@@ -21,14 +21,4 @@ public class JPAEntityManager {
         System.out.println(managerMap.get(database).toString());
         return managerMap.get(database);
     }
-
-
-//    public static EntityManager getEntityManager(String database){
-//        if (managerMap.get(database) == null){
-//            EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(database);
-//            EntityManager em = entityManagerFactory.createEntityManager();
-//            managerMap.put(database, em);
-//        }
-//        return managerMap.get(database);
-//    }
 }

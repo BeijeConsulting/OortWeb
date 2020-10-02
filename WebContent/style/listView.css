@@ -31,7 +31,7 @@ table{
     overflow: auto;
     overflow-x: hidden;
     display: block;
-    height: 300px;
+    height: 410px;
 }
 
 tbody{
@@ -76,4 +76,9 @@ a{
 .pageLink{
     color: black;
     text-align: right;
+}
+
+.delete{
+    cursor: pointer;
+    color: red;
 }

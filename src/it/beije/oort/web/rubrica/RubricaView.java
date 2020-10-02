@@ -75,7 +75,7 @@ public class RubricaView extends HttpServlet {
                     .append("<td>").append(c.getCognome()).append("</td>")
                     .append("<td>").append(c.getCell()).append("</td>")
                     .append("<td>").append(c.getEmail()).append("</td>")
-                    .append("<td><a href=\"./deleteContatto?id="+c.getId()+" \"><i class=\"fas fa-minus-circle\"></i></a></td>")
+                    .append("<td><a class=\"delete\" href=\"./deleteContatto?id="+c.getId()+" \"><i class=\"fas fa-minus-circle\"></i></a></td>")
                     .append("</tr>");
         }
 
