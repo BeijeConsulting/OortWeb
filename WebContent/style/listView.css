@@ -10,14 +10,9 @@ body{
 }
 
 .small-center-container{
-    margin-right: auto;
-    margin-left: auto;
     max-width: 900px;
-    padding-right: 10px;
-    padding-left: 10px;
     padding: 20px;
-    margin-bottom: 20px;
-    margin-top: 80px;
+    margin: 10px auto 20px;
     border-radius: 15px;
     text-align: center;
 
@@ -28,11 +23,21 @@ body{
 table, th, td{
     border-collapse: collapse;
     border: 1px solid black;
-    border-radius: px;
+    border-radius: 5px;
 }
 
 table{
     width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    display: block;
+    height: 300px;
+}
+
+tbody{
+    width: 100%;
+    overflow: auto;
+    display: table;
 }
 
 th{
@@ -66,4 +71,9 @@ tr:hover {
 a{
     text-decoration: none;
     color: white;
+}
+
+.pageLink{
+    color: black;
+    text-align: right;
 }
