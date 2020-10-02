@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import it.beije.oort.sala.web.beans.Contatto;
+import it.beije.oort.sala.web.db.JPAToolset;
 
 /**
  * Servlet implementation class Servlet1
@@ -29,7 +30,7 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("./index.html").include(request, response);
+		response.sendRedirect("/OortWeb/index.html");
 	}
 
 	/**
@@ -41,7 +42,11 @@ public class Servlet1 extends HttpServlet {
 										request.getParameter("cognome"),
 										request.getParameter("email"),
 										request.getParameter("telefono"));
-			System.out.println("Received->"+c.toString());
-			response.getWriter().append("<p>Received->"+c.toString()+"</p>");
+			try {
+			JPAToolset.insertJPA(c);
+			response.sendRedirect("/OortWeb/prova.html");
+			} catch (Exception e) {
+				response.append(e.printStackTrace());
+			}
 		}
 }
