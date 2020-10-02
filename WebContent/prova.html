@@ -1,16 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Test POST</title>
-		<style>
-		</style>
-	</head>
-	<body>
-		<h3>Inserisci i dati</h3>
-		<form action="./test" method="POST">
-			COGNOME&nbsp;<input type="text" name="cognome" value="" placeholder="Bianchi"/><br/>
- 			NOME&nbsp;<input type="text" name="nome" value="" placeholder="Marco"/><br>
-			<input type="submit" value="INVIO"/>
-		</form>
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Cool Form</title>
+    </head>
+    <body>
+        <header style="margin-left: 2em;">
+            <h1>This is a form.</h1>
+            <aside>You can insert some 'Contatto's in the database.</aside>
+        </header>
+        <div style="margin-left: 5em;">
+            <h2>Here is the form:</h2>
+            <form action="" method="POST" autocomplete="off">
+                <p>Nome:</p>
+                <input type="text" name="nome" value="" placeholder="Mario" autocapitalize="words">
+                <p>Cognome:</p>
+                <input type="text" name="cognome" value="" placeholder="Rossi" autocapitalize="words">
+                <p>Email:</p>
+                <input type="email" name="email" value="" placeholder="mariorossi@email.it">
+                <p>Telefono:</p>
+                <input type="tel" name="telefono" value="" placeholder="3334455666">
+                <input type="submit" value="Invia"  style="display:block; margin-top: 1em;">
+            </form>
+        </div>    
+    </body>
 </html>

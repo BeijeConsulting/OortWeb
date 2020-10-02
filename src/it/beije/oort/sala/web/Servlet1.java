@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.beije.oort.sala.web.beans.Contatto;
+
 /**
  * Servlet implementation class Servlet1
  */
@@ -27,7 +29,7 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("./index.html").include(request, response);
 	}
 
 	/**
@@ -35,7 +37,11 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+			Contatto c = new Contatto(request.getParameter("nome"),
+										request.getParameter("cognome"),
+										request.getParameter("email"),
+										request.getParameter("telefono"));
+			System.out.println("Received->"+c.toString());
+			response.getWriter().append("<p>Received->"+c.toString()+"</p>");
+		}
 }
