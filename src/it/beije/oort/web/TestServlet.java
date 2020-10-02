@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.beije.oort.rubrica.Contatto;
+
 /**
  * Servlet implementation class TestServlet
  */
@@ -37,7 +39,6 @@ public class TestServlet extends HttpServlet {
 		StringBuilder builder = new StringBuilder("<!DOCTYPE html>");
 		builder.append("<html><head><meta charset=\"ISO-8859-1\"><title>OortWeb</title></head><body><h1>Ciao Sono una servlet :-)</h1>");
 		builder.append("<br/><p>Sono le ").append(LocalTime.now().format(DateTimeFormatter.ISO_TIME)).append("</p></body></html>");
-		
 		response.getWriter().append(builder.toString());
 		//response.getWriter().append("Ciao sei su: ").append(request.getContextPath());
 	}
