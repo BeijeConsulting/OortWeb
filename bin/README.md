@@ -1,2 +1,0 @@
-# OortWeb
-Web Project
