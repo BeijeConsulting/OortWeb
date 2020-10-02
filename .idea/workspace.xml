@@ -33,74 +33,18 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebContent/media/biblioteca.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/media/rubrica.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/rubrica/postAdd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaAdd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaIndex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaUpdate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/style/biblioAdd.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/style/biblioView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/style/circles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/style/listView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/style/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/.idea/artifacts/OortWeb_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/OortWeb.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/media/biblioteca.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/media/rubrica.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/prova.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/rubrica/postAdd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/rubrica/rubricaAdd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/rubrica/rubricaIndex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/rubrica/rubricaUpdate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/rubrica/rubricaView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/style/biblioAdd.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/style/biblioView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/style/circles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/style/listView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/WebContent/style/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/lib/javax.annotation.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/lib/javax.ejb.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/lib/javax.jms.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/lib/javax.persistence.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/lib/javax.resource.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/lib/javax.servlet.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/lib/javax.servlet.jsp.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/lib/javax.transaction.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/src/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/src/it/beije/oort/web/TestServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/src/it/beije/oort/web/database/DBWriter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/src/it/beije/oort/web/database/JPAEntityManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/src/it/beije/oort/web/rubrica/AddContatto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/src/it/beije/oort/web/rubrica/Contatto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.ejb.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.persistence.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.resource.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/database/DBWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/database/JPAEntityManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/rubrica/AddContatto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/rubrica/Contatto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/index.html" afterDir="false" />
+    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment=".">
+      <change afterPath="$PROJECT_DIR$/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/WEB-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/OortWeb_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/OortWeb_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_21_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_22_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OortWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OortWeb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/TestServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,12 +89,17 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Oort/pom.xml" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2460733" />
   </component>
   <component name="RecentsManager">
@@ -158,17 +107,23 @@
       <recent name="it.franceschi.rubrica" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Code\OortWeb\src\main\resources" />
+      <recent name="C:\Code\OortWeb\resources" />
+      <recent name="C:\Code\OortWeb" />
+      <recent name="C:\Code\OortWeb\WebContent\WEB-INF" />
       <recent name="C:\Code\OortWeb\src\it\beije\oort\web\rubrica" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -244,9 +199,6 @@
           <artifact name="OortWeb:war" />
         </option>
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="OortWeb:war" />
-        </option>
       </method>
     </configuration>
   </component>
@@ -260,8 +212,17 @@
       <updated>1601640372193</updated>
       <workItem from="1601640373886" duration="4017000" />
       <workItem from="1601644447957" duration="992000" />
-      <workItem from="1601645540750" duration="83000" />
+      <workItem from="1601645540750" duration="698000" />
+      <workItem from="1601646286639" duration="651000" />
     </task>
+    <task id="LOCAL-00001" summary=".">
+      <created>1601645770662</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601645770662</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +254,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="255" key="#Assign_Data_Sources" timestamp="1601644505605">
@@ -307,10 +270,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="236" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1601645621950" />
-    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601645377517">
+    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601647115025">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601645377517" />
+    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601647115025" />
     <state x="311" y="53" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1601641108181">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -319,58 +282,82 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601645163233" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601643813425">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601646092415">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601643813425" />
-    <state width="905" height="353" key="GridCell.Tab.0.bottom" timestamp="1601645444888">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601646092415" />
+    <state width="1141" height="210" key="GridCell.Tab.0.bottom" timestamp="1601647037428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601645444888" />
-    <state width="905" height="353" key="GridCell.Tab.0.center" timestamp="1601645444887">
+    <state width="1141" height="210" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601647037428" />
+    <state width="1141" height="210" key="GridCell.Tab.0.center" timestamp="1601647037428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601645444887" />
-    <state width="905" height="353" key="GridCell.Tab.0.left" timestamp="1601645444887">
+    <state width="1141" height="210" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601647037428" />
+    <state width="1141" height="210" key="GridCell.Tab.0.left" timestamp="1601647037428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601645444887" />
-    <state width="905" height="353" key="GridCell.Tab.0.right" timestamp="1601645444887">
+    <state width="1141" height="210" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601647037428" />
+    <state width="1141" height="210" key="GridCell.Tab.0.right" timestamp="1601647037428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601645444887" />
-    <state width="905" height="353" key="GridCell.Tab.1.bottom" timestamp="1601645444888">
+    <state width="1141" height="210" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601647037428" />
+    <state width="1141" height="210" key="GridCell.Tab.1.bottom" timestamp="1601647037428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601645444888" />
-    <state width="905" height="353" key="GridCell.Tab.1.center" timestamp="1601645444888">
+    <state width="1141" height="210" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601647037428" />
+    <state width="1141" height="210" key="GridCell.Tab.1.center" timestamp="1601647037428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601645444888" />
-    <state width="905" height="353" key="GridCell.Tab.1.left" timestamp="1601645444888">
+    <state width="1141" height="210" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601647037428" />
+    <state width="1141" height="210" key="GridCell.Tab.1.left" timestamp="1601647037428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601645444888" />
-    <state width="905" height="353" key="GridCell.Tab.1.right" timestamp="1601645444888">
+    <state width="1141" height="210" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601647037428" />
+    <state width="1141" height="210" key="GridCell.Tab.1.right" timestamp="1601647037428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601645444888" />
-    <state width="905" height="353" key="GridCell.Tab.2.bottom" timestamp="1601645444889">
+    <state width="1141" height="210" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601647037428" />
+    <state width="1141" height="210" key="GridCell.Tab.2.bottom" timestamp="1601647037429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601645444889" />
-    <state width="905" height="353" key="GridCell.Tab.2.center" timestamp="1601645444888">
+    <state width="1141" height="210" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601647037429" />
+    <state width="1141" height="210" key="GridCell.Tab.2.center" timestamp="1601647037429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601645444888" />
-    <state width="905" height="353" key="GridCell.Tab.2.left" timestamp="1601645444888">
+    <state width="1141" height="210" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601647037429" />
+    <state width="1141" height="210" key="GridCell.Tab.2.left" timestamp="1601647037428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601645444888" />
-    <state width="905" height="353" key="GridCell.Tab.2.right" timestamp="1601645444889">
+    <state width="1141" height="210" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601647037428" />
+    <state width="1141" height="210" key="GridCell.Tab.2.right" timestamp="1601647037429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="353" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601645444889" />
+    <state width="1141" height="210" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601647037429" />
+    <state width="1068" height="353" key="GridCell.Tab.3.bottom" timestamp="1601646242806">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1068" height="353" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601646242806" />
+    <state width="1068" height="353" key="GridCell.Tab.3.center" timestamp="1601646242806">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1068" height="353" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1601646242806" />
+    <state width="1068" height="353" key="GridCell.Tab.3.left" timestamp="1601646242806">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1068" height="353" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1601646242806" />
+    <state width="1068" height="353" key="GridCell.Tab.3.right" timestamp="1601646242806">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1068" height="353" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1601646242806" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1601646093154">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601646093154" />
+    <state x="387" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1601646081800">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="387" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1366.728@0.0.1366.728" timestamp="1601646081800" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601645251673">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
