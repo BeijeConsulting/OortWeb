@@ -33,7 +33,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Search per ID funzionante. Download funziona a volte">
+    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Il download va ma il file è sempre vuoto. Verificare.">
       <change afterPath="$PROJECT_DIR$/WebContent/WEB-INF/rubrica.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaSearch.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/rubrica/DownloadXML.java" afterDir="false" />
@@ -210,7 +210,7 @@
       <workItem from="1601645540750" duration="698000" />
       <workItem from="1601646286639" duration="6837000" />
       <workItem from="1601653700828" duration="1418000" />
-      <workItem from="1601888406926" duration="7115000" />
+      <workItem from="1601888406926" duration="8650000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1601645770662</created>
@@ -247,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601894927335</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Il download va ma il file è sempre vuoto. Verificare.">
+      <created>1601895727335</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601895727335</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +291,8 @@
     <MESSAGE value="Insert, Delete e ListAll completati." />
     <MESSAGE value="Sistemato un po' di CSS, ma molte cose si sono rotte." />
     <MESSAGE value="Search per ID funzionante. Download funziona a volte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search per ID funzionante. Download funziona a volte" />
+    <MESSAGE value="Il download va ma il file è sempre vuoto. Verificare." />
+    <option name="LAST_COMMIT_MESSAGE" value="Il download va ma il file è sempre vuoto. Verificare." />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="255" key="#Assign_Data_Sources" timestamp="1601644505605">
@@ -315,54 +323,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601646092415" />
-    <state width="1195" height="425" key="GridCell.Tab.0.bottom" timestamp="1601895458730">
+    <state width="1195" height="425" key="GridCell.Tab.0.bottom" timestamp="1601895684592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601895458730" />
-    <state width="1195" height="425" key="GridCell.Tab.0.center" timestamp="1601895458729">
+    <state width="1195" height="425" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601895684592" />
+    <state width="1195" height="425" key="GridCell.Tab.0.center" timestamp="1601895684591">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601895458729" />
-    <state width="1195" height="425" key="GridCell.Tab.0.left" timestamp="1601895458729">
+    <state width="1195" height="425" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601895684591" />
+    <state width="1195" height="425" key="GridCell.Tab.0.left" timestamp="1601895684591">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601895458729" />
-    <state width="1195" height="425" key="GridCell.Tab.0.right" timestamp="1601895458730">
+    <state width="1195" height="425" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601895684591" />
+    <state width="1195" height="425" key="GridCell.Tab.0.right" timestamp="1601895684591">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601895458730" />
-    <state width="1195" height="425" key="GridCell.Tab.1.bottom" timestamp="1601895458731">
+    <state width="1195" height="425" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601895684591" />
+    <state width="1195" height="425" key="GridCell.Tab.1.bottom" timestamp="1601895684592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601895458731" />
-    <state width="1195" height="425" key="GridCell.Tab.1.center" timestamp="1601895458730">
+    <state width="1195" height="425" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601895684592" />
+    <state width="1195" height="425" key="GridCell.Tab.1.center" timestamp="1601895684592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601895458730" />
-    <state width="1195" height="425" key="GridCell.Tab.1.left" timestamp="1601895458730">
+    <state width="1195" height="425" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601895684592" />
+    <state width="1195" height="425" key="GridCell.Tab.1.left" timestamp="1601895684592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601895458730" />
-    <state width="1195" height="425" key="GridCell.Tab.1.right" timestamp="1601895458731">
+    <state width="1195" height="425" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601895684592" />
+    <state width="1195" height="425" key="GridCell.Tab.1.right" timestamp="1601895684592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601895458731" />
-    <state width="1195" height="425" key="GridCell.Tab.2.bottom" timestamp="1601895458731">
+    <state width="1195" height="425" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601895684592" />
+    <state width="1195" height="425" key="GridCell.Tab.2.bottom" timestamp="1601895684593">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601895458731" />
-    <state width="1195" height="425" key="GridCell.Tab.2.center" timestamp="1601895458731">
+    <state width="1195" height="425" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601895684593" />
+    <state width="1195" height="425" key="GridCell.Tab.2.center" timestamp="1601895684592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601895458731" />
-    <state width="1195" height="425" key="GridCell.Tab.2.left" timestamp="1601895458731">
+    <state width="1195" height="425" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601895684592" />
+    <state width="1195" height="425" key="GridCell.Tab.2.left" timestamp="1601895684592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601895458731" />
-    <state width="1195" height="425" key="GridCell.Tab.2.right" timestamp="1601895458731">
+    <state width="1195" height="425" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601895684592" />
+    <state width="1195" height="425" key="GridCell.Tab.2.right" timestamp="1601895684592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1195" height="425" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601895458731" />
+    <state width="1195" height="425" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601895684592" />
     <state width="1068" height="353" key="GridCell.Tab.3.bottom" timestamp="1601646242806">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -383,18 +391,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601646093154" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1601655118641">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1601901528303">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601655118641" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601901528303" />
     <state x="387" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1601646081800">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="387" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1366.728@0.0.1366.728" timestamp="1601646081800" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601645251673">
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601901541664">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1601645251673" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1601901541664" />
     <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1601643970985">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
