@@ -17,9 +17,9 @@ import it.beije.oort.gregori.rubrica.db.*;
 import it.beije.oort.rubrica.Contatto;
 
 /**
- * Servlet implementation class Visualizza
+ * Servlet implementation class Inserimento
  */
-@WebServlet("/Visualizza")
+@WebServlet("/Inserimento")
 public class Inserimento extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
