@@ -47,16 +47,16 @@
 					<div class="content">
 						<!-- Form -->
 						<h3>Contatto</h3>
-						<form  method="post" action="./Inserisci">
+						<form  method="post" action="./Inserimento">
 							<div class="row gtr-uniform">
 								<!--div class="col-6 col-12-xsmall"-->
 								<div class="col-12">
-									<input type="text" name="nome" id="name" value="" placeholder="Nome" />
+									<input type="text" name="name" id="name" value="" placeholder="Nome" />
 								</div>
 								<!-- Break -->
 								<!--div class="col-6 col-12-xsmall"-->
 								<div class="col-12">
-									<input type="text" name="cognome" id="surname" value="" placeholder="Cognome" />
+									<input type="text" name="surname" id="surname" value="" placeholder="Cognome" />
 								</div>
 								<!-- Break -->
 								<div class="col-12">
@@ -75,7 +75,7 @@
 									</select>
 								</div>
 								<div class="col-10 col-12-xsmall">
-									<input type="text" name="telefono" id="phone" value="" placeholder="Telefono" />
+									<input type="text" name="phone" id="phone" value="" placeholder="Telefono" />
 								</div>
 								<div class="col-12">
 									<ul class="actions">
@@ -85,6 +85,33 @@
 								</div>
 							</div>
 						</form>
+						<%
+						String nome = (String)session.getAttribute("nome");
+						String cognome = (String)session.getAttribute("cognome");
+						String telefono = (String)session.getAttribute("telefono");
+						String email = (String)session.getAttribute("email");
+						%>
+						<h3>Contatto inserito</h3>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+									<th>Nome</th>
+									<th>Cognome</th>
+									<th>Telefono</th>
+									<th>Email</th>
+									</tr>
+								</thead>
+								<tbody>									
+									<tr>
+									<td><%= nome %></td>
+									<td><%= cognome %></td>
+									<td><%= telefono %></td>
+									<td><%= email %></td>
+									</tr>
+								</tbody>			
+							</table>
+						</div>
 				</div>
 			</section>
 

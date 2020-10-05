@@ -1,3 +1,8 @@
+<%@ page import="it.beije.oort.gregori.rubrica.db.ReaderDb" %>
+<%@ page import="it.beije.oort.rubrica.Contatto" %>
+<%@ page import="java.util.List" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE HTML>
 <!--
 	Industrious by TEMPLATED
@@ -6,7 +11,7 @@
 -->
 <html>
 	<head>
-		<title>Rubrica - Inserimento contatti</title>
+		<title>Rubrica - Modifica contatti</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
@@ -38,25 +43,37 @@
 
 		<!-- Heading -->
 			<div id="heading" >
-				<h1>Inserimento</h1>
+				<h1>Modifica</h1>
 			</div>
 
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="inner">
 					<div class="content">
-						<!-- Form -->
-						<h3>Contatto</h3>
-						<form  method="post" action="./Inserisci">
+						<!-- Form -->						
+						<h3>Selezionare un contatto</h3>
+						<form method="post" action="./Modifica">
 							<div class="row gtr-uniform">
+								<div class="col-12">
+									<select name="selezione-contatto" id="selezione-contatto">
+										<option value="">- Contatto -</option>
+										<% 
+										List<Contatto> contatti = ReaderDb.readContatti(); 
+										for(Contatto contatto : contatti) {
+										%>
+										<option value="<%= contatto.getId() %>"><%= contatto %></option>
+										<% } %>
+									</select>
+								</div>
 								<!--div class="col-6 col-12-xsmall"-->
 								<div class="col-12">
-									<input type="text" name="nome" id="name" value="" placeholder="Nome" />
+									<h3>Modifica il contatto</h3>
+									<input type="text" name="nome" id="nome" value="" placeholder="Nome" />
 								</div>
 								<!-- Break -->
 								<!--div class="col-6 col-12-xsmall"-->
 								<div class="col-12">
-									<input type="text" name="cognome" id="surname" value="" placeholder="Cognome" />
+									<input type="text" name="cognome" id="cognome" value="" placeholder="Cognome" />
 								</div>
 								<!-- Break -->
 								<div class="col-12">
@@ -64,22 +81,13 @@
 								</div>
 								<!-- Break -->
 								<!-- Break -->
-								<div class="col-2 col-12-xsmall">
-									<select name="country-codes" id="country-codes">
-										<option value="">- Codice -</option>
-										<option value="it">IT +39</option>
-										<option value="de">DE +49</option>
-										<option value="us">US +1</option>
-										<option value="gb">GB +44</option>
-										<option value="fr">FR +33</option>
-									</select>
+								<div class="col-12">
+									<input type="text" name="telefono" id="telefono" value="" placeholder="Telefono" />
 								</div>
-								<div class="col-10 col-12-xsmall">
-									<input type="text" name="telefono" id="phone" value="" placeholder="Telefono" />
-								</div>
+								<!-- Break -->
 								<div class="col-12">
 									<ul class="actions">
-										<li><input type="submit" value="Invia" class="primary"/></li>
+										<li><input type="submit" value="Invia" class="primary" /></li>
 										<li><input type="reset" value="Cancella" /></li>
 									</ul>
 								</div>

@@ -1,3 +1,8 @@
+<%@ page import="it.beije.oort.gregori.rubrica.db.ReaderDb" %>
+<%@ page import="it.beije.oort.rubrica.Contatto" %>
+<%@ page import="java.util.List" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE HTML>
 <!--
 	Industrious by TEMPLATED
@@ -6,7 +11,7 @@
 -->
 <html>
 	<head>
-		<title>Rubrica - Inserimento contatti</title>
+		<title>Rubrica - Visualizzazione contatti</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
@@ -38,53 +43,41 @@
 
 		<!-- Heading -->
 			<div id="heading" >
-				<h1>Inserimento</h1>
+				<h1>Visualizzazione</h1>
 			</div>
 
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="inner">
 					<div class="content">
-						<!-- Form -->
-						<h3>Contatto</h3>
-						<form  method="post" action="./Inserisci">
-							<div class="row gtr-uniform">
-								<!--div class="col-6 col-12-xsmall"-->
-								<div class="col-12">
-									<input type="text" name="nome" id="name" value="" placeholder="Nome" />
-								</div>
-								<!-- Break -->
-								<!--div class="col-6 col-12-xsmall"-->
-								<div class="col-12">
-									<input type="text" name="cognome" id="surname" value="" placeholder="Cognome" />
-								</div>
-								<!-- Break -->
-								<div class="col-12">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
-								</div>
-								<!-- Break -->
-								<!-- Break -->
-								<div class="col-2 col-12-xsmall">
-									<select name="country-codes" id="country-codes">
-										<option value="">- Codice -</option>
-										<option value="it">IT +39</option>
-										<option value="de">DE +49</option>
-										<option value="us">US +1</option>
-										<option value="gb">GB +44</option>
-										<option value="fr">FR +33</option>
-									</select>
-								</div>
-								<div class="col-10 col-12-xsmall">
-									<input type="text" name="telefono" id="phone" value="" placeholder="Telefono" />
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Invia" class="primary"/></li>
-										<li><input type="reset" value="Cancella" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
+						<h3>Contatti</h3>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+									<th>Nome</th>
+									<th>Cognome</th>
+									<th>Telefono</th>
+									<th>Email</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% 
+									List<Contatto> contatti = ReaderDb.readContatti(); 
+									for(Contatto contatto : contatti) {
+									%>
+									
+									<tr>
+									<td><%= contatto.getNome() %></td>
+									<td><%= contatto.getCognome() %></td>
+									<td><%= contatto.getTelefono() %></td>
+									<td><%= contatto.getEmail() %></td>
+									
+									<% } %>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</section>
 

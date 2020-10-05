@@ -20,13 +20,13 @@ import it.beije.oort.rubrica.Contatto;
  * Servlet implementation class Inserimento
  */
 @WebServlet("/Inserimento")
-public class Inserimento extends HttpServlet {
+public class Inserimento_old extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Inserimento() {
+    public Inserimento_old() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -54,7 +54,7 @@ public class Inserimento extends HttpServlet {
 		
 		Contatto contatto = new Contatto(nome, cognome, telefono, email);
 		
-		Inserimento.inserisciContatto(contatto);
+		Inserimento_old.inserisciContatto(contatto);
 		
 		while(buffer.ready()) {
 			String s = buffer.readLine();
@@ -62,7 +62,7 @@ public class Inserimento extends HttpServlet {
 				s = "<h1>Inserimento</h1>";
 			}
 			else if(s.trim().equals("%!*replace me*!%")) {
-				s = Inserimento.tableContatto(contatto);
+				s = Inserimento_old.tableContatto(contatto);
 			}
 			builder.append(s);
 		}

@@ -23,12 +23,13 @@ public class ReaderDb {
 			connection = DBManager.getMySqlConnection(DBManager.DB_URL, DBManager.DB_USER, DBManager.DB_PASSWORD);
 			//System.out.println("connection is open? " + !connection.isClosed());
 			
-			ps = connection.prepareStatement("SELECT cognome, nome, telefono, email FROM rubrica.rubrica");
+			ps = connection.prepareStatement("SELECT id, cognome, nome, telefono, email FROM rubrica.rubrica");
 			
 			rs = ps.executeQuery();
 			
 			while (rs.next()) {
 				Contatto c = new Contatto();
+				c.setId(rs.getInt("id"));
 				c.setCognome(rs.getString("cognome"));
 				c.setNome(rs.getString("nome"));
 				c.setTelefono(rs.getString("telefono"));
