@@ -1,4 +1,4 @@
-package it.beije.oort.web;
+package it.beije.oort.web.servlet;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

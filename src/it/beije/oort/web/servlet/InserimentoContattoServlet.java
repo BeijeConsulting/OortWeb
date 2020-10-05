@@ -1,6 +1,7 @@
-package it.beije.oort.web;
+package it.beije.oort.web.servlet;
 
 import java.io.IOException;
+
 import java.util.Scanner;
 
 import javax.persistence.EntityManager;

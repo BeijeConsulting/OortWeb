@@ -1,4 +1,4 @@
-package it.beije.oort.web;
+package it.beije.oort.web.servlet;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
