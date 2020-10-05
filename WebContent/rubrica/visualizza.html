@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Menù ""viualizza"</title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<h2>Cliccare il seguente bottone per visualizzare tutti i contatti:</h2><br>
+		<form action="../VisualizzaTuttiServlet" method = "get">
+			<input type="submit" value="Visualizza Tutti i contatti">
+		</form> 
+		
+		<h2>Altrimenti, inserire l'id del contatto per una ricerca mirata:</h2><br>
+		<form action="../VisualizzaIdServlet" method = "get">
+			<label for="id">ID:</label>
+			<input type="text" id="id" name="id" placeholder="id"><br>
+			
+			<input type="submit" value="Conferma">
+		</form> 
+	</body>
+</html>
