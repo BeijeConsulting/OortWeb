@@ -1,0 +1,43 @@
+body {
+	margin-left: 10vw;
+	margin-right: 10vw;
+}
+#head {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+#search {
+	display: block;
+	position: relative;
+	bottom: 0px;
+	left: 0px;
+	width: 19em;
+}
+#search fieldset {
+	text-align: right;
+}
+#search fieldset label {
+	margin-right: 1em;
+}
+#search fieldset label,input {
+	margin-top: 5px;
+}
+#submit {
+	margin-right: 6.4em;
+}
+#contacts {
+	display: block;
+	position: relative;
+	text-align: center;
+}
+#contacts table {
+	border-collapse: collapse;
+}
+#contacts table td,th {
+	padding: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
