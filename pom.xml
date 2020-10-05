@@ -3,7 +3,7 @@
   <groupId>OortWeb</groupId>
   <artifactId>OortWeb</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <!--  <packaging>war</packaging> -->
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
