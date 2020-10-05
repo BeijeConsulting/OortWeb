@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Rubrica - Ricerca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="..\style\main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e8e37b0541.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../media/rubrica.ico"/>
+    
+</head>
+<body>
+<div class="home">
+    <a href="../index.html"><i class="fas fa-home"></i></a>
+</div>
+<div class="container">
+    <div class = "small-center-container">
+        <div class="header">
+            <h1><i>Ricerca</i></h1>
+            <h3>Cerca un contatto</h3>
+        </div>
+
+        <div class = "contatti-list">
+            <form action="../searchContatto" method="POST">
+                <label for="column">Campo:</label>
+                <select name="column" id="column">
+                    <option value="id">ID</option>
+                    <option value="nome">Nome</option>
+                    <option value="cognome">Cognome</option>
+                    <option value="cell">Cellulare</option>
+                    <option value="email">Email</option>
+                </select>
+                <input type="search" name="query" id="query" placeholder="Cerca">
+                <input type="submit" value="Cerca">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
