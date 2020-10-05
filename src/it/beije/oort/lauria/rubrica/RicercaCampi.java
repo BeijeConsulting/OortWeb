@@ -37,7 +37,8 @@ public class RicercaCampi extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		StringBuilder builder = new StringBuilder("<h2>Risultati della ricerca</h2><br>");
-
+		builder.append("<a href="+"./home.html" + ">home</a><br>");
+		
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
 		String telefono = request.getParameter("telefono");

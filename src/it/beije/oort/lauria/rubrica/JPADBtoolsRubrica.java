@@ -26,10 +26,9 @@ public class JPADBtoolsRubrica {
 		// chiudo la transaction
 		JPADBtoolsRubrica.entityManager.getTransaction().commit();
 					
-		//entityManager.close();
 	}
 	
-	public static void updateContact(int id, String cognome, String nome, String telefono, String email) {
+	public static void updateContact(int id, String nome, String cognome, String telefono, String email) {
 		
 		Contatto contatto = entityManager.find(Contatto.class, id);
 		//System.out.println("Contatto corrente da modificare : "+ + contatto.getId() + " - " + contatto);
@@ -45,6 +44,7 @@ public class JPADBtoolsRubrica {
 		JPADBtoolsRubrica.entityManager.persist(contatto);
 		// chiudo la transaction
 		JPADBtoolsRubrica.entityManager.getTransaction().commit();
+		
 	}
 	public static void searchContact(int id){
 		
@@ -56,24 +56,27 @@ public class JPADBtoolsRubrica {
 		JPADBtoolsRubrica.entityManager.remove(contatto);
 		// chiudo la transaction
 		JPADBtoolsRubrica.entityManager.getTransaction().commit();
+		
 	}
 
-	public static List<Contatto> selectContacts(String cognome, String nome, String telefono, String email) {
+	public static List<Contatto> selectContacts(String nome, String cognome, String telefono, String email) {
 
 		String jpql = "SELECT c FROM Contatto as c WHERE cognome like '%"+ cognome +"%' and nome like '%"+ nome +"%' and telefono like '%"+ telefono +"%' and email like '%"+ email +"%'";
 		//String hql = "SELECT c FROM Contatto as c WHERE email like '%@hotmail.it%'";		
 		Query query = JPADBtoolsRubrica.entityManager.createQuery(jpql);
 		List<Contatto> contatti = query.getResultList();		
-//		for (Contatto contatto : contatti) {
-//			System.out.print("id : " + contatto.getId());
-//			System.out.print(" - nome : " + contatto.getNome());
-//			System.out.print(" - cognome : " + contatto.getCognome());
-//			System.out.print(" - telefono : " + contatto.getTelefono());
-//			System.out.println(" - email : " + contatto.getEmail());
-//		}
 		return contatti;
 	}
 
+	public static List<Contatto> selectContacts() {
+
+		String jpql = "SELECT c FROM Contatto as c WHERE id > 0";
+		//String hql = "SELECT c FROM Contatto as c WHERE email like '%@hotmail.it%'";		
+		Query query = JPADBtoolsRubrica.entityManager.createQuery(jpql);
+		List<Contatto> contatti = query.getResultList();		
+		return contatti;
+		
+	}
 
 	public static void deleteContact(int id){
 		

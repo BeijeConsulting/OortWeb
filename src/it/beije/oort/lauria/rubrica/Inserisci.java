@@ -36,7 +36,7 @@ public class Inserisci extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		StringBuilder builder = new StringBuilder("<h2>Dati registrati con successo<h2><br>");
-		builder.append("<a href="+"./home.html" + ">home</a>");
+		builder.append("<a href="+"./home.html" + ">home</a><br>");
 		
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");

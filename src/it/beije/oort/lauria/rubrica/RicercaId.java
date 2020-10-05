@@ -35,13 +35,14 @@ public class RicercaId extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		StringBuilder builder = new StringBuilder("<h2>Dati registrati con successo</h2><br>");
+		
 		String id = request.getParameter("id");
-		Contatto contatto = JPADBtoolsRubrica.entityManager.find(Contatto.class, id);
+		Contatto contatto = JPADBtoolsRubrica.entityManager.find(Contatto.class, Integer.parseInt(id));
 		
 		builder.append("NOME : ").append(contatto.getNome()).append("<br/>COGNOME : ").append(contatto.getCognome()).append("<br/>TELEFONO : ")
 		.append(contatto.getTelefono()).append("<br/>EMAIL : ").append(contatto.getEmail());
 		
-		builder.append("<a href="+"./home.html" + ">home</a>");
+		builder.append("<br><a href="+"./home.html" + ">home</a><br>");
 
 		response.getWriter().append(builder);
 
