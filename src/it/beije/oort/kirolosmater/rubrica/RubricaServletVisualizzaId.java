@@ -10,17 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//import it.beije.oort.rubrica.Contatto;
+
 /**
  * Servlet implementation class RubricaServlet
  */
-@WebServlet("/rubrica/view/RubricaServlet")
-public class RubricaServlet extends HttpServlet {
+@WebServlet("/rubrica/view/RubricaServletVisualizzaId")
+public class RubricaServletVisualizzaId extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RubricaServlet() {
+    public RubricaServletVisualizzaId() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,6 +35,8 @@ public class RubricaServlet extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 //		Contatto contatto = readRecordFromDb(Integer.parseInt(request.getParameter("id")));
 		response.getWriter().append("hai selezionato questo ID: " + request.getParameter("id"));
+//		System.out.println(contatto);
+		
 	}
 
 	/**
