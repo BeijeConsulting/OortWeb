@@ -1,11 +1,8 @@
-package it.beije.oort.web;
-
+package it.beije.oort.lauria.rubrica;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,19 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class TestServlet
+ * Servlet implementation class RubricaServlet
  */
-@WebServlet("/test")
-public class TestServlet extends HttpServlet {
+@WebServlet("/RubricaServlet")
+public class RubricaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-//    /**
-//     * @see HttpServlet#HttpServlet()
-//     */
-//    public TestServlet() {
-//        super();
-//        // TODO Auto-generated constructor stub
-//    }
+    
+// /**
+//  * @see HttpServlet#HttpServlet()
+//  */
+// public TestServlet() {
+//     super();
+//     // TODO Auto-generated constructor stub
+// }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -48,7 +46,6 @@ public class TestServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		System.out.println("post...");
 		
 		StringBuilder builder = new StringBuilder("<h2>Dati registrati con successo<h2><br>");
 		
@@ -64,12 +61,11 @@ public class TestServlet extends HttpServlet {
 		String telefono = request.getParameter("telefono");
 		String email = request.getParameter("email");
 		
-		//elaborazione....
+		JPADBtoolsRubrica.insertContact(nome, cognome, telefono, email);
 		
-		builder.append("<br/>NOME : ").append(nome).append("<br/>COGNOME : ").append(cognome).append("<br/>TELEFONO : ")
+		builder.append("NOME : ").append(nome).append("<br/>COGNOME : ").append(cognome).append("<br/>TELEFONO : ")
 				.append(telefono).append("<br/>EMAIL : ").append(email);
 
 		response.getWriter().append(builder);
 	}
-
 }
