@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html lang="it">
+        <head>
+            <title>Rubrica - Visualizzazione contatti ricerca</title>
+            <link rel="stylesheet" href="./css/myCss.css">
+        </head>
+        <body>
+            <div class="titolo">
+                Visualizzazione contatti - ricerca
+            </div>
+            <div class="descrizione">
+                Riempire i campi per filtrare su questi dati.
+            </div>
+            <div class="form borderForm">
+                <form id="ricercaContatto" name="ricercaContatto" target="_blank" action="./visualizzaRicerca" method="POST">
+                    <div class="formButtons">
+                        <button class="buttonReset" type="reset">Resetta campi</button>
+                        <button class="buttonSubmit" type="submit">Cerca</button>
+                    </div>
+                    <div class="campi">
+                        <label>Cognome:</label><input type="text" name="cognome">
+                        <label>Nome:</label><input type="text" name="nome">
+                        <label>Telefono:</label><input type="text" name="telefono">
+                        <label>Email:</label><input type="text" name="email">
+                    </div>
+                </form>
+            </div>
+            <!-- 
+            <div class="rTable">
+                <div class="rTableRow">
+                <div class="rTableHead"><strong>Cognome</strong></div>
+                <div class="rTableHead"><strong>Nome</strong></div>
+                <div class="rTableHead"><strong>Telefono</strong></div>
+                <div class="rTableHead"><strong>Email</strong></div>
+                </div>
+                <div class="rTableRow">
+                <div class="rTableCell">Rossi</div>
+                <div class="rTableCell">Paolo</div>
+                <div class="rTableCell">3401001001</div>
+                <div class="rTableCell">paolo@rossi.it</div>
+                </div>
+                <div class="rTableRow">
+                <div class="rTableCell">Bianchi</div>
+                <div class="rTableCell">Federico</div>
+                <div class="rTableCell">3431551550</div>
+                <div class="rTableCell">fede90@libero.com</div>
+                </div>
+                </div> -->
+            <div class="form">
+                <form class="gestionePagine" name="gestionePagine">
+                    <div class="alignRight">
+                        <button class="buttonNavigation" onclick="location.href='./rubricaMenuVisualizzazioneContatti.html'" type="button">Torna indietro</button>
+                    </div>
+                </form>
+            </div>
+        </body>
+    </html>
