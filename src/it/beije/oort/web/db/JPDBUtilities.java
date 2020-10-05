@@ -5,6 +5,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 public class JPDBUtilities {
 	
 	public static void insertRecord(String cognome, String nome, String telefono, String email) {
@@ -46,6 +49,37 @@ public class JPDBUtilities {
 			}
 		}
 		return true;
+	}
+	
+	public static List<Contatto> exportRecords() {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		String jpql = "SELECT c FROM Contatto c";
+		Query query = entityManager.createQuery(jpql);
+		List<Contatto> contacts = query.getResultList();
+		entityManager.close();
+		return contacts;
+	}
+	
+	public static void editRecord(String id, String nome, String cognome, String telefono, String email) {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		Contatto contact = entityManager.find(Contatto.class, Integer.parseInt(id));
+		if (nome != null) {
+			contact.setNome(nome);
+		}
+		if (cognome != null) {
+			contact.setCognome(cognome);
+		}
+		if (telefono != null) {
+			contact.setTelefono(telefono);
+		}
+		if (email != null) {
+			contact.setEmail(email);
+		}
+		entityManager.persist(contact);
+		transaction.commit();
+		entityManager.close();
 	}
 	
 	public static List<Autore> exportAuthors() {
