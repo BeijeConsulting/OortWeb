@@ -1,18 +1,9 @@
 <%@ page import="it.beije.oort.web.database.DBReader" %>
-<%@ page import="it.beije.oort.web.rubrica.Contatto" %><%--
-  Created by IntelliJ IDEA.
-  User: Padawan09
-  Date: 05/10/2020
-  Time: 16:29
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="it.beije.oort.web.rubrica.Contatto" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta http-equiv='cache-control' content='no-cache'>
-    <meta http-equiv='expires' content='0'>
-    <meta http-equiv='pragma' content='no-cache'>
     <meta charset="UTF-8">
     <title>Rubrica - Ricerca</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e8e37b0541.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="../media/rubrica.ico"/>
-
-    <meta http-equiv='cache-control' content='no-cache'>
-    <meta http-equiv='expires' content='0'>
-    <meta http-equiv='pragma' content='no-cache'>
 </head>
 <body>
 
