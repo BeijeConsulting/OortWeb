@@ -13,16 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 //import it.beije.oort.rubrica.Contatto;
 
 /**
- * Servlet implementation class RubricaServlet
+ * Servlet implementation class RubricaServletVisualizzaId
  */
-@WebServlet("/rubrica/view/RubricaServletVisualizzaId")
-public class RubricaServletVisualizzaId extends HttpServlet {
+@WebServlet("/rubrica/view/RubricaContattoVisualizzaIdServlet")
+public class RubricaContattoVisualizzaIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RubricaServletVisualizzaId() {
+    public RubricaContattoVisualizzaIdServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
