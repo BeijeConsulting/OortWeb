@@ -82,3 +82,8 @@ a{
     cursor: pointer;
     color: red;
 }
+
+.modify{
+    cursor: pointer;
+    color: blue;
+}

@@ -18,7 +18,6 @@ public class JPAEntityManager {
             EntityManager em = entityManagerFactory.createEntityManager();
             managerMap.put(database, em);
         }
-        System.out.println(managerMap.get(database).toString());
         return managerMap.get(database);
     }
 }

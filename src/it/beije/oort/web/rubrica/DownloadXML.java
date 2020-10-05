@@ -22,12 +22,12 @@ public class DownloadXML extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/xml");
-        response.setHeader("Content-disposition", "attachment; rubrica.xml");
+        response.setHeader("Content-disposition", "attachment; web.xml");
         List<Contatto> list = new ArrayList<>();
         list.add(DBReader.searchByID(305));
-        XMLWriter.writeList(list, "C:\\Code\\OortWeb\\WebContent\\WEB-INF\\rubrica2.xml");
+        XMLWriter.writeList(list, "\\WEB-INF\\web.xml");
 
-        try(InputStream in = request.getServletContext().getResourceAsStream("C:\\Code\\OortWeb\\WebContent\\WEB-INF\\rubrica2.xml");
+        try(InputStream in = request.getServletContext().getResourceAsStream("\\WEB-INF\\web.xml");
             OutputStream out = response.getOutputStream()) {
 
             byte[] buffer = new byte[1028];
