@@ -1,16 +1,18 @@
 package it.beije.oort.kirolosmater.rubrica;
 
 import java.io.IOException;
+
+import it.beije.oort.kirolosmater.biblioteca.JPAEntityManagerSingleton;
 import it.beije.oort.rubrica.*;
-import it.beije.oort.kirolosmater.rubrica.*;
-import static it.beije.oort.kirolosmater.rubrica.HibernateDbManager.*;
+import static it.beije.oort.kirolosmater.rubrica.RubricaJpa.*;
+
+import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import it.beije.oort.rubrica.Contatto;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class RubricaServletVisualizzaId
@@ -35,12 +37,23 @@ public class RubricaContattoVisualizzaIdServlet extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 //		
 		
-		HibernateDbManager hdbm = new HibernateDbManager();
-		Contatto contatto = hdbm.readRecordFromDb(Integer.parseInt(request.getParameter("id")));
-		System.out.println(contatto);
-		response.getWriter().append("hai selezionato questo ID: " + request.getParameter("id"))
-		.append(contatto.toString());
+//		HibernateDbManager hdbm = new HibernateDbManager();
+//		Contatto contatto = hdbm.readRecordFromDb(Integer.parseInt(request.getParameter("id")));
+//		System.out.println(contatto);
+		int id = Integer.parseInt(request.getParameter("id"));
 		
+		
+		EntityManager em = JPAEntityManagerSingleton.getEntityManager("OortRubrica");
+//		Contatto contatto = readRecordFromDb(id);
+		response.getWriter().append("hai selezionato questo ID: " + id);
+//		String nome = contatto.getNome();
+//		String cognome = contatto.getCognome();
+//		System.out.println(nome);
+//		System.out.println(cognome);
+//		HttpSession session = request.getSession();
+//		session.setAttribute("nome", nome);
+//		session.setAttribute("cognome", cognome);
+//		response.sendRedirect("VisualizzaContattoId.jsp");
 	}
 
 	/**
@@ -49,6 +62,8 @@ public class RubricaContattoVisualizzaIdServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		
 	}
 
 }
