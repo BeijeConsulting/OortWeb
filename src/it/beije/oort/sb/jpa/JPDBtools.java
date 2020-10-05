@@ -295,6 +295,33 @@ public class JPDBtools {
 		return list;
 	}
 	
+	public static List<Contatto> listContatto(String... campo) {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortRubrica");
+		String jpql;
+		if(campo[0].equals("")) {jpql = "SELECT e FROM Contatto as e where id > 0";}
+		else if(campo[0].toLowerCase().equals("id")) { jpql = "SELECT e FROM Contatto as e where id = "+campo[1];}
+		else {jpql = "SELECT e FROM Contatto as e where "+campo[0]+" = '"+campo[1]+"'";}
+		Query query = entityManager.createQuery(jpql);
+		List<Contatto> list = query.getResultList();
+		return list;
+	}
+	
+	public static List<Contatto> listC(String... campo) {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortRubrica");
+		String jpql;
+		if(campo[0].toLowerCase().equalsIgnoreCase("id")) { jpql = "SELECT e FROM Contatto as e where id = "+campo[1];}
+		else if(campo.length==2){jpql = "SELECT e FROM Contatto as e where "+campo[0]+" = '"+campo[1]+"'";}
+		else if(campo.length==4){jpql = "SELECT e FROM Contatto as e where "+campo[0]+" = '"+campo[1]+"' and "+campo[2]+" = '"+campo[3]+"'";}
+		else if(campo.length==6){jpql = "SELECT e FROM Contatto as e where "+campo[0]+" = '"+campo[1]+"' and "+campo[2]+" = '"+campo[3]+"' and "+campo[4]+" = '"+campo[5]+"'";}
+		else {jpql = "SELECT e FROM Contatto as e where "+campo[0]+" = '"+campo[1]+"' or "+campo[2]+" = '"+campo[3]+"' or "+campo[4]+" = '"+campo[5]+"' or "+campo[6]+" = '"+campo[7]+"'";}
+		Query query = entityManager.createQuery(jpql);
+		List<Contatto> list = query.getResultList();
+		return list;
+	}
+	
+	public static void addTrim(List<String> list, String b, String a){
+		if(!a.equals("")) {list.add(b); list.add(a);}
+	}
 	public static void insert(Object o, String persistentUnitName) {
 		EntityManager entityManager = JpaEntityManagerFactory.entityManager(persistentUnitName);
 		EntityTransaction entityTransaction = entityManager.getTransaction();

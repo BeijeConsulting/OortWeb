@@ -14,6 +14,7 @@
  			TELEFONO&nbsp;<input type="text" name="telefono" value="" placeholder="3211233219"/><br/>
  			EMAIL&nbsp;<input type="text" name="email" value="" placeholder="mariorossi@gmail.com"/><br>
 			<input type="submit" value="INVIO"/> <button type="reset">Annulla</button>
+		
 		</form>
 	</body>
 </html>

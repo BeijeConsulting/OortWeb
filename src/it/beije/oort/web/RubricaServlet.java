@@ -36,19 +36,14 @@ public class RubricaServlet extends HttpServlet {
 		}
 		String campo ="";
 		String valore="";	
-		String menu ="";
-		if(request.getParameter("menu")!=null) menu = request.getParameter("menu");
+
 		if(request.getParameter("campo")!=null) campo = request.getParameter("campo");
 		if(request.getParameter("valore")!=null) valore = request.getParameter("valore");
-		if(menu.equals("2")) {
-			response.getWriter().append(htmlPageContatto("","","<h3>Scegli il contatto da cancellare</h3>").toString());
-		}
-		else if(menu.equals("1")) response.sendRedirect("http://localhost:8080/OortWeb/inserimentocontatto.html");	
-		else if(menu.equals("3")) response.sendRedirect("http://localhost:8080/OortWeb/ricercacontatto.html");	
 		if(indice!=0) {
 			JPDBtools.delete("Contatto", indice, "OortRubrica");
 			response.getWriter().append("Contatto cancellato");
 		}
+		
 		if(!campo.equals("")&&!valore.equals("")) response.getWriter()
 		.append(htmlPageContatto(campo, valore, "<h3>Ecco i contatti con quelle caratteristiche</h3>"));
 	}
@@ -72,11 +67,12 @@ public class RubricaServlet extends HttpServlet {
 		}
 	}
 	
+	//lo utilizzavo prima di utilizzare le jsp per crearmi una html
 	private static StringBuilder htmlPageContatto(String campo, String attributo, String funzione) {
 		StringBuilder builder = new StringBuilder("<!DOCTYPE html>");
 		builder.append("<html><head><meta charset='ISO-8859-1'><title>Delete Contact</title><style></style>")
 		.append("</head><body>").append(funzione);//);
-		for(Contatto c : JPDBtools.listContatto(campo, attributo)) {
+		for(Contatto c : JPDBtools.listContatto(campo, attributo)) { //il metodo cosi ormai non esiste piu
 			builder.append("<p> Id : ")
 			.append(c.getId()).append(" Nome : ").append(c.getNome()).append(" Cognome : ").append(c.getCognome())
 			.append(" Email : ").append(c.getEmail()).append(" Telefono : ").append(c.getTelefono()).append("</p>");

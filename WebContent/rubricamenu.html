@@ -7,12 +7,15 @@
 		</style>
 	</head>
 	<body>
-		<h3>Scegli cosa fare in base al numero corrispondente</h3>
-		<h2>1)INSERISCI<br>2)CANCELLA<br>3)RICERCA</h2>
-		<form action="./rubricaServlet" method="get">
-			
- IL NUMERO CORRISPONDENTE&nbsp;<input type="text" name="menu" value="" placeholder="1"/><br/>
-			<input type="submit" value="INVIO"/> <button type="reset">Annulla</button>
+		<h3>Cosa vuoi fare?</h3>
+		<form action="./inserimentocontatto.jsp" method="get">
+		<input type="submit" value="INSERISCI"/>
+		</form>
+		<form action="ricercacontatto.jsp" method="get">
+		<input type="submit" value="RICERCA"/>
+		</form>
+		<form action="./deletecontatto.jsp" method="get">
+		<input type="submit" value="CANCELLA"/>
 		</form>
 	</body>
 </html>
