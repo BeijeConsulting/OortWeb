@@ -7,20 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.beije.oort.sala.web.beans.Contatto;
-import it.beije.oort.sala.web.db.JPAToolset;
-
 /**
- * Servlet implementation class Servlet1
+ * Servlet implementation class SelectServlet
  */
-@WebServlet("/Servlet1")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/SelectServlet")
+public class PathServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet1() {
+    public PathServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,7 +27,7 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("/OortWeb/index.html");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -38,15 +35,15 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-			Contatto c = new Contatto(request.getParameter("nome"),
-										request.getParameter("cognome"),
-										request.getParameter("email"),
-										request.getParameter("telefono"));
-			try {
-			JPAToolset.insertJPA(c);
-			response.sendRedirect("/OortWeb/prova.html");
-			} catch (Exception e) {
-				response.append(e.printStackTrace());
-			}
+		String path = request.getParameter("req");
+		switch(path) {
+			case"form":
+				response.sendRedirect("/form.html");
+				break;
+			case "select":
+				response.sendRedirect("/select.jsp");
+				break;
 		}
+	}
+
 }
