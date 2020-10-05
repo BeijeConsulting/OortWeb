@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="rubrica")
-public class Contatto implements Comparable<Contatto>, Cloneable {
+public class Contatto implements Comparable<Contatto> {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

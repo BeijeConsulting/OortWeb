@@ -59,14 +59,22 @@ public class DatabaseManagerRubrica {
 		
 		jpqlBuilder.append("ORDER BY c.id");
 		
-		EntityManager eManager = JpaEntityManagerFactory.createEntityManager(UNIT_NAME);
-		Query query = eManager.createQuery(jpqlBuilder.toString());
-		if(addNome) { query.setParameter("nome", nome); }
-		if(addCognome) { query.setParameter("cognome", cognome); }
-		if(addTelefono) { query.setParameter("telefono", telefono); }
-		if(addEmail) { query.setParameter("email", email); }
+		EntityManager eManager = null;
+		List<Contatto> contatti = null;
+		Query query = null;
+		try {
+			eManager = JpaEntityManagerFactory.createEntityManager(UNIT_NAME);
+			query = eManager.createQuery(jpqlBuilder.toString());
+			if(addNome) { query.setParameter("nome", nome); }
+			if(addCognome) { query.setParameter("cognome", cognome); }
+			if(addTelefono) { query.setParameter("telefono", telefono); }
+			if(addEmail) { query.setParameter("email", email); }
+			contatti = query.getResultList();
+		} finally {
+			eManager.close();
+		}
 		
-		return query.getResultList();
+		return contatti;
 	}
 	
 }
