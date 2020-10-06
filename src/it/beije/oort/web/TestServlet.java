@@ -51,7 +51,7 @@ public class TestServlet extends HttpServlet {
 		//doGet(request, response);
 		System.out.println("post...");
 		
-		StringBuilder builder = new StringBuilder("<h2>Dati registrati con successo<h2><br>");
+		StringBuilder builder = new StringBuilder("Dati ricevuti\n");
 		
 //		Enumeration<String> e =	request.getParameterNames();
 //		while(e.hasMoreElements()) {
@@ -70,12 +70,11 @@ public class TestServlet extends HttpServlet {
 		utente.setNome(nome);
 		utente.setCognome(cognome);		
 		
-		builder.append("<br/>NOME : ").append(nome).append("<br/>COGNOME : ").append(cognome).append("<br/>TELEFONO : ")
-				.append(telefono).append("<br/>EMAIL : ").append(email);
 		HttpSession session = request.getSession();
 		session.setAttribute("sessionUser", utente);
 		
 		//builder.append("<br/>NOME : ").append(nome).append("<br/>COGNOME : ").append(cognome);
+
 		//response.getWriter().append(builder);
 		
 		response.sendRedirect("index.jsp");
