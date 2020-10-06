@@ -1,11 +1,12 @@
 package it.beije.oort.web.biblioteca.controller;
 
-import it.beije.oort.web.Utente;
+import it.beije.oort.web.biblioteca.model.Utente;
 import it.beije.oort.web.biblioteca.model.IBibliotecaModel;
 import it.beije.oort.web.biblioteca.utils.Config;
 import it.beije.oort.web.database.JPAEntityManager;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import java.util.List;
 
@@ -35,9 +36,13 @@ public class DatabaseManager {
     }
 
     public static Utente getUtenteFromCF(String cf){
-        String jpql = "SELECT u FROM Utente as u WHERE u.codice_fiscale = :cf";
-        Query query = em.createQuery(jpql, Utente.class)
-                .setParameter("cf", cf);
-        return (Utente) query.getSingleResult();
+        try {
+            String jpql = "SELECT u FROM Utente as u WHERE u.codice_fiscale = :cf";
+            Query query = em.createQuery(jpql, Utente.class).setParameter("cf", cf);
+            return (Utente) query.getSingleResult();
+        } catch (NoResultException e){
+            e.printStackTrace();
+            return null;
+        }
     }
 }

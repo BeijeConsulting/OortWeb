@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -20,23 +21,21 @@
 <div class="container">
     <div class = "small-center-container">
         <div class="header">
-            <h1><i>BibliOorteca</i></h1>
-            <h3>Gestionale per Database Bibliotecario</h3>
+            <h1><i>Bibli<span style="color: #008CBA;">Oort</span>eca</i></h1>
+            <h3>Gestionale per Database Bibliotecario   </h3>
         </div>
-        <div class = "grid-buttons">
-            <a href="./rubricaAdd.html"><button class="button-rubrica">
-                Aggiungi Contatto
-            </button></a>
-            <a href="search.jsp"><button class="button-rubrica">
-                Cerca Contatto
-            </button></a>
-            <a href="rubrica.jsp"><button class="button-rubrica">
-                Vedi Contatti
-            </button></a>
-            <a href="../getXML"><button class="button-rubrica">
-                Download XML
-            </button></a>
-        </div>
+
+
+        <%
+            if (request.getSession().getAttribute("logged") != null && (boolean) request.getSession().getAttribute("logged")){
+        %>
+        <jsp:useBean id="utente" class="it.beije.oort.web.biblioteca.model.Utente" scope="session" />
+
+
+
+        <%
+            } else response.sendRedirect("biblioLogin.jsp");
+        %>
     </div>
 </div>
 <ul class="circles">

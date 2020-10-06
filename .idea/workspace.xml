@@ -33,50 +33,22 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Aggiunto finto login">
-      <change afterPath="$PROJECT_DIR$/WebContent/biblio/biblioIndex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/biblio/biblioLogin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/DatabaseManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectUpdater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ProgramBasicOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/TestMethodsHere.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Autore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Editore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/IBibliotecaModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Libro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Prestito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Utente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/utils/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/utils/Paginator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b4f9d7d-c725-4262-ac54-52ea91e195e9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b4f9d7d-c725-4262-ac54-52ea91e195e9.xml" afterDir="false" />
+    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Iniziato login client biblioteca">
+      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/servlet/BiblioLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OortWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OortWeb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/rubrica/rubricaAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/rubrica/rubricaIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaIndex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/rubrica/rubricaSearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaSearch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/rubrica/rubricaUpdate.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaUpdate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/rubrica/rubricaView.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/rubrica/rubricaView.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/src/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/biblio/biblioIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/biblio/biblioIndex.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/biblio/biblioLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/biblio/biblioLogin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/database/DBReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/database/DBReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/tools/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/rubrica/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ProgramBasicOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ProgramBasicOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/TestMethodsHere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/TestMethodsHere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/utils/Paginator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +65,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -261,7 +239,7 @@
       <workItem from="1601646286639" duration="6837000" />
       <workItem from="1601653700828" duration="1418000" />
       <workItem from="1601888406926" duration="19921000" />
-      <workItem from="1601971757206" duration="7799000" />
+      <workItem from="1601971757206" duration="12334000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1601645770662</created>
@@ -340,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601974856725</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Iniziato login client biblioteca">
+      <created>1601980143767</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601980143767</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +365,8 @@
     <MESSAGE value="Il download va ma il file è sempre vuoto. Verificare." />
     <MESSAGE value="Finito e funzionante: Ricerca, Modifica, Elenca, Aggiungi, Elimina e Download di un XML a caso." />
     <MESSAGE value="Aggiunto finto login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto finto login" />
+    <MESSAGE value="Iniziato login client biblioteca" />
+    <option name="LAST_COMMIT_MESSAGE" value="Iniziato login client biblioteca" />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="255" key="#Assign_Data_Sources" timestamp="1601979261617">
@@ -403,18 +389,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601979238814" />
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1601981076803">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1601981076803" />
     <state x="311" y="53" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1601641108181">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="311" y="53" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.728@0.0.1366.728" timestamp="1601641108181" />
-    <state x="387" y="131" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1601974189657">
+    <state x="387" y="131" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1601981090047">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="387" y="131" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601974189657" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601974159722">
+    <state x="387" y="131" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601981090047" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601981575464">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601974159722" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601981575464" />
     <state x="430" y="219" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1601979651583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -423,54 +413,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601978951549" />
-    <state width="1145" height="208" key="GridCell.Tab.0.bottom" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.0.bottom" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
-    <state width="1145" height="208" key="GridCell.Tab.0.center" timestamp="1601978753777">
+    <state width="1145" height="276" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.0.center" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601978753777" />
-    <state width="1145" height="208" key="GridCell.Tab.0.left" timestamp="1601978753777">
+    <state width="1145" height="276" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.0.left" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601978753777" />
-    <state width="1145" height="208" key="GridCell.Tab.0.right" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.0.right" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
-    <state width="1145" height="208" key="GridCell.Tab.1.bottom" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.1.bottom" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
-    <state width="1145" height="208" key="GridCell.Tab.1.center" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.1.center" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
-    <state width="1145" height="208" key="GridCell.Tab.1.left" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.1.left" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
-    <state width="1145" height="208" key="GridCell.Tab.1.right" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.1.right" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
-    <state width="1145" height="208" key="GridCell.Tab.2.bottom" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.2.bottom" timestamp="1601987208225">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
-    <state width="1145" height="208" key="GridCell.Tab.2.center" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601987208225" />
+    <state width="1145" height="276" key="GridCell.Tab.2.center" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
-    <state width="1145" height="208" key="GridCell.Tab.2.left" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.2.left" timestamp="1601987208224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
-    <state width="1145" height="208" key="GridCell.Tab.2.right" timestamp="1601978753778">
+    <state width="1145" height="276" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
+    <state width="1145" height="276" key="GridCell.Tab.2.right" timestamp="1601987208225">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="208" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601978753778" />
+    <state width="1145" height="276" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601987208225" />
     <state width="1068" height="353" key="GridCell.Tab.3.bottom" timestamp="1601646242806">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -495,10 +485,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601646093154" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1601913279911">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1601980154385">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601913279911" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601980154385" />
     <state x="582" y="241" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1601974391517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -527,6 +517,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1601643970985" />
+    <state x="497" y="208" key="git4idea.ui.GitTagDialog" timestamp="1601980093579">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="497" y="208" key="git4idea.ui.GitTagDialog/0.0.1366.728@0.0.1366.728" timestamp="1601980093579" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1601913358512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

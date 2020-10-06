@@ -23,6 +23,18 @@
     <div class = "small-center-container">
         <div class="header">
             <h1><i>Biblioteca - Login</i></h1>
+
+            <%
+                String error = request.getParameter("error");
+                if (error != null){
+                    if (error.equalsIgnoreCase("user")){
+                        out.print("Utente inesistente");
+                    } else if (error.equalsIgnoreCase("pass")){
+                        out.print("Password inesistente");
+                    }
+                }
+            %>
+
         </div>
 
         <div class = "rubrica-form">

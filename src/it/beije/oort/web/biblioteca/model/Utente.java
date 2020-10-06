@@ -27,6 +27,12 @@ public class Utente implements IBibliotecaModel {
     @Column
     private String indirizzo;
 
+    @Column
+    private String password;
+
+    @Column(name = "admin")
+    private boolean admin;
+
     public String getCodice_fiscale() {
         return codice_fiscale;
     }
@@ -83,5 +89,21 @@ public class Utente implements IBibliotecaModel {
                 " .Cellulare: " + cellulare +
                 ".\n\tEmail:  " + email +
                 ".\n\tIndirizzo: " + indirizzo;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }
