@@ -33,12 +33,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Completata visualizzazione prestiti dell'utente">
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/servlet/BiblioViewController.java" afterDir="false" />
+    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Finita lista (solo libri per ora, con popup per sinossi) per admin e lista prestiti per utente.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/biblio/biblioView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/biblio/biblioView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/style/biblioView.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/style/biblioView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/DatabaseManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +226,7 @@
       <workItem from="1601646286639" duration="6837000" />
       <workItem from="1601653700828" duration="1418000" />
       <workItem from="1601888406926" duration="19921000" />
-      <workItem from="1601971757206" duration="23243000" />
+      <workItem from="1601971757206" duration="24417000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1601645770662</created>
@@ -329,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601991347171</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Finita lista (solo libri per ora, con popup per sinossi) per admin e lista prestiti per utente.">
+      <created>1601998700402</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1601998700402</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +376,8 @@
     <MESSAGE value="Iniziato login client biblioteca" />
     <MESSAGE value="Login BibliOorteca funzionante, con redirect" />
     <MESSAGE value="Completata visualizzazione prestiti dell'utente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completata visualizzazione prestiti dell'utente" />
+    <MESSAGE value="Finita lista (solo libri per ora, con popup per sinossi) per admin e lista prestiti per utente." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finita lista (solo libri per ora, con popup per sinossi) per admin e lista prestiti per utente." />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="255" key="#Assign_Data_Sources" timestamp="1601979261617">
@@ -419,54 +424,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601978951549" />
-    <state width="1145" height="166" key="GridCell.Tab.0.bottom" timestamp="1601998491081">
+    <state width="1145" height="166" key="GridCell.Tab.0.bottom" timestamp="1601999654538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
-    <state width="1145" height="166" key="GridCell.Tab.0.center" timestamp="1601998491080">
+    <state width="1145" height="166" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601999654538" />
+    <state width="1145" height="166" key="GridCell.Tab.0.center" timestamp="1601999654538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601998491080" />
-    <state width="1145" height="166" key="GridCell.Tab.0.left" timestamp="1601998491080">
+    <state width="1145" height="166" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601999654538" />
+    <state width="1145" height="166" key="GridCell.Tab.0.left" timestamp="1601999654538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601998491080" />
-    <state width="1145" height="166" key="GridCell.Tab.0.right" timestamp="1601998491081">
+    <state width="1145" height="166" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601999654538" />
+    <state width="1145" height="166" key="GridCell.Tab.0.right" timestamp="1601999654538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
-    <state width="1145" height="166" key="GridCell.Tab.1.bottom" timestamp="1601998491081">
+    <state width="1145" height="166" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601999654538" />
+    <state width="1145" height="166" key="GridCell.Tab.1.bottom" timestamp="1601999654538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
-    <state width="1145" height="166" key="GridCell.Tab.1.center" timestamp="1601998491081">
+    <state width="1145" height="166" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601999654538" />
+    <state width="1145" height="166" key="GridCell.Tab.1.center" timestamp="1601999654538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
-    <state width="1145" height="166" key="GridCell.Tab.1.left" timestamp="1601998491081">
+    <state width="1145" height="166" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601999654538" />
+    <state width="1145" height="166" key="GridCell.Tab.1.left" timestamp="1601999654538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
-    <state width="1145" height="166" key="GridCell.Tab.1.right" timestamp="1601998491081">
+    <state width="1145" height="166" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601999654538" />
+    <state width="1145" height="166" key="GridCell.Tab.1.right" timestamp="1601999654538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
-    <state width="1145" height="166" key="GridCell.Tab.2.bottom" timestamp="1601998491082">
+    <state width="1145" height="166" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601999654538" />
+    <state width="1145" height="166" key="GridCell.Tab.2.bottom" timestamp="1601999654539">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601998491082" />
-    <state width="1145" height="166" key="GridCell.Tab.2.center" timestamp="1601998491081">
+    <state width="1145" height="166" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601999654539" />
+    <state width="1145" height="166" key="GridCell.Tab.2.center" timestamp="1601999654539">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
-    <state width="1145" height="166" key="GridCell.Tab.2.left" timestamp="1601998491081">
+    <state width="1145" height="166" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601999654539" />
+    <state width="1145" height="166" key="GridCell.Tab.2.left" timestamp="1601999654539">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
-    <state width="1145" height="166" key="GridCell.Tab.2.right" timestamp="1601998491081">
+    <state width="1145" height="166" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601999654539" />
+    <state width="1145" height="166" key="GridCell.Tab.2.right" timestamp="1601999654539">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="166" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
+    <state width="1145" height="166" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601999654539" />
     <state width="1068" height="353" key="GridCell.Tab.3.bottom" timestamp="1601646242806">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -483,10 +488,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1068" height="353" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1601646242806" />
-    <state x="263" y="99" key="IDE.errors.dialog" timestamp="1601913326297">
+    <state x="263" y="99" key="IDE.errors.dialog" timestamp="1601999050648">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="263" y="99" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1601913326297" />
+    <state x="263" y="99" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1601999050648" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1601646093154">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -507,10 +512,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="19" key="com.intellij.database.dbimport.ImportDialog/0.0.1366.728@0.0.1366.728" timestamp="1601977791826" />
-    <state x="332" y="92" width="986" height="480" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1601989891754">
+    <state x="332" y="92" width="986" height="480" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1601998644794">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="332" y="92" width="986" height="480" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1601989891754" />
+    <state x="332" y="92" width="986" height="480" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1601998644794" />
     <state x="387" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1601646081800">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

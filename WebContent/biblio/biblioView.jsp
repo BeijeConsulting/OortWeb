@@ -104,10 +104,11 @@
                         <td><%= l.getDescrizione() != null ? l.getDescrizione() : ""%></td>
                         <td>
                             <a id="open-modal-<%= l.getId()%>"
-                               onclick="showSinossi('modal-<%= l.getId()%>', 'open-modal-<%= l.getId()%>')">
+                               onclick="showSinossi('modal-<%= l.getId()%>', 'open-modal-<%= l.getId()%>', <%= l.getId()%>)">
                                 <i class="far fa-file-alt"></i>
                             </a>
                         </td>
+                        <!-- todo eliminare libro con questo pulsante -->
                         <td><i class="fas fa-minus-circle"></i></td>
                     </tr>
                     <%
@@ -125,6 +126,22 @@
                         <th>Data di Morte</th>
                         <th>Biografia</th>
                     </tr>
+                    <%
+                        for (IBibliotecaModel obj : lista){
+                            Autore a = (Autore) obj;
+                     %>
+                    <tr>
+                        <td><%= a.getNome() != null ? a.getNome() : "" %></td>
+                        <td><%= a.getCognome() != null ? a.getCognome() : "" %></td>
+                        <td><%= a.getData_nascita() != null ? a.getData_nascita() : "" %></td>
+                        <td><%= a.getData_morte() != null ? a.getData_morte() : ""%></td>
+                        <td><%= a.getBiografia() != null ? a.getBiografia()  : ""%></td>
+                        <!-- todo eliminare autore con questo pulsante -->
+                        <td><i class="fas fa-minus-circle"></i></td>
+                    </tr>
+                    <%
+                        }
+                    %>
                 <%
                         // Chiude case libro
                         break;
@@ -134,6 +151,19 @@
                         <th>Nome</th>
                         <th>Descrizione</th>
                     </tr>
+                    <%
+                        for (IBibliotecaModel obj : lista){
+                            Editore e = (Editore) obj;
+                    %>
+                    <tr>
+                        <td><%= e.getNome() != null ? e.getNome() : "" %></td>
+                        <td><%= e.getDescrizione() != null ? e.getDescrizione() : "" %></td>
+                        <!-- todo eliminare editore con questo pulsante -->
+                        <td><i class="fas fa-minus-circle"></i></td>
+                    </tr>
+                    <%
+                        }
+                    %>
                 <%
                         // Chiude case libro
                         break;
@@ -147,6 +177,22 @@
                         <th>Indirizzo</th>
                         <th>Codice Fiscale</th>
                     </tr>
+<%--                    <%--%>
+<%--                        for (IBibliotecaModel obj : lista){--%>
+<%--                            Autore a = (Autore) obj;--%>
+<%--                    %>--%>
+<%--                    <tr>--%>
+<%--                        <td><%= a.getNome() != null ? a.getNome() : "" %></td>--%>
+<%--                        <td><%= a.getCognome() != null ? a.getCognome() : "" %></td>--%>
+<%--                        <td><%= a.getData_nascita() != null ? a.getData_nascita() : "" %></td>--%>
+<%--                        <td><%= a.getData_morte() != null ? a.getData_morte() : ""%></td>--%>
+<%--                        <td><%= a.getBiografia() != null ? a.getBiografia()  : ""%></td>--%>
+<%--                        <!-- todo eliminare autore con questo pulsante -->--%>
+<%--                        <td><i class="fas fa-minus-circle"></i></td>--%>
+<%--                    </tr>--%>
+<%--                    <%--%>
+<%--                        }--%>
+<%--                    %>--%>
                 <%
                         // Chiude case libro
                         break;
@@ -159,6 +205,23 @@
                         <th>Data Fine Prestito</th>
                         <th>Note</th>
                     </tr>
+                    <%
+                        for (IBibliotecaModel obj : lista){
+                            Prestito a = (Prestito) obj;
+                            // todo ottenere libro e utente qui
+                    %>
+                    <tr>
+<%--                        <td><%= a.getNome() != null ? a.getNome() : "" %></td>--%>
+<%--                        <td><%= a.getCognome() != null ? a.getCognome() : "" %></td>--%>
+<%--                        <td><%= a.getData_nascita() != null ? a.getData_nascita() : "" %></td>--%>
+<%--                        <td><%= a.getData_morte() != null ? a.getData_morte() : ""%></td>--%>
+<%--                        <td><%= a.getBiografia() != null ? a.getBiografia()  : ""%></td>--%>
+<%--                        <!-- todo eliminare prestito con questo pulsante -->--%>
+<%--                        <td><i class="fas fa-minus-circle"></i></td>--%>
+                    </tr>
+                    <%
+                        }
+                    %>
                 <%
                     // chiude switch
                     }
@@ -205,12 +268,12 @@
 </body>
 <script>
     // Sinossi script
-    function showSinossi(modalID, btnID){
+    function showSinossi(modalID, btnID, id){
         let modal = document.getElementById(modalID);
 
         let btn = document.getElementById(btnID);
 
-        let span = document.getElementsByClassName("close")[0];
+        let span = document.getElementsByClassName("close")[id];
 
         btn.onclick = function () {
             modal.style.display = "block";
