@@ -1,4 +1,4 @@
-package it.beije.oort.web;
+package it.beije.oort.web.jsp;
 
 public class Utente {
 	

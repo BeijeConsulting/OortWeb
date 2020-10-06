@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Inserimento rubrica jsp</title>
+<title>inserpage</title>
 </head>
 <body>
 	<h1>Inserire nuovo contatto!</h1>
@@ -23,14 +23,19 @@
 	</fieldset>
 			<br>
 			<button type ="submit"> Conferma e invia!</button> 
+			</form>
+			<br>
 		<form action="menu.jsp">	
 			<button type ="submit"> Annulla e torna al menu'!</button>
 		</form>
-<%		
+		
 	
 
-        StringBuilder builder = new StringBuilder("<h3>Dati ricevuti correttamente e aggiunti al DB!</h3> <br>");
-		String nome = request.getParameter("nome");
+       
+      
+	
+      <%
+      	String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
 		String telefono = request.getParameter("telefono");
 		String email = request.getParameter("email");
@@ -44,22 +49,36 @@
 		contatto.setCognome(cognome);
 		contatto.setTelefono(telefono);
 		contatto.setEmail(email);
-		entityManager.persist(contatto);
-		entityManager.getTransaction().commit();
-		entityManager.close();
-		System.out.println("Contatto inserito correttamente!");
-		
+		%>
+		      <%
+      if(nome != null || cognome != null || telefono != null || email != null){ %>
+		<p align ="center"> Nome: [	<%= (contatto.getNome() != null) ? contatto.getNome() : "" %> ]</p> 
+		<p align ="center"> Cognome: [<%= (contatto.getCognome() != null) ? contatto.getCognome() : "" %>] </p>
+		<p align ="center"> Telefono: [	<%= (contatto.getTelefono() != null) ? contatto.getTelefono() : "" %>]</p>
+		<p align ="center"> Email:[	<%= (contatto.getEmail() != null) ?  contatto.getEmail() : "" %>]</p> 
+			<h3>Dati ricevuti correttamente e aggiunti al DB!</h3> <br>
+			<form action="menu.jsp" method="POST">
+			<button type="submit"> MENU' PRINCIPALE</button> 
+			</form>		
 			
-		builder.append("<br/>NOME : ").append(nome).append("<br/>COGNOME : ").append(cognome)
-		.append("<br/>TELEFONO : ").append(telefono).append("<br/>EMAIL : ").append(email);
-
-		if(nome != null || cognome != null || telefono != null || email != null)
-			response.getWriter().append(builder).append("<br>");
-		else {
-			%>
+			<%
+			entityManager.persist(contatto);
+			entityManager.getTransaction().commit();
+			entityManager.close();
+			System.out.println("Contatto inserito correttamente!");
+     		 } else {
+     		   		 
+     		 %>	
+		
 			<h2>Inserire almeno un parametro!</h2>
 		<%
-		} %>		  
+		} 
+	
+		
+		%>
+
+		
+			  
 		 
 </body>
 </html>

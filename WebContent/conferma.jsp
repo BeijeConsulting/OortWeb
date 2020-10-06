@@ -1,4 +1,4 @@
-<%@page import="it.beije.oort.web.Utente"%>
+<%@page import="it.beije.oort.web.jsp.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<jsp:useBean id="userBean" class="it.beije.oort.web.Utente" scope="session"/>
+<jsp:useBean id="userBean" class="it.beije.oort.web.jsp.Utente" scope="session"/>
 
 <%
 //Utente contatto = (Utente)session.getAttribute("contatto");
