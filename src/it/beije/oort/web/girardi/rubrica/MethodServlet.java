@@ -16,32 +16,57 @@ public class MethodServlet {
 //menu iniziale, visualizza, modifica, cancella, inserisci Contatto:
 	
 	public static void menu (HttpServletResponse response) throws IOException {
-		StringBuilder menu = new StringBuilder("<!DOCTYPE html>");
-		menu.append("<html><head><meta charset=\\\"ISO-8859-1\\\"><title>OortWeb</title></head><body>")
-			.append("<br><a href=\"http://localhost:8080/OortWeb/rubrica/"
-					+ "menu.html\">Ritorna al menu iniziale</a><br>")
-			.append("</body></html>");
-		response.getWriter().append(menu);
+		StringBuilder menu = new StringBuilder();
+		menu.append("<div>")
+			.append("<a href=\"http://localhost:8080/OortWeb/rubrica/"
+					+ "menu.html\">Ritorna al menu iniziale</a><br><br>")
+			.append("</div>");
+	response.getWriter().append(menu.toString());
+}
+	
+	
+	public static void menuInizio (HttpServletResponse response) throws IOException {
+		// .jsp: inizializzazione e head
+		StringBuilder menu = new StringBuilder();
+		menu.append("<!DOCTYPE html>")
+			.append("<html><head><meta charset=\\\"ISO-8859-1\\\"><title>OortWeb</title>"
+					+ "</head><body>");
+		response.getWriter().append(menu.toString());
 	}
 	
-
-	public static List<Contatto> visualizzaTutti (HttpServletResponse response) 
-				throws ServletException, IOException {
+	
+	public static void menuFine (HttpServletResponse response) throws IOException {
+		// .jsp: body e chiusura
+		StringBuilder menu = new StringBuilder();
+		menu.append("<body><br><br><a href=\"http://localhost:8080/OortWeb/rubrica/"
+					+ "menu.html\">Ritorna al menu iniziale</a><br>")
+			.append("</body></html>");
+		response.getWriter().append(menu.toString());
+	}
+	
+	
+	public static List<Contatto> listContatti() throws  IOException {
 		//apro EntityManagerFactory 
 		EntityManager entityManager = JPAfactory.openEntityFactory();
-
+	
 		//query JPQL
 		String jpql = "SELECT c FROM Contatto as c";
 		Query query = entityManager.createQuery(jpql);
 		List<Contatto> listContatti = query.getResultList();
-		
+	
+		return listContatti;
+	}
+	
+	
+	public static void visualizzaTutti (HttpServletResponse response) 
+				throws ServletException, IOException {
+		List<Contatto> listContatti = MethodServlet.listContatti();
 		StringBuilder strb = new StringBuilder("totale contatti: ");
 		strb.append(listContatti.size());
 		for (Contatto contatto : listContatti) {
 			strb.append("\n").append(contatto);
 		}
 		response.getWriter().append(strb);
-		return listContatti;
 	}
 
 	
@@ -59,6 +84,8 @@ public class MethodServlet {
 			//SELECT
 			request.getParameter("id");
 			Contatto contatto = entityManager.find(Contatto.class, id);
+			if (contatto == null)
+				response.getWriter().append("Nessun contatto corrisponde all'id inserito");
 			
 			StringBuilder strb = new StringBuilder().append(contatto);
 			response.getWriter().append(strb);
@@ -73,28 +100,28 @@ public class MethodServlet {
 	
 	public static void modificaContatto (HttpServletRequest request,HttpServletResponse response) 
 			throws IOException {
-		Contatto contatto = MethodServlet.visualizzaId(request, response);
-		if (contatto == null) {
-			System.out.println("non sono presenti contatti con l'id richiesto");
+		Contatto c = MethodServlet.visualizzaId(request, response);
+		if (c == null) {
+//			response.getWriter().append("non sono presenti contatti con l'id richiesto");
 			return;
 		}
 	
 		//cognome, nome, telefono, email
 		String nome = request.getParameter("nome");
 		if (!(nome.contentEquals("")))
-			contatto.setNome(nome);
+			c.setNome(nome);
 		
 		String cognome = request.getParameter("cognome");
 		if (!(cognome.contentEquals("")))
-			contatto.setCognome(cognome);
+			c.setCognome(cognome);
 		
 		String telefono = request.getParameter("telefono");
 		if (!(telefono.contentEquals("")))
-			contatto.setTelefono(telefono);
+			c.setTelefono(telefono);
 		
 		String email = request.getParameter("email");
 		if (!(email.contentEquals("")))
-			contatto.setEmail(email);
+			c.setEmail(email);
 		
 		//apro EntityManagerFactory
 		EntityManager entityManager = JPAfactory.openEntityFactory();
@@ -103,10 +130,10 @@ public class MethodServlet {
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
 
-		entityManager.persist(contatto); //UPDATE
+		entityManager.persist(c); //UPDATE
 		entityManager.getTransaction().commit();
 		
-		response.getWriter().append("Contatto aggiornato con successo:\n"+ contatto);	
+		response.getWriter().append("<br>Contatto aggiornato con successo:<br>"+ c);	
 	}
 	
 	
@@ -114,9 +141,10 @@ public class MethodServlet {
 			throws IOException {
 		Contatto contatto = MethodServlet.visualizzaId(request, response);
 		if (contatto == null) {
-			response.getWriter().append("non sono presenti contatti con l'id richiesto");
+//			response.getWriter().append("non sono presenti contatti con l'id richiesto");
 			return;
 		}
+		
 		//apro EntityManagerFactory
 		EntityManager entityManager = JPAfactory.openEntityFactory();
 		
@@ -128,7 +156,7 @@ public class MethodServlet {
 		entityManager.remove(contatto);
 		entityManager.getTransaction().commit();
 		
-		response.getWriter().append("contatto eliminato");
+		response.getWriter().append("<br>contatto eliminato");
 	}
 	
 	
@@ -153,8 +181,8 @@ public class MethodServlet {
 			entityManager.persist(c);
 			//confermo aggiornamento su DB
 			entityManager.getTransaction().commit();
-			response.getWriter().append("contatto inserito con successo! \n " + c)
-								.append("\n id assegnato: " + c.getId());
+			response.getWriter().append("contatto inserito con successo! <br>\n " + c)
+								.append("\n<br> id assegnato: " + c.getId());
 		}		
 	}
 }

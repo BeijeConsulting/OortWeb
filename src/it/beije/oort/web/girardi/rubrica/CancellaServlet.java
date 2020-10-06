@@ -20,8 +20,9 @@ public class CancellaServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		MethodServlet.menuInizio(response);
 		MethodServlet.cancellaContatto(request, response);
-		MethodServlet.menu(response);
+		MethodServlet.menuFine(response);
 	}
 
 	/**

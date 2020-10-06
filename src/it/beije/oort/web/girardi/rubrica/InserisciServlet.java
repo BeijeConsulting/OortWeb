@@ -21,8 +21,9 @@ public class InserisciServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		MethodServlet.menuInizio(response);
 		MethodServlet.inserisciContatto(request, response);
-		MethodServlet.menu(response);
+		MethodServlet.menuFine(response);
 	}
 
 	/**

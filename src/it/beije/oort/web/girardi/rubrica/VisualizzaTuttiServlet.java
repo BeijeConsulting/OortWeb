@@ -20,8 +20,8 @@ public class VisualizzaTuttiServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		MethodServlet.menu(response);
-		MethodServlet.visualizzaTutti(response);
+//		MethodServlet.visualizzaTutti(response);
+		response.sendRedirect("rubrica/visualizzaTutti.jsp");
 	}
 
 	/**

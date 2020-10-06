@@ -6,17 +6,22 @@
 		</style>
 	</head>
 	<body>
-		<h2>Cliccare il seguente bottone per visualizzare tutti i contatti:</h2><br>
+		<h4>Cliccare il seguente bottone per visualizzare tutti i contatti:</h4>
 		<form action="../VisualizzaTuttiServlet" method = "get">
 			<input type="submit" value="Visualizza Tutti i contatti">
 		</form> 
 		
-		<h2>Altrimenti, inserire l'id del contatto per una ricerca mirata:</h2><br>
+		<h4>Oppure, inserire l'id del contatto per una ricerca mirata:</h4>
 		<form action="../VisualizzaIdServlet" method = "get">
 			<label for="id">ID:</label>
-			<input type="text" id="id" name="id" placeholder="id"><br>
+			<input type="text" id="id" name="id" placeholder="id">
 			
 			<input type="submit" value="Conferma">
+		</form> 
+		<br>
+		<h4>Torna al menu principale:</h4>
+		<form action="http://localhost:8080/OortWeb/rubrica/menu.html" >
+			<input type="submit" value="menu principale">
 		</form> 
 	</body>
 </html>

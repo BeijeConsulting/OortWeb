@@ -21,8 +21,9 @@ public class VisualizzaIdServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		MethodServlet.menuInizio(response);
 		MethodServlet.visualizzaId(request, response);
-		MethodServlet.menu(response);
+		MethodServlet.menuFine(response);
 	}
 
 	/**

@@ -19,8 +19,9 @@ public class ModificaServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		MethodServlet.menuInizio(response);
 		MethodServlet.modificaContatto(request, response);
-		MethodServlet.menu(response);
+		MethodServlet.menuFine(response);
 	}
 
 	/**
