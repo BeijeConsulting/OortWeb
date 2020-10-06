@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.beije.oort.gregori.biblioteca.jpa.Utente;
-
 /**
  * Servlet implementation class Modifica
  */

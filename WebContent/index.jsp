@@ -1,3 +1,4 @@
+<%@page import="it.beije.oort.web.Utente"%>
 <%@page import="java.time.LocalTime"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -10,8 +11,12 @@
 <body>
 
 <%
+	/*
 String nome = (String)session.getAttribute("nome");
 String cognome = (String)session.getAttribute("cognome");
+*/
+
+Utente contatto = (Utente)session.getAttribute("contatto");
 
 //String name = request.getParameter("name");
 
@@ -20,9 +25,9 @@ LocalTime now = LocalTime.now();
 
 System.out.println(now);
 
-if (nome != null || cognome != null) {
-	%>
-	<h1>CIAO <%= (nome != null) ? nome : "" %> <%= (cognome != null) ? cognome : "" %></h1>
+if (contatto.getNome() != null || contatto.getCognome() != null) {
+%>
+	<h1>CIAO <%= (contatto.getNome() != null) ? contatto.getNome() : "" %> <%= (contatto.getCognome() != null) ? contatto.getCognome() : "" %></h1>
 
 <p>SONO LE ORE <%= now %></p>
 <br>
