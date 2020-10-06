@@ -1,0 +1,119 @@
+label {
+    font-style: italic;
+    font-weight: lighter;
+    margin: 4px;
+}
+.titolo {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+.descrizione {
+    text-align: center;
+    margin: 10px;
+}
+.form {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+.formButtons {
+    margin: 10px;
+}
+.alignRight {
+    text-align: right;
+    margin: 10px;
+}
+.buttonSubmit{
+    border: none;
+    color: white;
+    background-color: green;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonWarning{
+    border: none;
+    color: black;
+    background-color: gold;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonReset{
+    border: none;
+    color: white;
+    background-color: red;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.buttonNavigation{
+    border: none;
+    color: white;
+    background-color: blue;
+    padding: 5px 10px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.rTable {
+    display: block;
+    text-align: center;
+    width: 100%;
+ }
+ .rTableHeading, .rTableBody, .rTableFoot, .rTableRow{
+    clear: both;
+ }
+ .rTableHead, .rTableFoot{
+    background-color: #DDD;
+    font-weight: bold;
+ }
+ .rTableCell, .rTableHead {
+    border: 1px solid #999999;
+    float: left;
+    height: 17px;
+    overflow: hidden;
+    padding: 3px 1.8%;
+    width: 20%;
+ }
+ .rTable:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+ }
+ 
+.isa_info, .isa_success, .isa_warning, .isa_error {
+    margin: 10px 0px;
+    padding:12px;
+ 
+}
+.isa_info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+.isa_success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+.isa_warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+.isa_error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}

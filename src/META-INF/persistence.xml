@@ -10,4 +10,18 @@
 			<property name="javax.persistence.jdbc.password" value="Beije01"/>
 		</properties>
 	</persistence-unit>
+	<persistence-unit name="OortBiblioteca">
+		<class>it.beije.oort.madonia.biblioteca.ebeans.Autore</class>
+		<class>it.beije.oort.madonia.biblioteca.ebeans.Editore</class>
+		<class>it.beije.oort.madonia.biblioteca.ebeans.Libro</class>
+		<class>it.beije.oort.madonia.biblioteca.ebeans.Prestito</class>
+		<class>it.beije.oort.madonia.biblioteca.ebeans.Utente</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca?serverTimezone=CET"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="Beije01"/>
+		</properties>
+	</persistence-unit>
 </persistence>
