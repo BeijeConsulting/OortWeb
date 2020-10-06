@@ -37,5 +37,9 @@ if (nome != null || cognome != null) {
 %>
 
 
+<a href="./phonebook/index.jsp">Phonebook Application</a>
+
+
+
 </body>
 </html>

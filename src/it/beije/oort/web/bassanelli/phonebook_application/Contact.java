@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "phonebook")
+@Table(name = "contact")
 public class Contact {
 
 	public static final String TABLE_CONTACT = Contact.class.getSimpleName();
@@ -94,7 +94,7 @@ public class Contact {
 	}
 
 	public String toString() {
-		return this.toString("NOME;COGNOME;TELEFONO;EMAIL");
+		return this.toString("ID;NAME;SURNAME;MOBILE;EMAIL");
 	}
 
 	public String toString(String pattern) {

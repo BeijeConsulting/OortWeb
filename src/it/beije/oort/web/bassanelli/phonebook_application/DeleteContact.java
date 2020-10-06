@@ -6,19 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class AddContact
+ * Servlet implementation class DeleteContact
  */
-@WebServlet("/phonebook/add-contact")
-public class AddContact extends HttpServlet {
+@WebServlet("/phonebook/delete-contact")
+public class DeleteContact extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddContact() {
+    public DeleteContact() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,10 +27,7 @@ public class AddContact extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 	}
 
 	/**
@@ -41,23 +37,11 @@ public class AddContact extends HttpServlet {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
 		
-		Contact contact = new Contact();
+		String id = request.getParameter("id");
 		
-		contact.setName(request.getParameter("name"));
-		contact.setSurname(request.getParameter("surname"));
-		contact.setMobile(request.getParameter("mobile"));
-		contact.setEmail(request.getParameter("email"));
+		JavaPersistenceDBManager.deleteContact(id);
 		
-		System.out.println(contact.toString("NAME;SURNAME;MOBILE;EMAIL"));
-		
-		JavaPersistenceDBManager.addContact(contact);
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("addContact", contact);
-		
-		// response.getWriter().append("Done");
-		
-		response.sendRedirect("./add.jsp");
+		response.sendRedirect("./delete.jsp");
 	}
 
 }
