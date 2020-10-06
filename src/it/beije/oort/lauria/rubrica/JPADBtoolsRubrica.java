@@ -12,7 +12,7 @@ public class JPADBtoolsRubrica {
 	public static final EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortRubrica");
 	
 	public static void insertContact(String nome, String cognome, String telefono, String email) {
-		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortRubrica");
 		Contatto contatto = new Contatto();
 		contatto.setNome(nome);
 		contatto.setCognome(cognome);
@@ -20,11 +20,12 @@ public class JPADBtoolsRubrica {
 		contatto.setEmail(email);
 		
 		// apro la transaction
-		JPADBtoolsRubrica.entityManager.getTransaction().begin();
+		entityManager.getTransaction().begin();
 		// salvo il libro
-		JPADBtoolsRubrica.entityManager.persist(contatto);
+		entityManager.persist(contatto);
 		// chiudo la transaction
-		JPADBtoolsRubrica.entityManager.getTransaction().commit();
+		entityManager.getTransaction().commit();
+		//entityManager.close();
 					
 	}
 	

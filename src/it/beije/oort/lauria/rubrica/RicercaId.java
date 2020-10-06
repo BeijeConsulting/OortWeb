@@ -35,18 +35,6 @@ public class RicercaId extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		StringBuilder builder = new StringBuilder("<h2>Dati registrati con successo</h2><br>");
-//		
-//		String id = request.getParameter("id");
-//		Contatto contatto = JPADBtoolsRubrica.entityManager.find(Contatto.class, Integer.parseInt(id));
-//		
-//		builder.append("NOME : ").append(contatto.getNome()).append("<br/>COGNOME : ").append(contatto.getCognome()).append("<br/>TELEFONO : ")
-//		.append(contatto.getTelefono()).append("<br/>EMAIL : ").append(contatto.getEmail());
-//		
-//		builder.append("<br><a href="+"./home.html" + ">home</a><br>");
-//
-//		response.getWriter().append(builder);
-
 		StringBuilder builder = new StringBuilder("<h2>Dati registrati con successo</h2><br>");
 		
 		String id = request.getParameter("id");
@@ -55,10 +43,10 @@ public class RicercaId extends HttpServlet {
 		builder.append("NOME : ").append(contatto.getNome()).append("<br/>COGNOME : ").append(contatto.getCognome()).append("<br/>TELEFONO : ")
 		.append(contatto.getTelefono()).append("<br/>EMAIL : ").append(contatto.getEmail());
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("id", id);
-		
-		response.sendRedirect("ricercaIdJSP.jsp");
+		builder.append("<br><a href="+"./home.html" + ">home</a><br>");
+
+		response.getWriter().append(builder);
+
 
 
 	}
