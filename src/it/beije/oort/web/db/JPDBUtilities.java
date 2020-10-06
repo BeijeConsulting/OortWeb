@@ -60,27 +60,44 @@ public class JPDBUtilities {
 		return contacts;
 	}
 	
-	public static void editRecord(String id, String nome, String cognome, String telefono, String email) {
+	public static Contatto exportContact(int id) {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
-		EntityTransaction transaction = entityManager.getTransaction();
-		transaction.begin();
-		Contatto contact = entityManager.find(Contatto.class, Integer.parseInt(id));
-		if (nome != null) {
-			contact.setNome(nome);
-		}
-		if (cognome != null) {
-			contact.setCognome(cognome);
-		}
-		if (telefono != null) {
-			contact.setTelefono(telefono);
-		}
-		if (email != null) {
-			contact.setEmail(email);
-		}
-		entityManager.persist(contact);
-		transaction.commit();
-		entityManager.close();
+		String jpql = "SELECT c FROM Contatto AS c WHERE id = " + id;
+		Query query = entityManager.createQuery(jpql);
+		Contatto contact = (Contatto) query.getSingleResult();
+		return contact;
 	}
+	
+	//Metodo per form web
+//	public static void editRecord(int id, String nome, String cognome, String telefono, String email) {
+//		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+//		EntityTransaction transaction = entityManager.getTransaction();
+//		transaction.begin();
+//		Contatto contact = entityManager.find(Contatto.class, id);
+//		if (nome != null) {
+//			contact.setNome(nome);
+//		} else {
+//			contact.setNome(contact.getNome());
+//		}
+//		if (cognome != null) {
+//			contact.setCognome(cognome);
+//		} else {
+//			contact.setNome(contact.getCognome());
+//		}
+//		if (telefono != null) {
+//			contact.setTelefono(telefono);
+//		} else {
+//			contact.setTelefono(contact.getTelefono());
+//		}
+//		if (email != null) {
+//			contact.setEmail(email);
+//		} else {
+//			contact.setEmail(contact.getEmail());
+//		}
+//		entityManager.persist(contact);
+//		transaction.commit();
+//		entityManager.close();
+//	}
 	
 	public static List<Autore> exportAuthors() {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();

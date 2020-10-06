@@ -37,14 +37,13 @@ public class UpdateServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String id = request.getParameter("id");
+		int id = Integer.parseInt(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
 		String email = request.getParameter("email");
 		String telefono = request.getParameter("telefono");
-		JPDBUtilities.editRecord(id, nome, cognome, telefono, email);
+//		JPDBUtilities.editRecord(id, nome, cognome, telefono, email);
 		StringBuilder builder = new StringBuilder("Dati aggiornati!");
 		response.getWriter().append(builder.toString());
 	}
-
 }
