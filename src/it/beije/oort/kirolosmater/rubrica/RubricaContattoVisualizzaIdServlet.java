@@ -45,12 +45,12 @@ public class RubricaContattoVisualizzaIdServlet extends HttpServlet {
 		
 		
 		
-//		Contatto contatto = readRecordFromDb(id);
-		response.getWriter().append("hai selezionato questo ID: " + id);
-//		String nome = contatto.getNome();
-//		String cognome = contatto.getCognome();
-//		System.out.println(nome);
-//		System.out.println(cognome);
+		Contatto contatto = readRecordFromDb(id);
+//		response.getWriter().append("hai selezionato questo ID: " + id);
+		String nome = contatto.getNome();
+		String cognome = contatto.getCognome();
+		System.out.println(nome);
+		System.out.println(cognome);
 //		HttpSession session = request.getSession();
 //		session.setAttribute("nome", nome);
 //		session.setAttribute("cognome", cognome);
