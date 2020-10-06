@@ -10,13 +10,14 @@
 <link rel="stylesheet" href="./css/myCss.css">
 </head>
 <body>
-<%
-String nome = request.getParameter("nome");
-String cognome = request.getParameter("cognome");
-String telefono = request.getParameter("telefono");
-String email = request.getParameter("email");
-String submit = request.getParameter("submitContatto");
-%>
+
+<jsp:useBean id="contatto" class="it.beije.oort.madonia.rubrica.ebeans.Contatto" scope="page" />
+<jsp:setProperty property="nome" name="contatto"/>
+<jsp:setProperty property="cognome" name="contatto"/>
+<jsp:setProperty property="telefono" name="contatto"/>
+<jsp:setProperty property="email" name="contatto"/>
+
+
 <div class="titolo">Inserimento contatto</div>
 <div class="descrizione">Inserire i campi del contatto da inserire.</div>
 <div class="form borderForm">
@@ -33,13 +34,8 @@ String submit = request.getParameter("submitContatto");
 		</div>
 	</form>
 	<%
+	String submit = request.getParameter("submitContatto");
 	if (submit != null && submit.equals("true")) {
-	
-	Contatto contatto = new Contatto();
-	contatto.setNome(request.getParameter("nome"));
-	contatto.setCognome(request.getParameter("cognome"));
-	contatto.setTelefono(request.getParameter("telefono"));
-	contatto.setEmail(request.getParameter("email"));
 
 	try {
 		DatabaseManagerRubrica.inserisciContatto(contatto);
