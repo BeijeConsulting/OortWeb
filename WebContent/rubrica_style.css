@@ -1,12 +1,14 @@
 body {
 	margin-left: 10vw;
 	margin-right: 10vw;
+	display: grid;
 }
 #head {
 	position: relative;
 	top: 0px;
 	left: 0px;
 	text-align: center;
+	grid-row: 1;
 }
 #search {
 	display: block;
@@ -14,6 +16,20 @@ body {
 	bottom: 0px;
 	left: 0px;
 	width: 19em;
+	margin-left: 27vw;
+	grid-row: 2;
+}
+ul{
+	display: block;
+	position: relative;
+	width: 33vw;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li {
+	display: block;
+	float: left;
 }
 #search fieldset {
 	text-align: right;
@@ -22,7 +38,10 @@ body {
 	margin-right: 1em;
 }
 #search fieldset label,input {
-	margin-top: 5px;
+	margin-top: 0px;
+}
+.fields {
+	width: 19em;
 }
 #submit {
 	margin-right: 6.4em;
@@ -31,6 +50,8 @@ body {
 	display: block;
 	position: relative;
 	text-align: center;
+	grid-row: 3;
+	margin-left: 15vw;
 }
 #contacts table {
 	border-collapse: collapse;

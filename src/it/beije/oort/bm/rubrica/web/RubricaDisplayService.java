@@ -15,7 +15,7 @@ import it.beije.oort.bm.rubrica.database.JPADatabase;
 
 
 @WebServlet("/displayService")
-public class RubricaService extends HttpServlet {
+public class RubricaDisplayService extends HttpServlet {
 	private static final long serialVersionUID = 2L;
 	
 	private static Database db = JPADatabase.getDatabase();
@@ -35,26 +35,26 @@ public class RubricaService extends HttpServlet {
 		List<Contatto> results;
 		String[] vals = new String[4];
 		boolean[] selector = new boolean[4];
-		vals[0] = (String) req.getParameter("lname");
-		if(vals[0] == null) {
+		vals[0] = req.getParameter("lname");
+		if(vals[0] == null || vals[0].equals("")) {
 			selector[0] = false;
 		}else {
 			selector[0] = true;
 		}
-		vals[1] = (String) req.getParameter("fname");
-		if(vals[1] == null) {
+		vals[1] = req.getParameter("fname");
+		if(vals[1] == null || vals[1].equals("")) {
 			selector[1] = false;
 		}else {
 			selector[1] = true;
 		}
-		vals[2] = (String) req.getParameter("phone");
-		if(vals[2] == null) {
+		vals[2] = req.getParameter("phone");
+		if(vals[2] == null || vals[2].equals("")) {
 			selector[2] = false;
 		}else {
 			selector[2] = true;
 		}
-		vals[3] = (String) req.getParameter("email");
-		if(vals[3] == null) {
+		vals[3] = req.getParameter("email");
+		if(vals[3] == null || vals[3].equals("")) {
 			selector[3] = false;
 		}else {
 			selector[3] = true;
