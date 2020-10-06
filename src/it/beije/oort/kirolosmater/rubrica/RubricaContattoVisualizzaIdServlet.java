@@ -20,6 +20,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/rubrica/view/RubricaContattoVisualizzaIdServlet")
 public class RubricaContattoVisualizzaIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+//	EntityManager em = JPAEntityManagerSingleton.getEntityManager("OortRubrica");
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -43,7 +44,7 @@ public class RubricaContattoVisualizzaIdServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
 		
-		EntityManager em = JPAEntityManagerSingleton.getEntityManager("OortRubrica");
+		
 //		Contatto contatto = readRecordFromDb(id);
 		response.getWriter().append("hai selezionato questo ID: " + id);
 //		String nome = contatto.getNome();

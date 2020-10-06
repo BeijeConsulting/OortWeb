@@ -8,10 +8,10 @@
 </head>
 <body>
     <p>Per visualizzare un contatto inserisci il suo id</p>
-    <form action="./RubricaContattoVisualizzaIdServlet" method="POST" target="_blank">
+    <!-- <form action="./RubricaContattoVisualizzaIdServlet" method="POST" target="_blank">
         ID&nbsp;<input type="text" name="id" value="" placeholder="id"/><br/>
         <input type="submit" value="INVIO"/>
-    </form>
+    </form> -->
     <% 
     String nome = (String)session.getAttribute("nome");
     String cognome = (String)session.getAttribute("cognome"); 
