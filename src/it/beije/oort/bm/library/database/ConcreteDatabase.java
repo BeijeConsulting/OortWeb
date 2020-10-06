@@ -1,4 +1,4 @@
-package it.beije.oort.bm.database;
+package it.beije.oort.bm.library.database;
 
 import java.sql.Date;
 import java.util.List;
@@ -164,33 +164,38 @@ public class ConcreteDatabase implements Database {
 		switch(type) {
 		case USER:
 			User user = (User) data;
-			if(!user.getSurname().equals("")) {
+			if(!(user.getSurname() == null || user.getSurname().equals(""))) {
 				query.append("surname = ").append("\'").append(user.getSurname()).append("\'").append(" ");
 				requireAnd = true;
 			}
-			if(!user.getName().equals("")) {
+			if(!(user.getName() == null || user.getName().equals(""))) {
 				if(requireAnd) query.append("AND ");
 				query.append("name = ").append("\'").append(user.getName()).append("\'").append(" ");
 				requireAnd = true;
 			}
-			if(!user.getFc().equals("")) {
+			if(!(user.getFc() == null || user.getFc().equals(""))) {
 				if(requireAnd) query.append("AND ");
 				query.append("fc = ").append("\'").append(user.getFc()).append("\'").append(" ");
 				requireAnd = true;
 			}
-			if(!user.getAddress().equals("")) {
+			if(!(user.getAddress() == null || user.getAddress().equals(""))) {
 				if(requireAnd) query.append("AND ");
 				query.append("address = ").append("\'").append(user.getAddress()).append("\'").append(" ");
 				requireAnd = true;
 			}
-			if(!user.getPhone().equals("")) {
+			if(!(user.getPhone() == null || user.getPhone().equals(""))) {
 				if(requireAnd) query.append("AND ");
 				query.append("phone = ").append("\'").append(user.getPhone()).append("\'").append(" ");
 				requireAnd = true;
 			}
-			if(!user.getEmail().equals("")) {
+			if(!(user.getEmail() == null || user.getEmail().equals(""))) {
 				if(requireAnd) query.append("AND ");
 				query.append("email = ").append("\'").append(user.getEmail()).append("\'").append(" ");
+				requireAnd = true;
+			}
+			if(!(user.getPassword() == null || user.getPassword().equals(""))) {
+				if(requireAnd) query.append("AND ");
+				query.append("password = ").append("\'").append(user.getPassword()).append("\'").append(" ");
 			}
 			break;
 		case BOOK:
@@ -216,23 +221,28 @@ public class ConcreteDatabase implements Database {
 			break;
 		case AUTHOR:
 			Author author = (Author) data;
-			if(!author.getSurname().equals("")) {
+			if(!(author.getSurname() == null || author.getSurname().equals(""))) {
 				query.append("surname = ").append("\'").append(author.getSurname()).append("\'").append(" ");
 				requireAnd = true;
 			}
-			if(!author.getName().equals("")) {
+			if(!(author.getName() == null || author.getName().equals(""))) {
 				if(requireAnd) query.append("AND ");
 				query.append("name = ").append("\'").append(author.getName()).append("\'").append(" ");
 				requireAnd = true;
 			}
-			if(!author.getDate_of_birth().equals("")) {
+			if(!(author.getDate_of_birth() == null || author.getDate_of_birth().equals(""))) {
 				if(requireAnd) query.append("AND ");
 				query.append("date_of_birth = ").append("\'").append(author.getDate_of_birth()).append("\'").append(" ");
 				requireAnd = true;
 			}
-			if(!author.getDate_of_death().equals("")) {
+			if(!(author.getDate_of_death() == null || author.getDate_of_death().equals(""))) {
 				if(requireAnd) query.append("AND ");
 				query.append("date_of_death = ").append("\'").append(author.getDate_of_death()).append("\'").append(" ");
+				requireAnd = true;
+			}
+			if(author.getId() != 0) {
+				if(requireAnd) query.append("AND ");
+				query.append("id = ").append("\'").append(author.getId()).append("\'").append(" ");
 			}
 			break;
 		case LOAN:
@@ -258,8 +268,12 @@ public class ConcreteDatabase implements Database {
 			break;
 		case PUBLISHER:
 			Publisher p = (Publisher) data;
-			if(!p.getName().equals("")) {
+			if(!(p.getName() == null || p.getName().equals(""))) {
 				query.append("name = ").append("\'").append(p.getName()).append("\'").append(" ");
+			}
+			if(p.getId() != 0) {
+				if(requireAnd) query.append("AND ");
+				query.append("id = ").append("\'").append(p.getId()).append("\'").append(" ");
 			}
 			break;
 		default:
