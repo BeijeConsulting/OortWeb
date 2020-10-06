@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class SelectServlet
  */
-@WebServlet("/SelectServlet")
+@WebServlet("/PathServlet")
 public class PathServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -41,7 +41,7 @@ public class PathServlet extends HttpServlet {
 				response.sendRedirect("/form.html");
 				break;
 			case "select":
-				response.sendRedirect("/select.jsp");
+				response.sendRedirect("/OortWeb/select.jsp");
 				break;
 		}
 	}

@@ -13,7 +13,7 @@ import it.beije.oort.sala.web.db.JPAToolset;
 /**
  * Servlet implementation class Servlet1
  */
-@WebServlet("/Servlet1")
+@WebServlet("/FormServlet")
 public class FormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String INDEX="<!DOCTYPE html><html><head><meta charset=\"utf-8\">"
