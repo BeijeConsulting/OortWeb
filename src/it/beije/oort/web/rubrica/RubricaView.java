@@ -1,6 +1,7 @@
 package it.beije.oort.web.rubrica;
 
 import it.beije.oort.web.database.DBReader;
+import it.beije.oort.web.model.Contatto;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,5 +1,5 @@
 <%@ page import="it.beije.oort.web.database.DBReader" %>
-<%@ page import="it.beije.oort.web.rubrica.Contatto" %>
+<%@ page import="it.beije.oort.web.model.Contatto" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="it">
@@ -30,9 +30,9 @@
     <%
         String modified = request.getParameter("modified");
         if (modified != null && modified.equalsIgnoreCase("true")){ %>
-    <p>Contatto modificato!</p>
-    <p>Funziona ;)</p>
-    <a href="rubricaIndex.html">Torna indietro.</a>
+        <p>Contatto modificato!</p>
+        <p>Funziona ;)</p>
+        <a href="rubricaIndex.html">Torna indietro.</a>
     <%
         } else if (modified != null && modified.equalsIgnoreCase("false")) {
     %>
@@ -94,5 +94,17 @@
     <img src="../media/404.gif"  alt="Qui non c'è niente!" style="margin-left: 25%;">
     <% } %>
 </div>
+<ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 </body>
 </html>

@@ -1,6 +1,6 @@
 package it.beije.oort.web.database;
 
-import it.beije.oort.web.rubrica.Contatto;
+import it.beije.oort.web.model.Contatto;
 
 import javax.persistence.EntityManager;
 

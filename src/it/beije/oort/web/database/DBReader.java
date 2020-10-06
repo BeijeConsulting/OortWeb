@@ -1,6 +1,8 @@
 package it.beije.oort.web.database;
 
-import it.beije.oort.web.rubrica.Contatto;
+import it.beije.oort.web.Utente;
+import it.beije.oort.web.model.Contatto;
+import it.beije.oort.web.model.User;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -22,5 +24,12 @@ public class DBReader {
                 + column + " LIKE "
                 + "'%" + query + "%'" +"", Contatto.class)
                 .getResultList();
+    }
+
+    public static User getUser(String email){
+        EntityManager em = JPAEntityManager.getEntityManager("user");
+        return em.createQuery("Select c from User as c WHERE email LIKE "
+                + "'%" + email + "%'" +"", User.class)
+                .getSingleResult();
     }
 }

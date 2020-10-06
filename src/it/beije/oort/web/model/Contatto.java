@@ -1,4 +1,4 @@
-package it.beije.oort.web.rubrica;
+package it.beije.oort.web.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-<%@ page import="it.beije.oort.web.rubrica.Contatto" %>
+<%@ page import="it.beije.oort.web.model.Contatto" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="it.beije.oort.web.database.DBReader" %>
@@ -100,5 +100,17 @@
         </div>
     </div>
 </div>
+<ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 </body>
 </html>

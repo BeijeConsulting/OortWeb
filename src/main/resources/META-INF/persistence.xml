@@ -2,7 +2,7 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
   <persistence-unit name="rubrica">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-  <class>it.beije.oort.web.rubrica.Contatto</class>
+  <class>it.beije.oort.web.model.Contatto</class>
 
     <properties>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

@@ -1,6 +1,6 @@
 package it.beije.oort.web.tools;
 
-import it.beije.oort.web.rubrica.Contatto;
+import it.beije.oort.web.model.Contatto;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 

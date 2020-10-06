@@ -1,6 +1,7 @@
 package it.beije.oort.web.rubrica;
 
 import it.beije.oort.web.database.JPAEntityManager;
+import it.beije.oort.web.model.Contatto;
 
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;

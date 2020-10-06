@@ -20,4 +20,13 @@ public class JPAEntityManager {
         }
         return managerMap.get(database);
     }
+
+    public static EntityManager getEntityManager(String customDatabase){
+        if (managerMap.get(customDatabase) == null){
+            EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(customDatabase);
+            EntityManager em = entityManagerFactory.createEntityManager();
+            managerMap.put(customDatabase, em);
+        }
+        return managerMap.get(customDatabase);
+    }
 }
