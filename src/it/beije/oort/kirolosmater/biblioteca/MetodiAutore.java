@@ -43,7 +43,7 @@ public class MetodiAutore {
 		
 	}
 	
-	public static void visualizzaAutoreById () {
+	public static Autore visualizzaAutoreById () {
 		String showRecordById = "Per visualizzare un autore inserisci il suo id: ";
 		System.out.println(showRecordById);
 		Scanner inputFromUser = new Scanner(System.in);
@@ -58,6 +58,7 @@ public class MetodiAutore {
 		System.out.println("data_nascita : " + autore.getData_nascita());
 		System.out.println("data_morte : " + autore.getData_morte());
 		System.out.println("biografia : " + autore.getBiografia());
+		return autore;
 	}
 	
 	public static Autore readRecordFromDb(int id) { 		
@@ -65,7 +66,8 @@ public class MetodiAutore {
 		return autore;
 	}
 	
-	public static void readRecordByStringFromInput () {
+	
+	public static List<Autore> readRecordByStringFromInput () {
 		Scanner inputFromUser = new Scanner(System.in);
 		System.out.println("Inserisci il parametro da analizzare: ");
 		String parameter = inputFromUser.nextLine();
@@ -83,6 +85,24 @@ public class MetodiAutore {
 			System.out.println("data_morte : " + autore.getData_morte());
 			System.out.println("biografia : " + autore.getBiografia());
 		}
+		return autori;
+	}
+	
+	public static List<Autore> readRecordByStringFromInput (String parametro, String stringaIniziale) {
+		String parameter = parametro;
+		String lineFromInput = stringaIniziale;
+		String jpql = "SELECT c FROM Autore as c WHERE " + parameter + " LIKE '" + lineFromInput + "%'";
+		Query query = (Query) entityManager.createQuery(jpql);
+		List<Autore> autori = query.getResultList();
+		for (Autore autore : autori) {
+			System.out.println("id : " + autore.getId());			
+			System.out.println("cognome : " + autore.getCognome());
+			System.out.println("nome : " + autore.getNome());
+			System.out.println("data_nascita : " + autore.getData_nascita());
+			System.out.println("data_morte : " + autore.getData_morte());
+			System.out.println("biografia : " + autore.getBiografia());
+		}
+		return autori;
 	}
 	
 	public static void inserimentoAutore () {

@@ -34,6 +34,12 @@ public class Utente {
 	@Column
 	private String indirizzo;
 	
+	@Column
+	private String password;
+	
+	@Column
+	private boolean admin;
+	
 	public int getId() {
 		return id;
 	}
@@ -75,5 +81,18 @@ public class Utente {
 	}
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public boolean isAdmin() {
+		return admin;
+	}
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 }
