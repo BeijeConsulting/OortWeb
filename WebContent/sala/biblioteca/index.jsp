@@ -9,20 +9,41 @@
 </head>
 <body>
 
-	<%if(session.getAttribute("auth")==null) { %>
-			<%
-	}else %>
+	<% if(session.getAttribute("auth")==null) { %>
+	<form action="../../Authentication" method="POST" autocomplete="off">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <br>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+        <br>
+        <button type="submit" name="submit">Login</button>
+    </form>
+	<% }else if((boolean)session.getAttribute("auth")) { %>
 	<header style="margin-left: 2em;">
         <div>
-            <h1>Welcome <%= (String)session.getAttribute("nome") %> !</h1>
+            <h1>Benvenuto <% out.print(session.getAttribute("nome")); %> !</h1>
+            <p>Seleziona l'azione che vuoi compiere tra quelle disponibili</p>
         </div>
     </header>
 	<div>
-	        <form action="/OortWeb/PathServlet" method="POST" autocomplete="off" style="margin-left: 2em;">
-	            <button type="submit" name="req" value="download">Download</button>
-	            <button type="submit" name="req" value="form">Form</button>
-	            <button type="submit" name="req" value="select">Select</button>
-	        </form>
-    	</div>
+		<form action="/OortWeb/PathServlet" method="POST" autocomplete="off" style="margin-left: 2em;">
+		    <button type="submit" name="req" value="download"></button>
+		    <button type="submit" name="req" value="form">Form</button>
+		    <button type="submit" name="req" value="select">Select</button>
+		</form>
+    	</div> 
+    	<% } else if (!(boolean)session.getAttribute("auth")) { %>
+    	 <p style="color: red;"><% out.print(session.getAttribute("error")); %></p>
+    	<form action="./Authentication" method="POST" autocomplete="off">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <br>
+            <label>Password:</label>
+            <input type="password" name="password" required>
+            <br>
+        <button type="submit" name="submit">Login</button>
+        </form>
+ 	<% } %>
 </body>
 </html>

@@ -8,7 +8,7 @@ public class JPAFactory {
 	private static EntityManagerFactory factory;
 	public static EntityManager createEntityManager() {
 		if(factory==null) {
-			factory = Persistence.createEntityManagerFactory("Rubrica");
+			factory = Persistence.createEntityManagerFactory("Biblioteca");
 		}
 		return factory.createEntityManager();
 	}

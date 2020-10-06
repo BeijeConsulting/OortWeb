@@ -49,6 +49,17 @@ public class JPAToolset {
 		return temp;
 	}
 	
+	public static List<Object> selectJPA(String email, String password) {
+		String jpql = "SELECT c FROM Utente as c WHERE email=:email AND password=:password";
+		EntityManager entityManager = JPAFactory.createEntityManager();
+		Query query = entityManager.createQuery(jpql)
+							.setParameter("email", email)
+							.setParameter("password", password);
+		List<Object> temp = query.getResultList();
+		entityManager.close();
+		return temp;
+	}
+	
 	public static void deleteJPA(String table, Integer id) {
 		String jpql = "DELETE FROM "+table+" WHERE id_"+table.toLowerCase()+" = :id";
 		EntityManager entityManager = JPAFactory.createEntityManager();
