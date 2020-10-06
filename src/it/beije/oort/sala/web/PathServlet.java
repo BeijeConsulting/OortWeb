@@ -21,15 +21,6 @@ public class PathServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -37,11 +28,14 @@ public class PathServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String path = request.getParameter("req");
 		switch(path) {
-			case"form":
-				response.sendRedirect("/form.html");
+			case "form":
+				response.sendRedirect("/OortWeb/form.html");
 				break;
 			case "select":
 				response.sendRedirect("/OortWeb/select.jsp");
+				break;
+			case "download":
+				response.sendRedirect("/OortWeb/download.jsp");
 				break;
 		}
 	}

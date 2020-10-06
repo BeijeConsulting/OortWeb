@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page import="it.beije.oort.sala.web.beans.Contatto" %>
+<%@ page import="it.beije.oort.sala.web.db.JPAToolset" %>
+<%@ page import="java.util.List" %>
 <html>
 <head>
 	<meta charset="ISO-8859-1">
@@ -19,7 +20,6 @@
            </div>
     </header>
         <form method="GET" autocomplete="off" action="/OortWeb/select.jsp" style="margin-left: 2em;">
-        <input type>
             <div>
                 <select name="field" id="field">
                     <option value="nome">Nome</option>
@@ -29,11 +29,24 @@
                 </select>
             </div>
             <div>
-                <input type="search" name="value" placeholder="Search box...">
+                <input type="search" name="value" value="" placeholder="Search box...">
             </div>
             <br>
             <button type="submit">Search</button>
         </form>
-        
+        <% if(request.getParameter("value") != null && !request.getParameter("value").equals("")) {
+        	List<Object> temp = JPAToolset.selectJPA("Contatto",
+        								(String)request.getParameter("field"),
+        								(String)request.getParameter("value"));
+        	out.print("<ul>");
+        	for(Object o : temp){
+        		Contatto c = (Contatto)o;
+        		out.print("<li>"+c.toStringFromDatabase()+"</li>");
+        	}
+        	out.print("</ul>");    	
+        } else if(request.getParameter("value") != null && request.getParameter("value").equals("")) {
+        	out.print("<p style=\"color: red;\">Inserire un filtro (anche un solo carattere/numero va bene)</p>");
+        }
+        %>
     </body>
 </html>
