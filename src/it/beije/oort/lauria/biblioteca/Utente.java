@@ -33,6 +33,12 @@ public class Utente {
 	
 	@Column(name = "indirizzo")
 	private String indirizzo;
+	
+	@Column(name = "password")
+	private String password;
+	
+	@Column(name = "admin")
+	private boolean admin;
 
 	public Utente() {}
 
@@ -102,5 +108,20 @@ public class Utente {
 		this.indirizzo = indirizzo;
 	}
 	
-	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
 }

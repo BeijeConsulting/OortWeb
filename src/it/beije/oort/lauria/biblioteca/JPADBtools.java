@@ -265,4 +265,162 @@ public class JPADBtools {
 					
 		//entityManager.close();
 	}
+	
+	
+	
+	public static List<Libro> selectLibri() {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		String jpql = "SELECT l FROM Libro as l WHERE id > 0";
+		Query query = entityManager.createQuery(jpql);
+		List<Libro> libri = query.getResultList();
+		if(libri.size() == 0) {
+			return null;
+		}
+//		System.out.println("In biblioteca sono presenti "+ libri.size() +" libri.");
+//		for (Libro libro : libri) {			
+//			Autore a = JPADBtools.entityManager.find(Autore.class, libro.getId_autore());
+//			Editore e = JPADBtools.entityManager.find(Editore.class, libro.getId_editore()); 
+//			System.out.println("id : " + libro.getId());
+//			System.out.println("titolo : " + libro.getTitolo());
+//			System.out.println("descrizione : " + libro.getDescrizione());
+//			System.out.println("id autore : " + libro.getId_autore() + " ("+ a.getNome() +" "+a.getCognome() +")" );
+//			System.out.println("id editore : " + libro.getId_editore() + " ("+ e.getDenominazione() +")" );
+//			System.out.println("anno : " + libro.getAnno());
+//		}
+//		//entityManager.close();
+		return libri;
+	}
+	public static List<Autore> selectAutori() {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		String jpql = "SELECT a FROM Autore as a WHERE id > 0";
+		Query query = entityManager.createQuery(jpql);
+		List<Autore> autori = query.getResultList();
+		if(autori.size() == 0) {
+			return null;
+		}
+//		System.out.println("In biblioteca sono presenti libri di "+ autori.size() +" autori diversi.");
+//		for (Autore autore : autori) {				
+//			System.out.println("id : " + autore.getId());
+//			System.out.println("cognome : " + autore.getCognome());
+//			System.out.println("nome : " + autore.getNome());
+//			System.out.println("data_nascita : " + autore.getData_nascita().toString());
+//			System.out.println("data_morte : " + autore.getData_morte().toString());
+//			System.out.println("biografia : " + autore.getBiografia());
+//		}
+		//entityManager.close();
+		return autori;
+	}
+
+	public static List<Editore> selectEditori() {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Editore as e WHERE id > 0";
+		Query query = entityManager.createQuery(jpql);
+		List<Editore> editori = query.getResultList();
+		if(editori.size() == 0) {
+			return null;
+		}
+//		System.out.println("In biblioteca sono presenti libri di "+ editori.size() +" editori diversi.");
+//		for (Editore editore : editori) {				
+//			System.out.println("id : " + editore.getId());
+//			System.out.println("denominazione : " + editore.getDenominazione());
+//			System.out.println("descrizione : " + editore.getDescrizione());
+//			
+//		}
+		//entityManager.close();
+		return editori;
+	}
+
+	public static List<Utente> selectUtenti() {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		String jpql = "SELECT u FROM Utente as u WHERE id > 0";
+		Query query = entityManager.createQuery(jpql);
+		List<Utente> utenti = query.getResultList();
+		if(utenti.size() == 0) {
+			return null;
+		}
+//		System.out.println("In biblioteca sono presenti "+ utenti.size() +" utenti registrati.");
+//		for (Utente utente : utenti) {				
+//			System.out.println("id : " + utente.getId());
+//			System.out.println("nome : " + utente.getNome());
+//			System.out.println("cognome : " + utente.getCognome());
+//			System.out.println("codice fiscale : " + utente.getCodice_fiscale());
+//			System.out.println("email : " + utente.getEmail());
+//			System.out.println("telefono : " + utente.getTelefono());
+//			System.out.println("indirizzo : " + utente.getIndirizzo());
+//			
+//		}
+		//entityManager.close();
+		return utenti;
+	}
+	
+	public static List<Prestito> selectPrestitiUtente(int id) {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		String jpql = "SELECT p FROM Prestito as p WHERE id_utente = " + id;
+		Query query = entityManager.createQuery(jpql);
+		List<Prestito> prestiti = query.getResultList();
+		if(prestiti.size() == 0) {
+			return null;
+		}
+		//System.out.println(prestiti.size());
+//		for (Prestito prestito : prestiti) {		
+//			Libro l = JPADBtools.entityManager.find(Libro.class, prestito.getId_libro());
+//			Utente u = JPADBtools.entityManager.find(Utente.class, prestito.getId_utente());
+//			System.out.println("id : " + prestito.getId());
+//			System.out.println("id_libro : " + prestito.getId_libro() + " ("+ l.getTitolo() +")" );
+//			System.out.println("id_utente : " + prestito.getId_utente() + " ("+ u.getNome() +" "+u.getCognome() +")" );
+//			System.out.println("data inizio prestito : " + prestito.getData_inizio().toString());
+//			System.out.println("data fine prestito : " + prestito.getData_fine().toString());
+//			System.out.println("note : " + prestito.getNote());
+//			
+//		}
+		//entityManager.close();
+		return prestiti;
+	}
+	
+	public static List<Prestito> selectPrestiti() {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		String jpql = "SELECT p FROM Prestito as p WHERE id > 0";
+		Query query = entityManager.createQuery(jpql);
+		List<Prestito> prestiti = query.getResultList();
+		if(prestiti.size() == 0) {
+			return null;
+		}
+		//System.out.println(prestiti.size());
+//		for (Prestito prestito : prestiti) {		
+//			Libro l = JPADBtools.entityManager.find(Libro.class, prestito.getId_libro());
+//			Utente u = JPADBtools.entityManager.find(Utente.class, prestito.getId_utente());
+//			System.out.println("id : " + prestito.getId());
+//			System.out.println("id_libro : " + prestito.getId_libro() + " ("+ l.getTitolo() +")" );
+//			System.out.println("id_utente : " + prestito.getId_utente() + " ("+ u.getNome() +" "+u.getCognome() +")" );
+//			System.out.println("data inizio prestito : " + prestito.getData_inizio().toString());
+//			System.out.println("data fine prestito : " + prestito.getData_fine().toString());
+//			System.out.println("note : " + prestito.getNote());
+//			
+//		}
+		//entityManager.close();
+		return prestiti;
+	}
+	
+	public static Utente verifyUtenti(String email, String password) {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		String jpql = "SELECT u FROM Utente as u WHERE email = '"+ email +"' and password = '"+ password +"'";
+		Query query = entityManager.createQuery(jpql);
+		List<Utente> utenti = query.getResultList();
+		if(utenti.size() == 0) {
+			return null;
+		}
+//		System.out.println("In biblioteca sono presenti "+ utenti.size() +" utenti registrati.");
+//		for (Utente utente : utenti) {				
+//			System.out.println("id : " + utente.getId());
+//			System.out.println("nome : " + utente.getNome());
+//			System.out.println("cognome : " + utente.getCognome());
+//			System.out.println("codice fiscale : " + utente.getCodice_fiscale());
+//			System.out.println("email : " + utente.getEmail());
+//			System.out.println("telefono : " + utente.getTelefono());
+//			System.out.println("indirizzo : " + utente.getIndirizzo());
+//			
+//		}
+		//entityManager.close();
+		return utenti.get(0);
+	}
 }
