@@ -9,12 +9,25 @@
 </head>
 <body>
 
-<jsp:useBean id="userBean" class="it.beije.oort.web.jsp.Utente" scope="session"/>
+
+
+
+<%-- jsp:useBean id="userBean" class="it.beije.oort.web.Utente" scope="session"/--%>
+
 
 <%
-//Utente contatto = (Utente)session.getAttribute("contatto");
-%>
+Utente userBean = (Utente)session.getAttribute("userBean");
 
-UTENTE: <jsp:getProperty property="nome" name="userBean"/> <jsp:getProperty property="cognome" name="userBean"/>
+if (userBean == null) {
+%>
+<b>DEVI EFFETTUARE L'AUTENTICAZIONE</b>
+<%
+} else {
+%>
+<%-- UTENTE: <jsp:getProperty property="nome" name="userBean"/> <jsp:getProperty property="cognome" name="userBean"/> --%>
+<h1>CIAO <%= (userBean.getNome() != null) ? userBean.getNome() : "" %> <%= (userBean.getCognome() != null) ? userBean.getCognome() : "" %></h1>
+<%
+}
+%>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package it.beije.oort.web.jsp;
+package it.beije.oort.web;
 
 public class Utente {
 	
@@ -11,6 +11,8 @@ public class Utente {
 	private String telefono;
 	
 	private String email;
+	
+	private String password;
 	
 	
 	public Utente() {}
@@ -62,9 +64,13 @@ public class Utente {
 		this.email = email;
 	}
 	
-//	public String getNominativo() { //nominativo
-//		return this.nome + " " + this.cognome;
-//	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder("contatto [");
