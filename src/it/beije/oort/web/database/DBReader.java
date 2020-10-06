@@ -5,6 +5,7 @@ import it.beije.oort.web.model.Contatto;
 import it.beije.oort.web.model.User;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import java.util.List;
 
 public class DBReader {
@@ -27,9 +28,15 @@ public class DBReader {
     }
 
     public static User getUser(String email){
-        EntityManager em = JPAEntityManager.getEntityManager("user");
-        return em.createQuery("Select c from User as c WHERE email LIKE "
-                + "'%" + email + "%'" +"", User.class)
-                .getSingleResult();
+        EntityManager em = JPAEntityManager.getEntityManager("rubrica");
+        User user;
+        try{
+            user = em.createQuery("Select c from User as c WHERE email LIKE "
+                    + "'%" + email + "%'" +"", User.class)
+                    .getSingleResult();
+        } catch (NoResultException e){
+            return null;
+        }
+        return user;
     }
 }

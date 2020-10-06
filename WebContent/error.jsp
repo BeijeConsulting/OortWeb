@@ -10,5 +10,8 @@
     <p><b>Request URI:</b> ${pageContext.request.scheme}://${header.host}${pageContext.errorData.requestURI}</p>
     <br/>
     <img src="${pageContext.request.contextPath}/media/404.gif" style="margin-left: 25%;" alt="404">
+    <jsp:scriptlet>
+        exception.printStackTrace(response.getWriter())
+    </jsp:scriptlet>
 </body>
 </html>
