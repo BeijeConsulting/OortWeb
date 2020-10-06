@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class TestServlet
@@ -61,12 +62,22 @@ public class TestServlet extends HttpServlet {
 
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
+//		String telefono = request.getParameter("telefono");
+//		String email = request.getParameter("email");
 		
 		//elaborazione....
+		Utente utente = new Utente();
+		utente.setNome(nome);
+		utente.setCognome(cognome);		
 		
-		builder.append("<br/>NOME : ").append(nome).append("<br/>COGNOME : ").append(cognome);
+		HttpSession session = request.getSession();
+		session.setAttribute("sessionUser", utente);
+		
+		//builder.append("<br/>NOME : ").append(nome).append("<br/>COGNOME : ").append(cognome);
 
-		response.getWriter().append(builder);
+		//response.getWriter().append(builder);
+		
+		response.sendRedirect("index.jsp");
 	}
 
 }
