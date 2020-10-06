@@ -272,6 +272,47 @@ public class JPDBtools {
 		return mapEdit.get(temp).getId();
 	}
 	
+	public static Utenti ricercaUtente(String email, String password) {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Utenti as e where email = '"+email+"' and password = '"+password+"'";
+		Query query = entityManager.createQuery(jpql);
+		List<Utenti> utenti = query.getResultList();
+		if(utenti.size()==0) return null;
+		else return utenti.get(0);
+	}
+	
+	public static List<Prestiti> ricercaPrestitiUtente(int utente) {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Prestiti as e where utente = "+utente;
+		Query query = entityManager.createQuery(jpql);
+		List<Prestiti> prestiti = query.getResultList();
+		return prestiti;
+	}
+	
+	public static Libri ricercaLibro(int indice) {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Libri as e where id = "+indice;
+		Query query = entityManager.createQuery(jpql);
+		List<Libri> list = query.getResultList();
+		if(list.size()==0) return null;
+		else return list.get(0);
+	}
+	
+	public static List<Libri> catalogoLibri() {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Libri as e where id > 0 ";
+		Query query = entityManager.createQuery(jpql);
+		List<Libri> list = query.getResultList();
+		return list;
+	}
+	
+	public static List<Libri> catalogoLibriPersonalizzato(int autore, int editore) {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Libri as e where autore = "+autore+" or editore = "+editore;
+		Query query = entityManager.createQuery(jpql);
+		List<Libri> list = query.getResultList();
+		return list;
+	}
 	
 	public static void delete(String classe, int indice, String persistentUnitName) {
 		EntityManager entityManager = JpaEntityManagerFactory.entityManager(persistentUnitName);
@@ -283,6 +324,24 @@ public class JPDBtools {
 		entityManager.getTransaction().commit();
 		System.out.println("Record cancellato");
 
+	}
+	
+	public static Autori ricercaAutore(int indice) {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Autori as e where id = "+indice;
+		Query query = entityManager.createQuery(jpql);
+		List<Autori> list = query.getResultList();
+		if(list.size()==0) return null;
+		else return list.get(0);
+	}
+	
+	public static Editori ricercaEditore(int indice) {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Editori as e where id = "+indice;
+		Query query = entityManager.createQuery(jpql);
+		List<Editori> list = query.getResultList();
+		if(list.size()==0) return null;
+		else return list.get(0);
 	}
 	
 	public static List<Contatto> listContatto(String campo, String attributo) {
@@ -323,6 +382,7 @@ public class JPDBtools {
 	public static void addTrim(List<String> list, String b, String a){
 		if(!a.equals("")) {list.add(b); list.add(a);}
 	}
+	
 	public static void insert(Object o, String persistentUnitName) {
 		EntityManager entityManager = JpaEntityManagerFactory.entityManager(persistentUnitName);
 		EntityTransaction entityTransaction = entityManager.getTransaction();
