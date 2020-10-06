@@ -3,6 +3,7 @@ package it.beije.oort.sb.jpa;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -306,14 +307,14 @@ public class JPDBtools {
 		return list;
 	}
 	
-	public static List<Contatto> listC(String... campo) {
+	public static List<Contatto> listC(List<String> campo) {
 		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortRubrica");
 		String jpql;
-		if(campo[0].toLowerCase().equalsIgnoreCase("id")) { jpql = "SELECT e FROM Contatto as e where id = "+campo[1];}
-		else if(campo.length==2){jpql = "SELECT e FROM Contatto as e where "+campo[0]+" = '"+campo[1]+"'";}
-		else if(campo.length==4){jpql = "SELECT e FROM Contatto as e where "+campo[0]+" = '"+campo[1]+"' and "+campo[2]+" = '"+campo[3]+"'";}
-		else if(campo.length==6){jpql = "SELECT e FROM Contatto as e where "+campo[0]+" = '"+campo[1]+"' and "+campo[2]+" = '"+campo[3]+"' and "+campo[4]+" = '"+campo[5]+"'";}
-		else {jpql = "SELECT e FROM Contatto as e where "+campo[0]+" = '"+campo[1]+"' or "+campo[2]+" = '"+campo[3]+"' or "+campo[4]+" = '"+campo[5]+"' or "+campo[6]+" = '"+campo[7]+"'";}
+		if(campo.get(0).toLowerCase().equalsIgnoreCase("id")) { jpql = "SELECT e FROM Contatto as e where id = "+campo.get(1);}
+		else if(campo.size()==2){jpql = "SELECT e FROM Contatto as e where "+campo.get(0)+" = '"+campo.get(1)+"'";}
+		else if(campo.size()==4){jpql = "SELECT e FROM Contatto as e where "+campo.get(0)+" = '"+campo.get(1)+"' and "+campo.get(2)+" = '"+campo.get(3)+"'";}
+		else if(campo.size()==6){jpql = "SELECT e FROM Contatto as e where "+campo.get(0)+" = '"+campo.get(1)+"' and "+campo.get(2)+" = '"+campo.get(3)+"' and "+campo.get(4)+" = '"+campo.get(5)+"'";}
+		else {jpql = "SELECT e FROM Contatto as e where "+campo.get(0)+" = '"+campo.get(1)+"' and "+campo.get(2)+" = '"+campo.get(3)+"' and "+campo.get(4)+" = '"+campo.get(5)+"' and "+campo.get(6)+" = '"+campo.get(7)+"'";}
 		Query query = entityManager.createQuery(jpql);
 		List<Contatto> list = query.getResultList();
 		return list;
