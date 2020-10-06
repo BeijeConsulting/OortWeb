@@ -1,4 +1,6 @@
-<%@page import="it.beije.oort.web.jsp.Utente"%>
+<%@page import="java.time.LocalTime"%>
+<%@page import="it.beije.oort.web.biblioteca.Utenti"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -7,7 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body background="sfondo.jpg">
 
 
 
@@ -16,16 +18,23 @@
 
 
 <%
-Utente userBean = (Utente)session.getAttribute("userBean");
+Utenti userBean = (Utenti)session.getAttribute("userBean");
 
 if (userBean == null) {
 %>
-<b>DEVI EFFETTUARE L'AUTENTICAZIONE</b>
+<b>DEVI PRIMA EFFETTUARE L'AUTENTICAZIONE, clicca <a href ="login.jsp"><mark>QUI</mark></a></b>
+
 <%
 } else {
 %>
 <%-- UTENTE: <jsp:getProperty property="nome" name="userBean"/> <jsp:getProperty property="cognome" name="userBean"/> --%>
-<h1>CIAO <%= (userBean.getNome() != null) ? userBean.getNome() : "" %> <%= (userBean.getCognome() != null) ? userBean.getCognome() : "" %></h1>
+<h1>Benvenuto,  <mark> <%= (userBean.getNome() != null) ? userBean.getNome() : "" %> <%= (userBean.getCognome() != null) ? userBean.getCognome() : "" %></mark></h1>
+<% LocalTime time = LocalTime.now();
+%><p align="right"><mark><% out.print(time);%></mark></p>
+
+
+<h3><p align ="left">Operazione che puoi effettuare:   </p></h3>
+<p align ="left">1) Visualizzare <a href="libri.jsp">libri</a>, <a href="autori.jsp">autori</a>, <a href="editori.jsp">editori</a>.
 <%
 }
 %>

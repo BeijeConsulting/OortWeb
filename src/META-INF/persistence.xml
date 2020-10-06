@@ -11,4 +11,55 @@
 			<property name="javax.persistence.jdbc.password" value="simone9810"/>
 		</properties>
 	</persistence-unit>
+	
+<persistence-unit name="OortBiblioteca">
+		<class>it.beije.oort.db.jpa.biblio.Autore</class>
+		<properties>	
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca?serverTimezone=CET"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="simone9810"/>
+		</properties>
+	</persistence-unit>
+	
+		<persistence-unit name="OortBiblioteca">
+		<class>it.beije.oort.db.jpa.biblio.Editori</class>
+		<properties>	
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca?serverTimezone=CET"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="simone9810"/>
+		</properties>
+	</persistence-unit>
+	
+	
+	<persistence-unit name="OortBiblioteca">
+		<class>it.beije.oort.db.jpa.biblio.Libri</class>
+		<properties>	
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca?serverTimezone=CET"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="simone9810"/>
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="OortBiblioteca">
+		<class>it.beije.oort.db.jpa.biblio.Prestiti</class>
+		<properties>	
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca?serverTimezone=CET"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="simone9810"/>
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="OortBiblioteca">
+		<class>it.beije.oort.db.jpa.biblio.Utenti</class>
+		<properties>	
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca?serverTimezone=CET"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="simone9810"/>
+		</properties>
+	</persistence-unit>
 </persistence>
