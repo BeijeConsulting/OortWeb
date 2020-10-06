@@ -1,9 +1,6 @@
 package it.beije.oort.web.biblioteca.controller;
 
-import it.beije.oort.web.biblioteca.model.Libro;
-import it.beije.oort.web.biblioteca.model.Prestito;
-import it.beije.oort.web.biblioteca.model.Utente;
-import it.beije.oort.web.biblioteca.model.IBibliotecaModel;
+import it.beije.oort.web.biblioteca.model.*;
 import it.beije.oort.web.biblioteca.utils.Config;
 import it.beije.oort.web.database.JPAEntityManager;
 
@@ -35,7 +32,7 @@ public class DatabaseManager {
     }
 
     public static List<? extends IBibliotecaModel> findAll(Class<? extends IBibliotecaModel> classe) {
-        return em.createQuery("Select o from " + classe.getSimpleName() + "as o", IBibliotecaModel.class).getResultList();
+        return em.createQuery("Select o from " + classe.getSimpleName() + " as o", IBibliotecaModel.class).getResultList();
     }
 
     public static Utente getUtenteFromCF(String cf){
@@ -62,4 +59,6 @@ public class DatabaseManager {
             return null;
         }
     }
+
+
 }

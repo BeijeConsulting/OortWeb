@@ -33,18 +33,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Login BibliOorteca funzionante, con redirect">
-      <change afterPath="$PROJECT_DIR$/WebContent/biblio/biblioAdd.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/biblio/biblioView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/biblio/userPrestiti.jsp" afterDir="false" />
+    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Completata visualizzazione prestiti dell'utente">
+      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/servlet/BiblioViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/biblio/biblioIndex.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/biblio/biblioIndex.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/biblio/biblioView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/biblio/biblioView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/style/biblioView.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/style/biblioView.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Utente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +229,7 @@
       <workItem from="1601646286639" duration="6837000" />
       <workItem from="1601653700828" duration="1418000" />
       <workItem from="1601888406926" duration="19921000" />
-      <workItem from="1601971757206" duration="16243000" />
+      <workItem from="1601971757206" duration="23243000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1601645770662</created>
@@ -328,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601987337811</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Completata visualizzazione prestiti dell'utente">
+      <created>1601991347171</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1601991347171</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +371,8 @@
     <MESSAGE value="Aggiunto finto login" />
     <MESSAGE value="Iniziato login client biblioteca" />
     <MESSAGE value="Login BibliOorteca funzionante, con redirect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login BibliOorteca funzionante, con redirect" />
+    <MESSAGE value="Completata visualizzazione prestiti dell'utente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completata visualizzazione prestiti dell'utente" />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="255" key="#Assign_Data_Sources" timestamp="1601979261617">
@@ -417,54 +419,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601978951549" />
-    <state width="1145" height="255" key="GridCell.Tab.0.bottom" timestamp="1601991045185">
+    <state width="1145" height="166" key="GridCell.Tab.0.bottom" timestamp="1601998491081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601991045185" />
-    <state width="1145" height="255" key="GridCell.Tab.0.center" timestamp="1601991045185">
+    <state width="1145" height="166" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
+    <state width="1145" height="166" key="GridCell.Tab.0.center" timestamp="1601998491080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601991045185" />
-    <state width="1145" height="255" key="GridCell.Tab.0.left" timestamp="1601991045185">
+    <state width="1145" height="166" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601998491080" />
+    <state width="1145" height="166" key="GridCell.Tab.0.left" timestamp="1601998491080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601991045185" />
-    <state width="1145" height="255" key="GridCell.Tab.0.right" timestamp="1601991045185">
+    <state width="1145" height="166" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601998491080" />
+    <state width="1145" height="166" key="GridCell.Tab.0.right" timestamp="1601998491081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601991045185" />
-    <state width="1145" height="255" key="GridCell.Tab.1.bottom" timestamp="1601991044849">
+    <state width="1145" height="166" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
+    <state width="1145" height="166" key="GridCell.Tab.1.bottom" timestamp="1601998491081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
-    <state width="1145" height="255" key="GridCell.Tab.1.center" timestamp="1601991044849">
+    <state width="1145" height="166" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
+    <state width="1145" height="166" key="GridCell.Tab.1.center" timestamp="1601998491081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
-    <state width="1145" height="255" key="GridCell.Tab.1.left" timestamp="1601991044849">
+    <state width="1145" height="166" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
+    <state width="1145" height="166" key="GridCell.Tab.1.left" timestamp="1601998491081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
-    <state width="1145" height="255" key="GridCell.Tab.1.right" timestamp="1601991044849">
+    <state width="1145" height="166" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
+    <state width="1145" height="166" key="GridCell.Tab.1.right" timestamp="1601998491081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
-    <state width="1145" height="255" key="GridCell.Tab.2.bottom" timestamp="1601991044850">
+    <state width="1145" height="166" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
+    <state width="1145" height="166" key="GridCell.Tab.2.bottom" timestamp="1601998491082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601991044850" />
-    <state width="1145" height="255" key="GridCell.Tab.2.center" timestamp="1601991044849">
+    <state width="1145" height="166" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601998491082" />
+    <state width="1145" height="166" key="GridCell.Tab.2.center" timestamp="1601998491081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
-    <state width="1145" height="255" key="GridCell.Tab.2.left" timestamp="1601991044849">
+    <state width="1145" height="166" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
+    <state width="1145" height="166" key="GridCell.Tab.2.left" timestamp="1601998491081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
-    <state width="1145" height="255" key="GridCell.Tab.2.right" timestamp="1601991044849">
+    <state width="1145" height="166" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
+    <state width="1145" height="166" key="GridCell.Tab.2.right" timestamp="1601998491081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="255" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
+    <state width="1145" height="166" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601998491081" />
     <state width="1068" height="353" key="GridCell.Tab.3.bottom" timestamp="1601646242806">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
