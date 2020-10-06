@@ -1,10 +1,11 @@
 package it.beije.oort.web.db;
 
+import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-
+import it.beije.oort.web.db.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -28,14 +29,23 @@ public class JPDBUtilities {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
 		String jpql = "SELECT l FROM Libro AS l WHERE titolo = '" + titolo + "'";
 		Query query = entityManager.createQuery(jpql);
-		Libro book = (Libro) query.getSingleResult();
+		Libro book = (Libro)query.getSingleResult();
 		return book;
+	}
+	
+	public static List<Libro> exportBooks() {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		String jpql = "SELECT l FROM Libro l";
+		Query query = entityManager.createQuery(jpql);
+		List<Libro> books = query.getResultList();
+		entityManager.close();
+		return books;
 	}
 	
 	public static List<Prestito> exportLoans() {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
-		String jpql2 = "SELECT p FROM Prestito p";
-		Query query = entityManager.createQuery(jpql2);
+		String jpql = "SELECT p FROM Prestito p";
+		Query query = entityManager.createQuery(jpql);
 		List<Prestito> loans = query.getResultList();
 		entityManager.close();
 		return loans;
@@ -68,36 +78,25 @@ public class JPDBUtilities {
 		return contact;
 	}
 	
-	//Metodo per form web
-//	public static void editRecord(int id, String nome, String cognome, String telefono, String email) {
-//		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
-//		EntityTransaction transaction = entityManager.getTransaction();
-//		transaction.begin();
-//		Contatto contact = entityManager.find(Contatto.class, id);
-//		if (nome != null) {
-//			contact.setNome(nome);
-//		} else {
-//			contact.setNome(contact.getNome());
-//		}
-//		if (cognome != null) {
-//			contact.setCognome(cognome);
-//		} else {
-//			contact.setNome(contact.getCognome());
-//		}
-//		if (telefono != null) {
-//			contact.setTelefono(telefono);
-//		} else {
-//			contact.setTelefono(contact.getTelefono());
-//		}
-//		if (email != null) {
-//			contact.setEmail(email);
-//		} else {
-//			contact.setEmail(contact.getEmail());
-//		}
-//		entityManager.persist(contact);
-//		transaction.commit();
-//		entityManager.close();
-//	}
+	public static boolean checkLogin(String email, String password) {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		String jpql = "SELECT u FROM User AS u WHERE password = '" + password + "' and email = '" + email + "'";
+		Query query = entityManager.createQuery(jpql);
+		try {
+			User user = (User)query.getSingleResult();
+			return true;
+		} catch (javax.persistence.NoResultException e) {
+			return false;
+		}
+	}
+	
+	public static User exportLoggedUser(String email, String password) {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		String jpql = "SELECT u FROM User AS u WHERE password = '" + password + "' and email = '" + email + "'";
+		Query query = entityManager.createQuery(jpql);
+		User user = (User)query.getSingleResult();
+		return user;
+	}
 	
 	public static List<Autore> exportAuthors() {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
@@ -163,7 +162,7 @@ public class JPDBUtilities {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		Utente user = new Utente();
+		User user = new User();
 		user.setNome(nome);
 		user.setCognome(cognome);
 		user.setTelefono(telefono);
@@ -175,18 +174,25 @@ public class JPDBUtilities {
 		entityManager.close();
 	}
 	
-	public static void insertLoan(int idLibro, int idUtente, String data_inizio, String data_fine, String note) {
+	public static String insertLoan(int idLibro, int idUtente, LocalDate data_inizio, LocalDate data_fine, String note) {
+		String message = new String();
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		Prestito loan = new Prestito();
-		loan.setId_libro(idLibro);
-		loan.setId_utente(idUtente);
-		loan.setData_inizio(data_inizio);
-		loan.setData_fine(data_fine);
-		loan.setNote(note);
-		entityManager.persist(loan);
-		transaction.commit();
-		entityManager.close();
+		if (isAvalaible(idUtente, idLibro)) {
+			Prestito loan = new Prestito();
+			loan.setId_libro(idLibro);
+			loan.setId_utente(idUtente);
+			loan.setData_inizio(data_inizio);
+			loan.setData_fine(data_fine);
+			loan.setNote(note);
+			entityManager.persist(loan);
+			transaction.commit();
+			message = "Nuovo prestito registrato!";
+		} else {
+			transaction.rollback();
+			message = "Libro non disponibile.";
+		}
+		return message;
 	}
 }

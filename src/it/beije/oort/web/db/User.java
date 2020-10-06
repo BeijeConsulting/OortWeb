@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "utenti")
-public class Utente {
+public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
@@ -26,7 +26,11 @@ public class Utente {
 	private String codice_fiscale;
 	@Column
 	private String indirizzo;
-	
+	@Column
+	private String password;
+	@Column
+	private boolean admin;
+
 	public int getId() {
 		return id;
 	}
@@ -68,5 +72,27 @@ public class Utente {
 	}
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public boolean isAdmin() {
+		return admin;
+	}
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(this.id).append(";")
+		.append(this.nome).append(";")
+		.append(this.cognome).append(";")
+		.append(this.email).append(";")
+		.append(this.telefono).append(";");
+		return builder.toString();
 	}
 }

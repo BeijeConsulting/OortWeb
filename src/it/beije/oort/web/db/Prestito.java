@@ -1,5 +1,7 @@
 package it.beije.oort.web.db;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,9 +21,9 @@ public class Prestito {
 	@Column
 	private int id_utente;
 	@Column
-	private String data_inizio;
+	private LocalDate data_inizio;
 	@Column
-	private String data_fine;
+	private LocalDate data_fine;
 	@Column
 	private String note;
 	public int getId() {
@@ -42,16 +44,16 @@ public class Prestito {
 	public void setId_utente(int id_utente) {
 		this.id_utente = id_utente;
 	}
-	public String getData_inizio() {
+	public LocalDate getData_inizio() {
 		return data_inizio;
 	}
-	public void setData_inizio(String data_inizio) {
+	public void setData_inizio(LocalDate data_inizio) {
 		this.data_inizio = data_inizio;
 	}
-	public String getData_fine() {
+	public LocalDate getData_fine() {
 		return data_fine;
 	}
-	public void setData_fine(String data_fine) {
+	public void setData_fine(LocalDate data_fine) {
 		this.data_fine = data_fine;
 	}
 	public String getNote() {
