@@ -49,12 +49,19 @@ public class RubricaContattoVisualizzaIdServlet extends HttpServlet {
 //		response.getWriter().append("hai selezionato questo ID: " + id);
 		String nome = contatto.getNome();
 		String cognome = contatto.getCognome();
+		String telefono = contatto.getTelefono();
+		String email = contatto.getEmail();
+		
 		System.out.println(nome);
 		System.out.println(cognome);
-//		HttpSession session = request.getSession();
-//		session.setAttribute("nome", nome);
-//		session.setAttribute("cognome", cognome);
-//		response.sendRedirect("VisualizzaContattoId.jsp");
+		System.out.println(telefono);
+		System.out.println(email);
+		HttpSession session = request.getSession();
+		session.setAttribute("nome", nome);
+		session.setAttribute("cognome", cognome);
+		session.setAttribute("telefono", telefono);
+		session.setAttribute("email", email);
+		response.sendRedirect("VisualizzaContattoId.jsp");
 	}
 
 	/**
