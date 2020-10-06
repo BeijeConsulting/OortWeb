@@ -22,20 +22,46 @@
     <div class = "small-center-container">
         <div class="header">
             <h1><i>Bibli<span style="color: #008CBA;">Oort</span>eca</i></h1>
-            <h3>Gestionale per Database Bibliotecario   </h3>
+            <h3>Gestionale per Database Bibliotecario</h3>
         </div>
 
-
         <%
-            if (request.getSession().getAttribute("logged") != null && (boolean) request.getSession().getAttribute("logged")){
+            if (request.getSession().getAttribute("logged") == null || !(boolean) request.getSession().getAttribute("logged")) {
+                response.sendRedirect("biblioLogin.jsp");
+            }
         %>
         <jsp:useBean id="utente" class="it.beije.oort.web.biblioteca.model.Utente" scope="session" />
+        <%
+            if (utente.isAdmin()){
+        %>
+        <!-- Index per amministratori -->
 
-
+        <div class = "grid-buttons">
+            <a href="./biblioAdd.jsp"><button class="button-rubrica">
+                Aggiungi
+            </button></a>
+            <a href="./biblioView.jsp"><button class="button-rubrica">
+                Visualizza
+            </button></a>
+        </div>
 
         <%
-            } else response.sendRedirect("biblioLogin.jsp");
+            } else {
         %>
+        <!-- Index per utenti -->
+        <div class = "grid-buttons">
+            <a href="./biblioView.jsp"><button class="button-rubrica">
+                Elenco Libri
+            </button></a>
+            <a href="./userPrestiti.jsp"><button class="button-rubrica">
+                Prestiti
+            </button></a>
+        </div>
+
+        <%
+            }
+        %>
+
     </div>
 </div>
 <ul class="circles">

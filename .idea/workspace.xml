@@ -33,22 +33,18 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Iniziato login client biblioteca">
-      <change afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/servlet/BiblioLogin.java" afterDir="false" />
+    <list default="true" id="fab3197c-4f52-49ea-ace7-a20d7948086c" name="Default Changelist" comment="Login BibliOorteca funzionante, con redirect">
+      <change afterPath="$PROJECT_DIR$/WebContent/biblio/biblioAdd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/biblio/biblioView.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/biblio/userPrestiti.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/biblio/biblioIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/biblio/biblioIndex.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/biblio/biblioLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/biblio/biblioLogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/biblio/biblioIndex.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/biblio/biblioIndex.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/App.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ObjectUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ProgramBasicOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/ProgramBasicOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/TestMethodsHere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/controller/TestMethodsHere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/model/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/oort/web/biblioteca/utils/Paginator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +235,7 @@
       <workItem from="1601646286639" duration="6837000" />
       <workItem from="1601653700828" duration="1418000" />
       <workItem from="1601888406926" duration="19921000" />
-      <workItem from="1601971757206" duration="12334000" />
+      <workItem from="1601971757206" duration="16243000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1601645770662</created>
@@ -325,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601980143767</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Login BibliOorteca funzionante, con redirect">
+      <created>1601987337811</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1601987337811</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +369,8 @@
     <MESSAGE value="Finito e funzionante: Ricerca, Modifica, Elenca, Aggiungi, Elimina e Download di un XML a caso." />
     <MESSAGE value="Aggiunto finto login" />
     <MESSAGE value="Iniziato login client biblioteca" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iniziato login client biblioteca" />
+    <MESSAGE value="Login BibliOorteca funzionante, con redirect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login BibliOorteca funzionante, con redirect" />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="255" key="#Assign_Data_Sources" timestamp="1601979261617">
@@ -413,54 +417,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601978951549" />
-    <state width="1145" height="276" key="GridCell.Tab.0.bottom" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.0.bottom" timestamp="1601991045185">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.0.center" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601991045185" />
+    <state width="1145" height="255" key="GridCell.Tab.0.center" timestamp="1601991045185">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.0.left" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601991045185" />
+    <state width="1145" height="255" key="GridCell.Tab.0.left" timestamp="1601991045185">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.0.right" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601991045185" />
+    <state width="1145" height="255" key="GridCell.Tab.0.right" timestamp="1601991045185">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.1.bottom" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601991045185" />
+    <state width="1145" height="255" key="GridCell.Tab.1.bottom" timestamp="1601991044849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.1.center" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
+    <state width="1145" height="255" key="GridCell.Tab.1.center" timestamp="1601991044849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.1.left" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
+    <state width="1145" height="255" key="GridCell.Tab.1.left" timestamp="1601991044849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.1.right" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
+    <state width="1145" height="255" key="GridCell.Tab.1.right" timestamp="1601991044849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.2.bottom" timestamp="1601987208225">
+    <state width="1145" height="255" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
+    <state width="1145" height="255" key="GridCell.Tab.2.bottom" timestamp="1601991044850">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601987208225" />
-    <state width="1145" height="276" key="GridCell.Tab.2.center" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601991044850" />
+    <state width="1145" height="255" key="GridCell.Tab.2.center" timestamp="1601991044849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.2.left" timestamp="1601987208224">
+    <state width="1145" height="255" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
+    <state width="1145" height="255" key="GridCell.Tab.2.left" timestamp="1601991044849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601987208224" />
-    <state width="1145" height="276" key="GridCell.Tab.2.right" timestamp="1601987208225">
+    <state width="1145" height="255" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
+    <state width="1145" height="255" key="GridCell.Tab.2.right" timestamp="1601991044849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1145" height="276" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601987208225" />
+    <state width="1145" height="255" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601991044849" />
     <state width="1068" height="353" key="GridCell.Tab.3.bottom" timestamp="1601646242806">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -485,10 +489,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601646093154" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1601980154385">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1601987340224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601980154385" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601987340224" />
     <state x="582" y="241" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1601974391517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -501,10 +505,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="19" key="com.intellij.database.dbimport.ImportDialog/0.0.1366.728@0.0.1366.728" timestamp="1601977791826" />
-    <state x="332" y="92" width="986" height="480" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1601979825375">
+    <state x="332" y="92" width="986" height="480" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1601989891754">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="332" y="92" width="986" height="480" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1601979825375" />
+    <state x="332" y="92" width="986" height="480" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1601989891754" />
     <state x="387" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1601646081800">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
