@@ -281,9 +281,9 @@ public class JPDBtools {
 		else return utenti.get(0);
 	}
 	
-	public static List<Prestiti> ricercaPrestitiUtente(int utente) {
+	public static List<Prestiti> ricercaPrestitiId(String campo, int valore) {
 		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
-		String jpql = "SELECT e FROM Prestiti as e where utente = "+utente;
+		String jpql = "SELECT e FROM Prestiti as e where "+campo+" = "+valore;
 		Query query = entityManager.createQuery(jpql);
 		List<Prestiti> prestiti = query.getResultList();
 		return prestiti;
@@ -308,7 +308,12 @@ public class JPDBtools {
 	
 	public static List<Libri> catalogoLibriPersonalizzato(int autore, int editore) {
 		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
-		String jpql = "SELECT e FROM Libri as e where autore = "+autore+" or editore = "+editore;
+		String jpql;
+		if(autore == 0 && editore ==0)
+		jpql = "SELECT e FROM Libri as e where id>0";
+		else if(autore == 0 || editore ==0) {
+		jpql = "SELECT e FROM Libri as e where autore = "+autore+" or editore = "+editore; }
+		else jpql = "SELECT e FROM Libri as e where autore = "+autore+" and editore = "+editore;
 		Query query = entityManager.createQuery(jpql);
 		List<Libri> list = query.getResultList();
 		return list;
@@ -342,6 +347,30 @@ public class JPDBtools {
 		List<Editori> list = query.getResultList();
 		if(list.size()==0) return null;
 		else return list.get(0);
+	}
+	
+	public static List<Autori> catalogoAutori() {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Autori as e where id >0";
+		Query query = entityManager.createQuery(jpql);
+		List<Autori> list = query.getResultList();
+		return list;
+	}
+	
+	public static List<Utenti> catalogoUtenti() {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Utenti as e where id >0";
+		Query query = entityManager.createQuery(jpql);
+		List<Utenti> list = query.getResultList();
+		return list;
+	}
+	
+	public static List<Editori> catalogoEditori() {
+		EntityManager entityManager = JpaEntityManagerFactory.entityManager("OortBiblioteca");
+		String jpql = "SELECT e FROM Editori as e where id >0";
+		Query query = entityManager.createQuery(jpql);
+		List<Editori> list = query.getResultList();
+		return list;
 	}
 	
 	public static List<Contatto> listContatto(String campo, String attributo) {
@@ -378,6 +407,7 @@ public class JPDBtools {
 		List<Contatto> list = query.getResultList();
 		return list;
 	}
+	
 	
 	public static void addTrim(List<String> list, String b, String a){
 		if(!a.equals("")) {list.add(b); list.add(a);}

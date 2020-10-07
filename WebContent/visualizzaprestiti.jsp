@@ -14,11 +14,14 @@
 <body>
 <%Utenti utente = ((Utenti)session.getAttribute("utente")); %>
 <h3>Questi sono i prestiti di <%=utente.getNome()%> <%=utente.getCognome() %></h3>
-<% List<Prestiti> list = JPDBtools.ricercaPrestitiUtente(utente.getId());
+<% List<Prestiti> list = JPDBtools.ricercaPrestitiId("utente",utente.getId());
 	for(Prestiti p : list) { %>
 		<p><b>Libro</b> <%=JPDBtools.ricercaLibro(p.getLibro()).getTitolo() %> <b>Data Inizio</b> <%=p.getData_inizio() %> 
 		<b>Data Fine</b> <%=p.getData_fine() %> </p>
 	<%}%>
+	<form action="./Smistatore" method="get">
+	<input type="submit" value="HOME" name="Menu">
+	</form>
 
 </body>
 </html>
