@@ -26,6 +26,24 @@ public class JPDBUtilities {
 		entityManager.close();
 	}
 	
+	public static List<String> exportBookTitles() {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		List<Prestito> loans = exportLoans();
+		List<Libro> books = null;
+		for (int i = 0; i < loans.size(); i++) {
+			int idLibro = loans.get(i).getId_libro();
+			String jpql = "SELECT l FROM Libro AS l WHERE id = " + idLibro;
+			Query query = entityManager.createQuery(jpql);
+			Libro book = (Libro)query.getSingleResult();
+			books.add(book);
+		}
+		List<String> titles = null;
+		for (int i = 0; i < books.size(); i++) {
+			titles.add(books.get(i).getTitolo());
+		}
+		return titles;
+	}
+	
 	public static Libro exportBook(String titolo) {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
 		String jpql = "SELECT l FROM Libro AS l WHERE titolo = '" + titolo + "'";
@@ -139,6 +157,28 @@ public class JPDBUtilities {
 		List <Editore> publishers = query.getResultList();
 		entityManager.close();
 		return publishers;
+	}
+	
+	public static void updateLoan(String nota, int idPrestito) {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		String jpql = "UPDATE Prestito SET note = '" + nota + "' where id = " + idPrestito;
+		Query query = entityManager.createQuery(jpql); 
+		query.executeUpdate();
+		transaction.commit();
+		entityManager.close();
+	}
+	
+	public static void deleteLoan(int idPrestito) {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		String jpql = "DELETE Prestito where id = " + idPrestito;
+		Query query = entityManager.createQuery(jpql); 
+		query.executeUpdate();
+		transaction.commit();
+		entityManager.close();
 	}
 	
 	public static void insertAuthor(String cognome, String nome, String data_nascita, String data_morte, String biografia) {

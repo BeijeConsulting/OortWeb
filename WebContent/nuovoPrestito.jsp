@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>NUOVO PRESTITO</title>
- <style>
+ 	<style>
         table {
           font-family: arial, sans-serif;
           border-collapse: collapse;
@@ -23,7 +23,7 @@
         tr:nth-child(even) {
           background-color: #dddddd;
         }
-        </style>
+	</style>
 </head>
 <body>
 	<form action = "./insertLoan" method = "post">

@@ -30,13 +30,13 @@
             <th>BENVENUTO <jsp:getProperty property="nome" name="loggedUser"/> </th>
           </tr>
           <tr>
-            <td><a href = "gestisciPrestiti.jsp">Gestitsci prestiti</a></td>
+            <td><a href = "./LoansManager">Gestitsci prestiti</a></td>
           </tr>
           <tr>
-            <td><a href = "nuovoPrestito.jsp" >Inserisci nuovo libro</a></td>
+            <td><a href = "./InsertBook">Inserisci nuovo libro</a></td>
           </tr>
            <tr>
-            <td><a href = "login_biblioteca.jsp">Esci</a></td>
+            <td><a href = "">Esci</a></td>
           </tr>
         </table>
 </body>
