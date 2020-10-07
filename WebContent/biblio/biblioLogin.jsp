@@ -16,6 +16,12 @@
 
 </head>
 <body>
+
+<jsp:useBean id="utente" class="it.beije.oort.web.biblioteca.model.Utente" scope="session" />
+<%
+    if (utente.getCodice_fiscale() != null) response.sendRedirect("./biblioIndex.jsp");
+%>
+
 <div class="home">
     <a href="../index.html"><i class="fas fa-home"></i></a>
 </div>

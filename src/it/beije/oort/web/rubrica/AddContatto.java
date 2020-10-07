@@ -13,11 +13,11 @@ import java.io.PrintWriter;
 
 @WebServlet("/addContatto")
 public class AddContatto extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         doGet(request, response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Contatto c = new Contatto();
         c.setNome(request.getParameter("nome"));
         c.setCognome(request.getParameter("cognome"));

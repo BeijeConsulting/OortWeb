@@ -1,6 +1,6 @@
-package it.beije.oort.web.biblioteca.servlet;
+package it.beije.oort.web.biblioteca.controller;
 
-import it.beije.oort.web.biblioteca.controller.DatabaseManager;
+import it.beije.oort.web.biblioteca.dbutils.DatabaseManager;
 import it.beije.oort.web.biblioteca.model.Utente;
 
 import javax.servlet.ServletException;
@@ -12,11 +12,11 @@ import java.io.IOException;
 
 @WebServlet("/logUser")
 public class BiblioLogin extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         doGet(request, response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Utente utente = DatabaseManager.getUtenteFromCF(request.getParameter("cf").trim());
         if (utente == null){
             response.sendRedirect("/OortWeb_war/biblio/biblioLogin.jsp?error=user");

@@ -1,13 +1,13 @@
 package it.beije.oort.web.biblioteca.utils;
 
-import it.beije.oort.web.biblioteca.controller.DatabaseManager;
+import it.beije.oort.web.biblioteca.dbutils.DatabaseManager;
 import it.beije.oort.web.biblioteca.model.Libro;
 
 import java.sql.Date;
 import java.util.Scanner;
 
 public class Utils {
-    public final static DatabaseManager db = new DatabaseManager(Config.getPersistenceUnitName());
+
 
     public static void showInstructions(){
         System.out.println("Comandi disponibili:");

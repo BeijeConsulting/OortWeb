@@ -1,4 +1,4 @@
-package it.beije.oort.web.biblioteca.controller;
+package it.beije.oort.web.biblioteca.dbutils;
 
 import it.beije.oort.web.biblioteca.model.*;
 import it.beije.oort.web.biblioteca.utils.Config;
@@ -50,7 +50,7 @@ public class DatabaseManager {
         try {
             String jpql = "SELECT p FROM Prestito as p WHERE p.cfUtente = " +
                     "'" + userCF + "'";
-            Query query = em.createQuery(jpql, Prestito.class);
+            TypedQuery<Prestito> query = em.createQuery(jpql, Prestito.class);
 //                    .setParameter("cf", userCF);
             System.out.println(query.toString());
             return query.getResultList();
@@ -60,5 +60,21 @@ public class DatabaseManager {
         }
     }
 
+    public static void delete(Class<? extends IBibliotecaModel> classe, int id){
+        IBibliotecaModel deleteMe = null;
+        try{
+            deleteMe = select(classe, id);
+        } catch (Exception e){
+        }
+        em.getTransaction().begin();
+        em.remove(deleteMe);
+        em.getTransaction().commit();
+    }
 
+    public static void deleteUtente(String cf){
+        Utente deleteMe = getUtenteFromCF(cf);
+        em.getTransaction().begin();
+        em.remove(deleteMe);
+        em.getTransaction().commit();
+    }
 }

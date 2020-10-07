@@ -1,5 +1,5 @@
 <%@ page import="it.beije.oort.web.biblioteca.model.Prestito" %>
-<%@ page import="it.beije.oort.web.biblioteca.controller.DatabaseManager" %>
+<%@ page import="it.beije.oort.web.biblioteca.dbutils.DatabaseManager" %>
 <%@ page import="java.util.List" %>
 <%@ page import="it.beije.oort.web.biblioteca.model.Libro" %>
 <%@ page import="it.beije.oort.web.biblioteca.model.Autore" %><%--

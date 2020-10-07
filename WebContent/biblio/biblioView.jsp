@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="it.beije.oort.web.biblioteca.controller.DatabaseManager" %>
+<%@ page import="it.beije.oort.web.biblioteca.dbutils.DatabaseManager" %>
 <%@ page import="it.beije.oort.web.biblioteca.model.*" %><%--
   Created by IntelliJ IDEA.
   User: Padawan09
@@ -22,7 +22,6 @@
 <body>
 <jsp:useBean id="utente" class="it.beije.oort.web.biblioteca.model.Utente" scope="session" />
 <%
-    if (request.getSession().getAttribute("type") == null) request.getSession().setAttribute("type", "Libro");
     if (utente.getCodice_fiscale() == null) response.sendRedirect("./biblioLogin.jsp");
 %>
 <%
@@ -36,19 +35,22 @@
 <div class="container">
     <div class="small-center-container">
         <div class="header">
-            <h1><i>Biblioteca - Visualizza</i></h1>
+            <h1><i>Biblioteca
+                <% if (request.getSession().getAttribute("type") != null)
+                    out.print("- " + request.getSession().getAttribute("type")); %>
+            </i></h1>
             <h3>Leggi e Modifica le Tabelle della Biblioteca</h3>
         </div>
         <form action="../biblioViewController">
             <div class="single-input selector">
-                <label for="list">Cosa vuoi visualizzare:</label>
-                <select id="list" name="list" onchange="this.form.submit()">
+                <label for="type">Cosa vuoi visualizzare:</label>
+                <select id="type" name="type" onchange="this.form.submit()">
                     <option value="" disabled selected>Seleziona cosa visualizzare</option>
-                    <option value="libri">Libri</option>
-                    <option value="autori">Autori</option>
-                    <option value="editori">Editori</option>
-                    <option value="utenti">Utenti</option>
-                    <option value="prestiti">Prestiti</option>
+                    <option value="Libro">Libri</option>
+                    <option value="Autore">Autori</option>
+                    <option value="Editore">Editori</option>
+                    <option value="Utente">Utenti</option>
+                    <option value="Prestito">Prestiti</option>
                 </select>
             </div>
         </form>
@@ -56,7 +58,7 @@
 
         <%
             if (request.getSession().getAttribute("list") != null){
-                List<? extends IBibliotecaModel> lista = (List)request.getSession().getAttribute("list");
+                List<? extends IBibliotecaModel> lista = (List<? extends IBibliotecaModel>)request.getSession().getAttribute("list");
         %>
             <!-- qui stampo le liste -->
             <div class="contatti-list">
@@ -108,14 +110,12 @@
                                 <i class="far fa-file-alt"></i>
                             </a>
                         </td>
-                        <!-- todo eliminare libro con questo pulsante -->
-                        <td><i class="fas fa-minus-circle"></i></td>
+                        <td><a href="../destroy?classe=<%=l.getClass().getSimpleName()%>&id=<%=l.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     <%
                         }
                     %>
                 <%
-                    // Chiude case libro
                     break;
                     case "Autore":
                 %>
@@ -136,14 +136,12 @@
                         <td><%= a.getData_nascita() != null ? a.getData_nascita() : "" %></td>
                         <td><%= a.getData_morte() != null ? a.getData_morte() : ""%></td>
                         <td><%= a.getBiografia() != null ? a.getBiografia()  : ""%></td>
-                        <!-- todo eliminare autore con questo pulsante -->
-                        <td><i class="fas fa-minus-circle"></i></td>
+                        <td><a href="../destroy?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     <%
                         }
                     %>
                 <%
-                        // Chiude case libro
                         break;
                     case "Editore":
                 %>
@@ -158,14 +156,12 @@
                     <tr>
                         <td><%= e.getNome() != null ? e.getNome() : "" %></td>
                         <td><%= e.getDescrizione() != null ? e.getDescrizione() : "" %></td>
-                        <!-- todo eliminare editore con questo pulsante -->
-                        <td><i class="fas fa-minus-circle"></i></td>
+                        <td><a href="../destroy?classe=<%=e.getClass().getSimpleName()%>&id=<%=e.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     <%
                         }
                     %>
                 <%
-                        // Chiude case libro
                         break;
                     case "Utente":
                 %>
@@ -177,24 +173,23 @@
                         <th>Indirizzo</th>
                         <th>Codice Fiscale</th>
                     </tr>
-<%--                    <%--%>
-<%--                        for (IBibliotecaModel obj : lista){--%>
-<%--                            Autore a = (Autore) obj;--%>
-<%--                    %>--%>
-<%--                    <tr>--%>
-<%--                        <td><%= a.getNome() != null ? a.getNome() : "" %></td>--%>
-<%--                        <td><%= a.getCognome() != null ? a.getCognome() : "" %></td>--%>
-<%--                        <td><%= a.getData_nascita() != null ? a.getData_nascita() : "" %></td>--%>
-<%--                        <td><%= a.getData_morte() != null ? a.getData_morte() : ""%></td>--%>
-<%--                        <td><%= a.getBiografia() != null ? a.getBiografia()  : ""%></td>--%>
-<%--                        <!-- todo eliminare autore con questo pulsante -->--%>
-<%--                        <td><i class="fas fa-minus-circle"></i></td>--%>
-<%--                    </tr>--%>
-<%--                    <%--%>
-<%--                        }--%>
-<%--                    %>--%>
+                    <%
+                        for (IBibliotecaModel obj : lista){
+                            Utente a = (Utente) obj;
+                    %>
+                    <tr>
+                        <td><%= a.getNome() != null ? a.getNome() : "" %></td>
+                        <td><%= a.getCognome() != null ? a.getCognome() : "" %></td>
+                        <td><%= a.getEmail() != null ? a.getEmail() : "" %></td>
+                        <td><%= a.getCellulare() != null ? a.getCellulare() : ""%></td>
+                        <td><%= a.getIndirizzo() != null ? a.getIndirizzo() : ""%></td>
+                        <td><%= a.getCodice_fiscale() != null ? a.getCodice_fiscale()  : ""%></td>
+                        <td><a href="../destroy?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getCodice_fiscale()%>"><i class="fas fa-minus-circle"></i></a></td>
+                    </tr>
+                    <%
+                        }
+                    %>
                 <%
-                        // Chiude case libro
                         break;
                     case "Prestito":
                 %>
@@ -208,16 +203,16 @@
                     <%
                         for (IBibliotecaModel obj : lista){
                             Prestito a = (Prestito) obj;
-                            // todo ottenere libro e utente qui
+                            Libro l = (Libro) DatabaseManager.select(Libro.class, a.getIdLibro());
+                            Utente u = DatabaseManager.getUtenteFromCF(a.getCfUtente());
                     %>
                     <tr>
-<%--                        <td><%= a.getNome() != null ? a.getNome() : "" %></td>--%>
-<%--                        <td><%= a.getCognome() != null ? a.getCognome() : "" %></td>--%>
-<%--                        <td><%= a.getData_nascita() != null ? a.getData_nascita() : "" %></td>--%>
-<%--                        <td><%= a.getData_morte() != null ? a.getData_morte() : ""%></td>--%>
-<%--                        <td><%= a.getBiografia() != null ? a.getBiografia()  : ""%></td>--%>
-<%--                        <!-- todo eliminare prestito con questo pulsante -->--%>
-<%--                        <td><i class="fas fa-minus-circle"></i></td>--%>
+                        <td><%= l.getTitolo() != null ? l.getTitolo()  : "" %></td>
+                        <td><%= u.getCodice_fiscale() != null ? u.getCodice_fiscale()  : "" %></td>
+                        <td><%= a.getDataInizio() != null ? a.getDataInizio() : "" %></td>
+                        <td><%= a.getDataFine() != null ? a.getDataFine() : ""%></td>
+                        <td><%= a.getNote() != null ? a.getNote()  : ""%></td>
+                        <td><a href="../destroy?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     <%
                         }
