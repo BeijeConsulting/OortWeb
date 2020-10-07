@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import it.beije.oort.kirolosmater.biblioteca.model.Prestito;
 import it.beije.oort.kirolosmater.biblioteca.model.Utente;
@@ -43,36 +44,26 @@ public class AutenticazioneServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
+		HttpSession session = request.getSession();
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		Utente utente = checkEmail(email);
 		
 		boolean passwordCorretta = checkPassword(utente, password);
 		if (passwordCorretta) {
-			request.getSession().setAttribute("userBean", utente);
+			session.setAttribute("userBean", utente);
 			List<Prestito> prestitiUtente = visualizzaPrestitiByIdUtente(utente);
-			request.getSession().setAttribute("prestitiUserBean", prestitiUtente);
+			session.setAttribute("prestitiUserBean", prestitiUtente);
 			boolean admin = utente.isAdmin();
 //			System.out.println(admin);
-			request.getSession().setAttribute("userIsAdmin", admin);
+			session.setAttribute("userIsAdmin", admin);
 			response.sendRedirect("areaPersonaleUtente.jsp");
 		} else {
-			request.getSession().setAttribute("errore", "CREDENZIALI ERRATE");
+			session.setAttribute("errore", "CREDENZIALI ERRATE");
 			response.sendRedirect("loginUtente.jsp");
 		}
 	}
 	
-	public static Utente checkEmail (String email) {
-		Utente utente = new Utente();
-		List<Utente> utenti = readRecordByStringFromInput("email", email);
-		utente = utenti.get(0);
-		return utente;
-	}
 	
-	public static boolean checkPassword (Utente utente, String password) {
-		boolean passwordCorretta = false;
-		passwordCorretta = password.equals(utente.getPassword());
-		return passwordCorretta;
-	}
 
 }

@@ -1,6 +1,7 @@
 package it.beije.oort.kirolosmater.biblioteca;
 
 import static it.beije.oort.kirolosmater.biblioteca.LibraryManager.libraryPersistenceUnit;
+import static it.beije.oort.kirolosmater.biblioteca.MetodiUtente.readRecordByStringFromInput;
 
 import java.util.List;
 import java.util.Scanner;
@@ -82,5 +83,18 @@ public class MetodiUtente {
 //			System.out.println("indirizzo : " + utente.getIndirizzo());
 //		}
 		return utenti;
+	}
+	
+	public static Utente checkEmail (String email) {
+		Utente utente = new Utente();
+		List<Utente> utenti = readRecordByStringFromInput("email", email);
+		utente = utenti.get(0);
+		return utente;
+	}
+	
+	public static boolean checkPassword (Utente utente, String password) {
+		boolean passwordCorretta = false;
+		passwordCorretta = password.equals(utente.getPassword());
+		return passwordCorretta;
 	}
 }
