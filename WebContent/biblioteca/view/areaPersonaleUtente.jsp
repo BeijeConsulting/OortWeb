@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="it.beije.oort.kirolosmater.biblioteca.model.Utente"%>
+    <%@page import="it.beije.oort.kirolosmater.biblioteca.model.Prestito"%>
+    <%@page import="java.util.ArrayList"%>
+    <%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,5 +25,24 @@ if (userBean == null) {
 <%
 }
 %>
+<b>PRESTITI</b>
+<table style="width:100%">
+<tr>
+    <th>LIBRO</th>
+    <th>DATA INIZIO</th>
+    <th>DATA FINE</th>
+    <th>NOTE</th>
+  </tr>
+<% List<Prestito> prestitiUserBean = (List<Prestito>)session.getAttribute("prestitiUserBean"); %>
+<% for(Prestito prestito : prestitiUserBean) { 
+	%> <tr>
+	<th><% out.println(prestito.getLibro());%></th>
+	<th><% out.println(prestito.getData_inizio());%></th>
+	<th><% out.println(prestito.getData_fine());%></th>
+	<th><% out.println(prestito.getNote());%></th>
+	</tr>
+<% }%>
+</table>
+
 </body>
 </html>

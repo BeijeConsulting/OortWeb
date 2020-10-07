@@ -1,6 +1,7 @@
 package it.beije.oort.kirolosmater.biblioteca.controller;
 
 import static it.beije.oort.kirolosmater.biblioteca.MetodiUtente.*;
+import static it.beije.oort.kirolosmater.biblioteca.MetodiPrestito.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.beije.oort.kirolosmater.biblioteca.model.Prestito;
 import it.beije.oort.kirolosmater.biblioteca.model.Utente;
 
 /**
@@ -47,7 +49,9 @@ public class AutenticazioneServlet extends HttpServlet {
 		boolean passwordCorretta = checkPassword(utente, password);
 		if (passwordCorretta) {
 			request.getSession().setAttribute("userBean", utente);
-			response.sendRedirect("areaPersonale.jsp");
+			List<Prestito> prestitiUtente = visualizzaPrestitiByIdUtente(utente);
+			request.getSession().setAttribute("prestitiUserBean", prestitiUtente);
+			response.sendRedirect("areaPersonaleUtente.jsp");
 		} else {
 			request.getSession().setAttribute("errore", "CREDENZIALI ERRATE");
 			response.sendRedirect("loginUtente.jsp");
