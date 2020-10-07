@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import it.beije.oort.gregori.biblioteca.jpa.Utente;
 import it.beije.oort.gregori.biblioteca.jpa.JPAEntityManager;
+import it.beije.oort.gregori.biblioteca.jpa.Libro;
 import it.beije.oort.gregori.biblioteca.jpa.Prestito;
 
 /**
@@ -53,7 +54,7 @@ public class Login extends HttpServlet {
 		utente.setPassword(password);		
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("utente", utente);
+//		session.setAttribute("utente", utente);
 		
 		String jpaql = "SELECT u FROM Utente as u WHERE email = '" + email + "' AND password = '" + password + "'";
 		
@@ -63,6 +64,7 @@ public class Login extends HttpServlet {
 		
 		
 		if(utenti.size() == 0) {
+			session.setAttribute("errore", "Dati inseriti non corretti!");
 			response.sendRedirect("./biblioteca/login/login.jsp");
 			entityManager.close();
 		}
@@ -76,6 +78,11 @@ public class Login extends HttpServlet {
 				jpaql = "SELECT p FROM Prestito as p WHERE id_utente = '" + utenti.get(0).getId() + "'";
 				List<Prestito> prestiti = entityManager.createQuery(jpaql).getResultList();
 				session.setAttribute("prestiti", prestiti);
+				
+				jpaql = "SELECT l FROM Libro as l";
+				List<Libro> libri = entityManager.createQuery(jpaql).getResultList();
+				session.setAttribute("libri", libri);
+				
 				entityManager.close();
 				response.sendRedirect("./biblioteca/visualizza.jsp");
 			}

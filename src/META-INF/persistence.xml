@@ -17,6 +17,7 @@
 		<class>it.beije.oort.gregori.biblioteca.jpa.Prestito</class>
 		<class>it.beije.oort.gregori.biblioteca.jpa.Autore</class>
 		<class>it.beije.oort.gregori.biblioteca.jpa.Editore</class>
+		<class>it.beije.oort.gregori.biblioteca.jpa.Libro</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

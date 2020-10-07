@@ -18,13 +18,13 @@ import it.beije.oort.rubrica.Contatto;
  * Servlet implementation class Inserisci
  */
 @WebServlet("/Inserisci")
-public class Inserisci extends HttpServlet {
+public class Inserisci_r extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Inserisci() {
+    public Inserisci_r() {
         super();
         // TODO Auto-generated constructor stub
     }

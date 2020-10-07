@@ -23,7 +23,7 @@ import it.beije.oort.rubrica.Contatto;
  * Servlet implementation class Download
  */
 @WebServlet("/Download")
-public class Download extends HttpServlet {
+public class Download_r extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public static int BUFFER_SIZE = 1024 * 100;
@@ -32,7 +32,7 @@ public class Download extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Download() {
+    public Download_r() {
         super();
         // TODO Auto-generated constructor stub
     }

@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class Modifica
  */
 @WebServlet("/Modifica")
-public class Modifica extends HttpServlet {
+public class Modifica_r extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Modifica() {
+    public Modifica_r() {
         super();
         // TODO Auto-generated constructor stub
     }

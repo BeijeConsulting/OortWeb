@@ -1,5 +1,5 @@
-<%@page import="it.beije.oort.gregori.biblioteca.jpa.PrestitoUtility"%>
 <%@page import="it.beije.oort.gregori.biblioteca.jpa.Prestito"%>
+<%@page import="it.beije.oort.gregori.biblioteca.jpa.Libro"%>
 <%@page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -22,7 +22,8 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a class="logo" href="home.html">Biblioteca</a>
+				<a class="logo" href="#">Biblioteca</a>
+				<a class="logo" href="../Logout">Log out</a>
 			</header>
 
 		<!-- Heading -->
@@ -49,6 +50,7 @@
 								<tbody>
 									<% 
 									List<Prestito> prestiti = (List<Prestito>)session.getAttribute("prestiti");
+									List<Libro> libri = (List<Libro>)session.getAttribute("libri");
 									for(Prestito prestito : prestiti) {
 									%>
 									
@@ -57,7 +59,15 @@
 									<td><%= prestito.getDataInizio() %></td>
 									<td><%= prestito.getDataFine() %></td>
 									<td><%= prestito.getNote() %></td>
-									<td><%= prestito.getLibro() %></td>
+									<td>
+										<%
+										for(Libro libro : libri) {
+											if(prestito.getLibro() == libro.getId()) {
+												out.print(libro.getTitolo());
+											}
+										}
+										%>
+									</td>
 									
 									<% } %>
 								</tbody>

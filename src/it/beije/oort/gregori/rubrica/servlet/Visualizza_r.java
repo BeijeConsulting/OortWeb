@@ -19,13 +19,13 @@ import it.beije.oort.rubrica.Contatto;
  * Servlet implementation class Visualizza
  */
 @WebServlet("/Visualizza")
-public class Visualizza extends HttpServlet {
+public class Visualizza_r extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Visualizza() {
+    public Visualizza_r() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,7 +45,7 @@ public class Visualizza extends HttpServlet {
 			String s = buffer.readLine();
 			if(s.trim().equals("%!*replace me*!%")) {
 				System.out.println(s);
-				s = Visualizza.createTable();
+				s = Visualizza_r.createTable();
 				System.out.println(s);
 			}
 			builder.append(s);

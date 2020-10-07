@@ -67,13 +67,22 @@
 						</button>
 					</div>
 					
+					<% 
+					String errore = (String)session.getAttribute("errore");
+					if (errore != null && errore.length() > 0) {
+					%>
 					<div  class="text-center p-t-90">
 						<div class="txt1">ERRORE: Dati inseriti non corretti!</div>
 					</div>
+					
+					<%
+					session.removeAttribute("errore");
+					}
+					%>
 
 					<div class="text-center p-t-90">
-						<a class="txt1" href="#">
-							Forgot Password?
+						<a class="txt1" href="../../GestioneLink?page=registrazione">
+							Nuovo utente? Registrati!
 						</a>
 					</div>
 				</form>

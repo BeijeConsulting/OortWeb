@@ -19,7 +19,7 @@ import it.beije.oort.rubrica.Contatto;
 /**
  * Servlet implementation class Inserimento
  */
-@WebServlet("/Inserimento")
+@WebServlet("/Inserimento_old")
 public class Inserimento_old extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
