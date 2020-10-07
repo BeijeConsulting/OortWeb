@@ -34,6 +34,7 @@
 								</tr>
 							<%} %>
 					</table>
-				<%} %>
+				<%} 
+				session.removeAttribute("data_list");%>
 		</body>
 </html>

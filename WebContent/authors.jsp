@@ -32,7 +32,8 @@
 								<td><%= a.getDate_of_death() %></td>
 								<td><%= a.getBiography() %></td>
 							</tr>
-						<%} %>
+						<%} 
+						session.removeAttribute("data_list");%>
 				</table>
 			<%} %>
 	</body>

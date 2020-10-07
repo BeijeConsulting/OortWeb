@@ -20,5 +20,7 @@ public interface Database {
 	
 	<T> List<T> searchRecord(Class<T> beanType, T data);
 	
+	<T> List<T> inquiry(Class<T> resultType, String query);
+	
 	
 }

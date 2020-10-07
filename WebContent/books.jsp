@@ -34,7 +34,8 @@
 							<td><%= b.getYear() %></td>
 							<td><%= b.getDescription() %></td>
 						</tr>
-					<%} %>
+					<%} 
+					session.removeAttribute("data_list");%>
 			</table>
 		<%} %>
 	</body>

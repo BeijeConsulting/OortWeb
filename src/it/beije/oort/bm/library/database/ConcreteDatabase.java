@@ -55,7 +55,7 @@ public class ConcreteDatabase implements Database {
 	public <T> boolean update(Class<T> type, int id, Object data) {
 		EntityManager s = getEntityManager();
 		try {
-			s.getTransaction().begin();;
+			s.getTransaction().begin();
 			Object elem = s.find(type, id);
 			String t_name = type.getSimpleName();
 			switch(t_name) {
@@ -115,29 +115,17 @@ public class ConcreteDatabase implements Database {
 		return true;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public <T> List<T> getAll(Class<T> beanType) {
 		String query = "SELECT x FROM " + beanType.getSimpleName() + " AS x";
 		List<T> ret;
-		EntityManager s = getEntityManager();
-		try {
-			Query results = s.createQuery(query);
-			ret = results.getResultList();
-		}catch(RuntimeException re) {
-			re.printStackTrace();
-			return null;
-		}finally {
-			s.close();
-		}
+		ret = inquiry(beanType, query);
 		return ret;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public <T> List<T> searchRecord(Class<T> beanType, T data) {
 		String type = data.getClass().getSimpleName();
-		EntityManager s = getEntityManager();
 		List<T> ret = null;
 		StringBuilder query = new StringBuilder();
 		query.append("SELECT x FROM ").append(type).append(" AS x WHERE ");
@@ -260,7 +248,16 @@ public class ConcreteDatabase implements Database {
 		default:
 			throw new IllegalArgumentException("Something went really wrong man.");
 		}
-		Query results = s.createQuery(query.toString());
+		ret = inquiry(beanType, query.toString());
+		return ret;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public <T> List<T> inquiry(Class<T> resultType, String query) {
+		List<T> ret;
+		EntityManager s = getEntityManager();
+		Query results = s.createQuery(query);
 		ret = results.getResultList();
 		s.close();
 		return ret;
