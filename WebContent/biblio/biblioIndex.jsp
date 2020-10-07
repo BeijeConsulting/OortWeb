@@ -1,3 +1,5 @@
+<%@ page import="it.beije.oort.web.biblioteca.dbutils.DatabaseManager" %>
+<%@ page import="it.beije.oort.web.biblioteca.model.Libro" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="it">
@@ -14,6 +16,12 @@
     <link rel="icon" type="image/png" href="../media/biblioteca.ico"/>
 
 </head>
+
+<%
+    //svegliamo hibernate
+    DatabaseManager.exist(Libro.class, -1);
+%>
+
 <body>
 <div class="home">
     <a href="../index.html"><i class="fas fa-home"></i></a>
@@ -37,6 +45,9 @@
         <!-- Index per amministratori -->
 
         <div class = "grid-buttons">
+            <a href="./biblioSearch.jsp"><button class="button-rubrica">
+                Ricerca
+            </button></a>
             <a href="./biblioAdd.jsp"><button class="button-rubrica">
                 Aggiungi
             </button></a>
@@ -50,6 +61,9 @@
         %>
         <!-- Index per utenti -->
         <div class = "grid-buttons">
+            <a href="./biblioSearch.jsp"><button class="button-rubrica">
+                Ricerca
+            </button></a>
             <a href="./biblioView.jsp"><button class="button-rubrica">
                 Elenco Libri
             </button></a>

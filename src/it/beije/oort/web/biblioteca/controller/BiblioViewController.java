@@ -22,14 +22,9 @@ public class BiblioViewController extends HttpServlet {
 
         if (request.getParameter("type") != null && !request.getParameter("type").equalsIgnoreCase("")){
             request.getSession().setAttribute("type", request.getParameter("type"));
-
-            System.out.println("new session attribute setted");
-            System.out.println(request.getSession().getAttribute("type"));
         }
 
         String type = (String) request.getSession().getAttribute("type");
-
-        System.out.println(type);
 
         if (type != null
                 && !type.equalsIgnoreCase("")) {

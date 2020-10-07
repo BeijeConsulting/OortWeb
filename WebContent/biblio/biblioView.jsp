@@ -17,10 +17,6 @@
 <jsp:useBean id="utente" class="it.beije.oort.web.biblioteca.model.Utente" scope="session" />
 <%
     if (utente.getCodice_fiscale() == null) response.sendRedirect("./biblioLogin.jsp");
-
-    //questo serve perché sennò alla prima richiesta si rompe?
-    //if (request.getSession().getAttribute("type") == null) request.getSession().setAttribute("type", "Libro");
-
 %>
 <%
     if (utente.isAdmin()) {
