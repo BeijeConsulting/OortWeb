@@ -9,6 +9,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import it.beije.oort.lauria.rubrica.Contatto;
+
 
 public class JPADBtools {
 
@@ -191,6 +193,8 @@ public class JPADBtools {
 		//entityManager.close();
 	}
 	
+	
+	
 	public static void insertAutore(String nome, String cognome, LocalDate data_nascita, LocalDate data_morte, String biografia) {
 		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
 		Autore autore = new Autore();
@@ -236,6 +240,28 @@ public class JPADBtools {
 		utente.setEmail(email);
 		utente.setTelefono(telefono);
 		utente.setIndirizzo(indirizzo);
+		
+		// apro la transaction
+		entityManager.getTransaction().begin();
+		// salvo il libro
+		entityManager.persist(utente);
+		// chiudo la transaction
+		entityManager.getTransaction().commit();
+					
+		//entityManager.close();
+	}
+	
+	public static void insertUtente(String nome, String cognome, String codice_fiscale, String email, String telefono, String indirizzo, String password, boolean admin) {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		Utente utente = new Utente();
+		utente.setNome(nome);
+		utente.setCognome(cognome);
+		utente.setCodice_fiscale(codice_fiscale);
+		utente.setEmail(email);
+		utente.setTelefono(telefono);
+		utente.setIndirizzo(indirizzo);
+		utente.setPassword(password);
+		utente.setAdmin(admin);
 		
 		// apro la transaction
 		entityManager.getTransaction().begin();
@@ -399,6 +425,26 @@ public class JPADBtools {
 //		}
 		//entityManager.close();
 		return prestiti;
+	}
+	
+	public static void updateLibro(int id, String titolo, String descrizione, int id_autore, int id_editore, String anno) {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		Libro libro = entityManager.find(Libro.class, id);
+		
+		libro.setTitolo(titolo);
+		libro.setDescrizione(descrizione);
+		libro.setId_autore(id_autore);
+		libro.setId_editore(id_editore);
+		libro.setAnno(anno);
+		
+		// apro la transaction
+		entityManager.getTransaction().begin();
+		// salvo il libro
+		entityManager.persist(libro);
+		// chiudo la transaction
+		entityManager.getTransaction().commit();
+					
+		//entityManager.close();
 	}
 	
 	public static Utente verifyUtenti(String email, String password) {

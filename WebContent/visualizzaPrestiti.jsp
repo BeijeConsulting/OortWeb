@@ -36,16 +36,16 @@ Utente userBean = (Utente)session.getAttribute("userBean");
 if (userBean == null) {
 %>
 	<b>DEVI EFFETTUARE L'AUTENTICAZIONE</b>
-	<a href="./loginBiblio.jsp" >- Login</a>
+	<a href="./LoginBiblio" >- Login</a>
 <%
 } else {
 %>
 
 <table>
 
-	<a href="./confermaLogin.jsp">HOME</a><br>
+	<a href="./GestioneLink">HOME</a><br>
 	<%
-	List<Prestito> prestiti = JPADBtools.selectPrestiti();
+	List<Prestito> prestiti = (List<Prestito>)session.getAttribute("catalogoPrestiti");
 	%>
 	<h2>Sono stati registrati <%=prestiti.size() %> prestiti.</h2>
 	<tr>

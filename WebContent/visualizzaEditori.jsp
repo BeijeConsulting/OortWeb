@@ -36,15 +36,15 @@ Utente userBean = (Utente)session.getAttribute("userBean");
 if (userBean == null) {
 %>
 	<b>DEVI EFFETTUARE L'AUTENTICAZIONE</b>
-	<a href="./loginBiblio.jsp" >- Login</a>
+	<a href="./LoginBiblio" >- Login</a>
 <%
 } else {
 %>
 
 <table>
-	<a href="./confermaLogin.jsp">HOME</a><br>
+	<a href="./GestioneLink">HOME</a><br>
 	<%
-	List<Editore> editori = JPADBtools.selectEditori();
+	List<Editore> editori = (List<Editore>)session.getAttribute("catalogoEditori");
 	%>
 	<h2>Sono presenti <%=editori.size() %> editori di libri nel catalogo della biblioteca</h2>
 	<tr>

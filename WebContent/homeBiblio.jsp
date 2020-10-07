@@ -9,8 +9,8 @@
 <body>
 	<h1><em>Benvenuto nella Oort Biblioteca</em></h1>
 	<ul>
-		<a href="./loginBiblio.jsp" ><li>Login</li></a>
-		<a href="./visualizzaLibri.jsp" ><li>Libri in biblioteca</li></a>
+		<a href="./LoginBiblio" ><li>Login</li></a>
+		<a href="./VisualizzaLibri" ><li>Libri in biblioteca</li></a>
 	</ul>
 	
 </body>
