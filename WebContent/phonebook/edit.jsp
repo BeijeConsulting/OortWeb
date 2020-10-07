@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Phonebook application</title>
+<title>Phonebook Application</title>
 </head>
 <body>
 

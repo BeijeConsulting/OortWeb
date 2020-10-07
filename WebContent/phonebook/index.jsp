@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Phonebook application</title>
+<title>Phonebook Application</title>
 </head>
 <body>
 
@@ -17,15 +17,9 @@
 		<li><a href="./edit.jsp">Edit contact</a></li>
 		<li><a href="./delete.jsp">Delete contact</a></li>
 		<li><a href="./view.jsp">View contacts</a></li>
-		<li><a href="../index.jsp">Back</a></li>
 	</ul>
 	
-	
-	
-	
-	
-	
-	
+	<a href="../index.jsp">Back</a>
 
 </body>
 </html>
