@@ -20,25 +20,6 @@ public class ConcreteDatabase implements Database {
 	
 	@Override
 	public boolean add(Object data) {
-//		switch(table) {
-//			case USER:
-//				data = (User)data;
-//				break;
-//			case BOOK:
-//				data = (Book)data;
-//				break;
-//			case AUTHOR:
-//				data = (Author)data;
-//				break;
-//			case LOAN:
-//				data = (Loan)data;
-//				break;
-//			case PUBLISHER:
-//				data = (Publisher)data;
-//				break;
-//			default:
-//				throw new IllegalArgumentException("Table " + table + " not found.");
-//		}
 		EntityManager s = getEntityManager();
 		try {
 			s.getTransaction().begin();
@@ -81,45 +62,45 @@ public class ConcreteDatabase implements Database {
 			case USER:
 				User newU = (User) data;
 				User oldU = (User) elem;
-				if(!newU.getSurname().equals("")) oldU.setSurname(newU.getSurname());
-				if(!newU.getName().equals("")) oldU.setName(newU.getName());
-				if(!newU.getFc().equals("")) oldU.setFc(newU.getFc());
-				if(!newU.getPhone().equals("")) oldU.setPhone(newU.getPhone());
-				if(!newU.getEmail().equals("")) oldU.setEmail(newU.getEmail());
-				if(!newU.getAddress().equals("")) oldU.setAddress(newU.getAddress());
+				if(!(newU.getSurname() == null || newU.getSurname().equals(""))) oldU.setSurname(newU.getSurname());
+				if(!(newU.getName() == null || newU.getName().equals(""))) oldU.setName(newU.getName());
+				if(!(newU.getFc() == null || newU.getFc().equals(""))) oldU.setFc(newU.getFc());
+				if(!(newU.getPhone() == null || newU.getPhone().equals(""))) oldU.setPhone(newU.getPhone());
+				if(!(newU.getEmail() == null || newU.getEmail().equals(""))) oldU.setEmail(newU.getEmail());
+				if(!(newU.getAddress() == null || newU.getAddress().equals(""))) oldU.setAddress(newU.getAddress());
 				break;
 			case BOOK:
 				Book newB = (Book) data;
 				Book oldB = (Book) elem;
-				if(!newB.getTitle().equals("")) oldB.setTitle(newB.getTitle());
-				if(!newB.getDescription().equals("")) oldB.setDescription(newB.getDescription());
-				if(!(newB.getAuthor() == 0)) oldB.setAuthor(newB.getAuthor());
-				if(!(newB.getPublisher() == 0)) oldB.setPublisher(newB.getPublisher());
-				if(!newB.getYear().equals("")) oldB.setYear(newB.getYear());
+				if(!(newB.getTitle() == null || newB.getTitle().equals(""))) oldB.setTitle(newB.getTitle());
+				if(!(newB.getDescription() == null || newB.getDescription().equals(""))) oldB.setDescription(newB.getDescription());
+				if(newB.getAuthor() != null) oldB.setAuthor(newB.getAuthor());
+				if(newB.getPublisher() != null) oldB.setPublisher(newB.getPublisher());
+				if(!(newB.getYear() == null || newB.getYear().equals(""))) oldB.setYear(newB.getYear());
 				break;
 			case AUTHOR:
 				Author newA = (Author) data;
 				Author oldA = (Author) elem;
-				if(!newA.getSurname().equals("")) oldA.setSurname(newA.getSurname());
-				if(!newA.getName().equals("")) oldA.setName(newA.getName());
-				if(!newA.getDate_of_birth().equals("")) oldA.setDate_of_birth(Date.valueOf(newA.getDate_of_birth()));
-				if(!newA.getDate_of_death().equals("")) oldA.setDate_of_death(Date.valueOf(newA.getDate_of_death()));
-				if(!newA.getBiography().equals("")) oldA.setBiography(newA.getBiography());
+				if(!(newA.getSurname() == null || newA.getSurname().equals(""))) oldA.setSurname(newA.getSurname());
+				if(!(newA.getName() == null || newA.getName().equals(""))) oldA.setName(newA.getName());
+				if(!(newA.getDate_of_birth() == null || newA.getDate_of_birth().equals(""))) oldA.setDate_of_birth(Date.valueOf(newA.getDate_of_birth()));
+				if(!(newA.getDate_of_death() == null || newA.getDate_of_death().equals(""))) oldA.setDate_of_death(Date.valueOf(newA.getDate_of_death()));
+				if(!(newA.getBiography() == null || newA.getBiography().equals(""))) oldA.setBiography(newA.getBiography());
 				break;
 			case LOAN:
 				Loan newL = (Loan) data;
 				Loan oldL = (Loan) elem;
-				if(newL.getUser() != 0) oldL.setUser(newL.getUser());
-				if(newL.getBook() != 0) oldL.setBook(newL.getBook());
-				if(!newL.getStart_date().equals("")) oldL.setStart_date(Date.valueOf(newL.getStart_date()));
-				if(!newL.getEnd_date().equals("")) oldL.setEnd_date(Date.valueOf(newL.getEnd_date()));
-				if(!newL.getNotes().equals("")) oldL.setNotes(newL.getNotes());
+				if(newL.getUser() != null) oldL.setUser(newL.getUser());
+				if(newL.getBook() != null) oldL.setBook(newL.getBook());
+				if(!(newL.getStart_date() == null || newL.getStart_date().equals(""))) oldL.setStart_date(Date.valueOf(newL.getStart_date()));
+				if(!(newL.getEnd_date() == null || newL.getEnd_date().equals(""))) oldL.setEnd_date(Date.valueOf(newL.getEnd_date()));
+				if(!(newL.getNotes() == null || newL.getNotes().equals(""))) oldL.setNotes(newL.getNotes());
 				break;
 			case PUBLISHER:
 				Publisher newP = (Publisher) data;
 				Publisher oldP = (Publisher) elem;
-				if(!newP.getName().equals("")) oldP.setName(newP.getName());
-				if(!newP.getDescription().equals("")) oldP.setDescription(newP.getDescription());
+				if(!(newP.getName() == null || newP.getName().equals(""))) oldP.setName(newP.getName());
+				if(!(newP.getDescription() == null || newP.getDescription().equals(""))) oldP.setDescription(newP.getDescription());
 				break;
 			default:
 				throw new IllegalArgumentException("");
@@ -200,21 +181,21 @@ public class ConcreteDatabase implements Database {
 			break;
 		case BOOK:
 			Book book = (Book) data;
-			if(!book.getTitle().equals("")) {
+			if(!(book.getTitle() == null || book.getTitle().equals(""))) {
 				query.append("title = ").append("\'").append(book.getTitle()).append("\'").append(" ");
 				requireAnd = true;
 			}
-			if(book.getPublisher() != 0) {
+			if(book.getPublisher() != null) {
 				if(requireAnd) query.append("AND ");
 				query.append("publisher = ").append(book.getPublisher()).append(" ");
 				requireAnd = true;
 			}
-			if(book.getAuthor() != 0) {
+			if(book.getAuthor() != null) {
 				if(requireAnd) query.append("AND ");
 				query.append("author = ").append(book.getAuthor()).append(" ");
 				requireAnd = true;
 			}
-			if(!book.getYear().equals("")) {
+			if(!(book.getYear() == null || book.getYear().equals(""))) {
 				if(requireAnd) query.append("AND ");
 				query.append("year = ").append("\'").append(book.getYear()).append("\'").append(" ");
 			}			
@@ -247,11 +228,11 @@ public class ConcreteDatabase implements Database {
 			break;
 		case LOAN:
 			Loan loan = (Loan) data;
-			if(loan.getBook() != 0) {
+			if(loan.getBook() != null) {
 				query.append("book = ").append(loan.getBook()).append(" ");
 				requireAnd = true;
 			}
-			if(loan.getUser() != 0) {
+			if(loan.getUser() != null) {
 				if(requireAnd) query.append("AND ");
 				query.append("user = ").append(loan.getUser()).append(" ");
 				requireAnd = true;

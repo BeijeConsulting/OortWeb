@@ -17,10 +17,12 @@ public class Book implements Comparable<Book>, Serializable{
 	private String title;
 	@Column
 	private String description;
+	@ManyToOne(optional=false)
 	@Column
-	private int author;
+	private Author author;
+	@ManyToOne(optional=false)
 	@Column
-	private int publisher;
+	private Publisher publisher;
 	@Column
 	private String year;
 	
@@ -55,22 +57,22 @@ public class Book implements Comparable<Book>, Serializable{
 	}
 
 
-	public int getAuthor() {
+	public Author getAuthor() {
 		return author;
 	}
 
 
-	public void setAuthor(int author) {
+	public void setAuthor(Author author) {
 		this.author = author;
 	}
 
 
-	public int getPublisher() {
+	public Publisher getPublisher() {
 		return publisher;
 	}
 
 
-	public void setPublisher(int publisher) {
+	public void setPublisher(Publisher publisher) {
 		this.publisher = publisher;
 	}
 
@@ -108,12 +110,9 @@ public class Book implements Comparable<Book>, Serializable{
 	public int compareTo(Book b) {
 		int comp = this.title.compareTo(b.getTitle());
 		if(comp == 0) {
-			if(this.publisher == b.getPublisher()) {
+			comp = this.publisher.compareTo(b.getPublisher());
+			if(comp==0) {
 				comp = this.year.compareTo(getYear());
-			}else if(this.publisher < b.getPublisher()) {
-				comp = -1;
-			}else {
-				comp = 1;
 			}
 		}
 		return comp;

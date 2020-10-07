@@ -14,10 +14,12 @@ public class Loan implements Comparable<Loan>, Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id_loan")
 	private int id;
+	@ManyToOne(optional=false)
 	@Column
-	private int user;
+	private User user;
+	@ManyToOne(optional=false)
 	@Column
-	private int book;
+	private Book book;
 	@Column
 	private String start_date;
 	@Column
@@ -36,22 +38,22 @@ public class Loan implements Comparable<Loan>, Serializable {
 	}
 
 
-	public int getUser() {
+	public User getUser() {
 		return user;
 	}
 
 
-	public void setUser(int user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
 
-	public int getBook() {
+	public Book getBook() {
 		return book;
 	}
 
 
-	public void setBook(int book) {
+	public void setBook(Book book) {
 		this.book = book;
 	}
 
