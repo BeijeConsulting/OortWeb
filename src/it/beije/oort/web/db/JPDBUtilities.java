@@ -1,6 +1,7 @@
 package it.beije.oort.web.db;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -33,6 +34,21 @@ public class JPDBUtilities {
 		return book;
 	}
 	
+	public static List<Libro> exportBooks(int idUtente) {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		String jpql = "SELECT p FROM Prestito AS p WHERE id_utente = " + idUtente;
+		Query query = entityManager.createQuery(jpql);
+		List<Prestito> userLoans = query.getResultList();
+		List<Libro> userBooks = new ArrayList<Libro>();
+		for (int i = 0; i < userLoans.size(); i++) {
+			String jpql2 = "SELECT l FROM Libro AS l WHERE id = " + userLoans.get(i).getId_libro();
+			Query query2 = entityManager.createQuery(jpql2);
+			Libro book = (Libro)query2.getSingleResult();
+			userBooks.add(book);
+		}
+		return userBooks;
+	}
+	
 	public static List<Libro> exportBooks() {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
 		String jpql = "SELECT l FROM Libro l";
@@ -45,6 +61,15 @@ public class JPDBUtilities {
 	public static List<Prestito> exportLoans() {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
 		String jpql = "SELECT p FROM Prestito p";
+		Query query = entityManager.createQuery(jpql);
+		List<Prestito> loans = query.getResultList();
+		entityManager.close();
+		return loans;
+	}
+	
+	public static List<Prestito> exportLoans(int idUtente) {
+		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
+		String jpql = "SELECT p FROM Prestito p where id_utente = " + idUtente;
 		Query query = entityManager.createQuery(jpql);
 		List<Prestito> loans = query.getResultList();
 		entityManager.close();

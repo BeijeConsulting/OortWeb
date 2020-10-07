@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Nuovo Prestito</title>
+<title>NUOVO PRESTITO</title>
  <style>
         table {
           font-family: arial, sans-serif;
@@ -26,21 +26,21 @@
         </style>
 </head>
 <body>
-	<form action = "./nuovoPrestito.jsp" method = "post">
+	<form action = "./insertLoan" method = "post">
 	CERCA&nbsp;<input type="text" name="libro" value="" placeholder="inserisci titolo"/>
 	<input type="submit" value="INVIO"/><br/>
 	</form>
 	<% try { %>
-	<% if (request.getParameter("libro") == null || request.getParameter("libro").equals("")) { %>
+	<% if (session.getAttribute("libro") == null || session.getAttribute("libro").equals("")) { %>
 	<table>
           <tr>
             <th>Titolo</th>
             <th>Descrizione</th>
             <th>Anno</th>
           </tr>
-          <% List<Libro> books = JPDBUtilities.exportBooks(); 
+          <% List<Libro> books = (List<Libro>)session.getAttribute("libri");
           	for (int i = 0; i < books.size(); i++) { %>
-          		<tr><td><a href = "./InsertLoanServlet?title=<%=books.get(i).getTitolo() %>"><% out.print(books.get(i).getTitolo()); %></a></td> 
+          		<tr><td><a href = "./insertLoan?title=<%=books.get(i).getTitolo() %>"><% out.print(books.get(i).getTitolo()); %></a></td> 
           			<td><% out.print(books.get(i).getDescrizione()); %></td>
           			<td><% out.print(books.get(i).getAnno()); %></td>
           		</tr>
@@ -53,7 +53,7 @@
             <th>Descrizione</th>
             <th>Anno</th>
           </tr>
-          <% Libro book = JPDBUtilities.exportBook(request.getParameter("libro")); %>
+          <% Libro book = (Libro)session.getAttribute("libro"); %>
           		<tr> <td><a href = "./InsertLoanServlet?title=<%= book.getTitolo() %>"><% out.print(book.getTitolo()); %></a></td> 
           			<td><% out.print(book.getDescrizione()); %></td>
           			<td><% out.print(book.getAnno()); %></td>

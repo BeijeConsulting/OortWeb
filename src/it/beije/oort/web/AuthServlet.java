@@ -26,6 +26,13 @@ public class AuthServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	if (request.getParameter("logout") != null && request.getParameter("logout").equals("1")) {
+    		request.getSession().invalidate();
+    	}
+    	response.sendRedirect("login_biblioteca.jsp");
+    }
+    
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
