@@ -9,7 +9,7 @@ public class Libro implements IBibliotecaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private int id;
+    private Integer id;
 
     @Column
     private String titolo;
@@ -21,16 +21,16 @@ public class Libro implements IBibliotecaModel {
     private Date anno_pubblicazione;
 
     @Column
-    private int id_autore;
+    private Integer id_autore;
 
     @Column
-    private int id_editore;
+    private Integer id_editore;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -58,19 +58,19 @@ public class Libro implements IBibliotecaModel {
         this.anno_pubblicazione = anno_pubblicazione;
     }
 
-    public int getId_autore() {
+    public Integer getId_autore() {
         return id_autore;
     }
 
-    public void setId_autore(int id_autore) {
+    public void setId_autore(Integer id_autore) {
         this.id_autore = id_autore;
     }
 
-    public int getId_editore() {
+    public Integer getId_editore() {
         return id_editore;
     }
 
-    public void setId_editore(int id_editore) {
+    public void setId_editore(Integer id_editore) {
         this.id_editore = id_editore;
     }
 

@@ -28,12 +28,17 @@ public class BiblioViewController extends HttpServlet {
         }
 
         String type = (String) request.getSession().getAttribute("type");
+
+        System.out.println(type);
+
         if (type != null
                 && !type.equalsIgnoreCase("")) {
             switch (type) {
                 case "Libro":
+                    System.out.println("in switch case Libro");
                     lista = DatabaseManager.findAll(Libro.class);
                    // request.getSession().setAttribute("type", "Libro");
+                    System.out.println("ottenuta lista");
                     break;
                 case "Autore":
                     lista = DatabaseManager.findAll(Autore.class);
@@ -57,10 +62,5 @@ public class BiblioViewController extends HttpServlet {
             request.getSession().setAttribute("type", type);
         }
         response.sendRedirect("/OortWeb_war/biblio/biblioView.jsp");
-
-        /*
-        todo fare che la servlet carica TUTTE le liste, così poi la jsp le prende e bona
-        idea: usare mappe anziché list
-         */
     }
 }

@@ -1,5 +1,7 @@
 package it.beije.oort.web.biblioteca.model;
 
+import it.beije.oort.web.biblioteca.dbutils.DatabaseManager;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -25,6 +27,14 @@ public class Prestito implements IBibliotecaModel {
 
     @Column(name = "id_libro")
     private int idLibro;
+
+    public Utente getUtente(){
+        return DatabaseManager.getUtenteFromCF(cfUtente);
+    }
+
+    public Libro getLibro(){
+        return (Libro) DatabaseManager.select(Libro.class, idLibro);
+    }
 
     public int getId() {
         return id;

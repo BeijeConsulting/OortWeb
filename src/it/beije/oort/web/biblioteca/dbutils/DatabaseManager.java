@@ -32,7 +32,8 @@ public class DatabaseManager {
     }
 
     public static List<? extends IBibliotecaModel> findAll(Class<? extends IBibliotecaModel> classe) {
-        return em.createQuery("Select o from " + classe.getSimpleName() + " as o", IBibliotecaModel.class).getResultList();
+        return em.createQuery("Select o from " + classe.getSimpleName() + " as o", IBibliotecaModel.class)
+                .getResultList();
     }
 
     public static Utente getUtenteFromCF(String cf){

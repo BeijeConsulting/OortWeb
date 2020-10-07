@@ -23,6 +23,10 @@
 <jsp:useBean id="utente" class="it.beije.oort.web.biblioteca.model.Utente" scope="session" />
 <%
     if (utente.getCodice_fiscale() == null) response.sendRedirect("./biblioLogin.jsp");
+
+    //questo serve perché sennò alla prima richiesta si rompe?
+    //if (request.getSession().getAttribute("type") == null) request.getSession().setAttribute("type", "Libro");
+
 %>
 <%
     if (utente.isAdmin()) {
@@ -203,12 +207,10 @@
                     <%
                         for (IBibliotecaModel obj : lista){
                             Prestito a = (Prestito) obj;
-                            Libro l = (Libro) DatabaseManager.select(Libro.class, a.getIdLibro());
-                            Utente u = DatabaseManager.getUtenteFromCF(a.getCfUtente());
                     %>
                     <tr>
-                        <td><%= l.getTitolo() != null ? l.getTitolo()  : "" %></td>
-                        <td><%= u.getCodice_fiscale() != null ? u.getCodice_fiscale()  : "" %></td>
+                        <td><%= a.getLibro().getTitolo() != null ? a.getLibro().getTitolo()  : "" %></td>
+                        <td><%= a.getUtente().getCodice_fiscale() != null ? a.getUtente().getCodice_fiscale()  : "" %></td>
                         <td><%= a.getDataInizio() != null ? a.getDataInizio() : "" %></td>
                         <td><%= a.getDataFine() != null ? a.getDataFine() : ""%></td>
                         <td><%= a.getNote() != null ? a.getNote()  : ""%></td>
