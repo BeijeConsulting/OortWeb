@@ -46,10 +46,10 @@ public class Editori {
 	}
 
 	public String toString() {
-		StringBuilder builder = new StringBuilder("editore [");
-		builder.append("id: ").append(this.id)
-			.append(" - denominazione: ").append(this.denominazione)
-			.append(" - descrizione: ").append(this.descrizione).append("]");
+		StringBuilder builder = new StringBuilder("[");
+		builder.append("ID: ").append(this.id)
+			.append(" - NOME: ").append(this.denominazione)
+			.append(" - DESCRIZIONE: ").append(this.descrizione).append("]");
 
 		return builder.toString();
 	}

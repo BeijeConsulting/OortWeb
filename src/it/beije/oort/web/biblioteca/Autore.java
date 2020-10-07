@@ -81,13 +81,13 @@ import javax.persistence.Table;
 		}
 
 		public String toString() {
-			StringBuilder builder = new StringBuilder("autore [");
-			builder.append("id: ").append(this.id)
-				.append(" - nome: ").append(this.nome)
-				.append(" - cognome: ").append(this.cognome)
-				.append(" - data nascita: ").append(this.dataNascita)
-				.append(" - data morte: ").append(this.dataMorte)
-				.append(" - biografia: ").append(this.biografia).append("]");
+			StringBuilder builder = new StringBuilder("[");
+			builder.append("ID: ").append(this.id)
+				.append(" - NOME: ").append(this.nome)
+				.append(" - COGNOME: ").append(this.cognome)
+				.append(" - DATA NASCITA: ").append(this.dataNascita)
+				.append(" - DATA MORTE: ").append(this.dataMorte)
+				.append(" - BIOGRAFIA: ").append(this.biografia).append("]");
 
 			return builder.toString();
 		}

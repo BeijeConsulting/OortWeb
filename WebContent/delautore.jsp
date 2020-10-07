@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>contattiBiblio</title>
+<title>cancellaatuore</title>
 </head>
-<body background ="404error.gif">
-<h2><p align="center">IN FASE DI SVILUPPO..<a href = "conferma.jsp"><mark>HOME</mark></a></h2>
+<body>
 
 </body>
 </html>
