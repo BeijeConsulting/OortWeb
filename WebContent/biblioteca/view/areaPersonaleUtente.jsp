@@ -44,5 +44,10 @@ if (userBean == null) {
 <% }%>
 </table>
 
+<% boolean userIsAdmin = (boolean)session.getAttribute("userIsAdmin"); 
+if(userIsAdmin) {%>
+<a href="./homeBiblioteca.html">Gestione biblioteca</a>
+<%} %>
+
 </body>
 </html>

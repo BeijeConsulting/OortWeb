@@ -46,11 +46,15 @@ public class AutenticazioneServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		Utente utente = checkEmail(email);
+		
 		boolean passwordCorretta = checkPassword(utente, password);
 		if (passwordCorretta) {
 			request.getSession().setAttribute("userBean", utente);
 			List<Prestito> prestitiUtente = visualizzaPrestitiByIdUtente(utente);
 			request.getSession().setAttribute("prestitiUserBean", prestitiUtente);
+			boolean admin = utente.isAdmin();
+//			System.out.println(admin);
+			request.getSession().setAttribute("userIsAdmin", admin);
 			response.sendRedirect("areaPersonaleUtente.jsp");
 		} else {
 			request.getSession().setAttribute("errore", "CREDENZIALI ERRATE");
