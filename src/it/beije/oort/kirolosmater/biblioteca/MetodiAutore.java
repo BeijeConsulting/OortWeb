@@ -96,14 +96,14 @@ public class MetodiAutore {
 		String jpql = "SELECT c FROM Autore as c WHERE " + parameter + " LIKE '" + lineFromInput + "%'";
 		Query query = (Query) entityManager.createQuery(jpql);
 		List<Autore> autori = query.getResultList();
-		for (Autore autore : autori) {
-			System.out.println("id : " + autore.getId());			
-			System.out.println("cognome : " + autore.getCognome());
-			System.out.println("nome : " + autore.getNome());
-			System.out.println("data_nascita : " + autore.getData_nascita());
-			System.out.println("data_morte : " + autore.getData_morte());
-			System.out.println("biografia : " + autore.getBiografia());
-		}
+//		for (Autore autore : autori) {
+//			System.out.println("id : " + autore.getId());			
+//			System.out.println("cognome : " + autore.getCognome());
+//			System.out.println("nome : " + autore.getNome());
+//			System.out.println("data_nascita : " + autore.getData_nascita());
+//			System.out.println("data_morte : " + autore.getData_morte());
+//			System.out.println("biografia : " + autore.getBiografia());
+//		}
 		return autori;
 	}
 	

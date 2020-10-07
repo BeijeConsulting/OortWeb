@@ -58,7 +58,7 @@ public class MetodiLibro {
 		entityManager.close();
 	}
 	
-	public static void readRecordByStringFromInput () {
+	public static List<Libro> readRecordByStringFromInput () {
 		Scanner inputFromUser = new Scanner(System.in);
 		System.out.println("Inserisci il parametro da analizzare: ");
 		String parameter = inputFromUser.nextLine();
@@ -76,7 +76,26 @@ public class MetodiLibro {
 			System.out.println("anno : " + libro.getAnno());
 			System.out.println("descrizione : " + libro.getDescrizione());
 		}
+		return libri;
 	}
+	
+	public static List<Libro> readRecordByStringFromInput (String parametro, String stringaIniziale) {
+		String parameter = parametro;
+		String lineFromInput = stringaIniziale;
+		String jpql = "SELECT c FROM Libro as c WHERE " + parameter + " LIKE '" + lineFromInput + "%'";
+		Query query = (Query) entityManager.createQuery(jpql);
+		List<Libro> libri = query.getResultList();
+//		for (Libro libro : libri) {
+//			System.out.println("id : " + libro.getId());			
+//			System.out.println("titolo : " + libro.getTitolo());
+//			System.out.println("autore : " + libro.getAutore());
+//			System.out.println("editore : " + libro.getEditore());
+//			System.out.println("anno : " + libro.getAnno());
+//			System.out.println("descrizione : " + libro.getDescrizione());
+//		}
+		return libri;
+	}
+	
 	
 	public static Libro readRecordFromDb(int id) { 
 		Libro libro = entityManager.find(Libro.class, id);
