@@ -38,6 +38,15 @@
 						<input type="submit" value="Loans"/>
 					</form>
 				</li>
+				<% User user = (User) session.getAttribute("user");
+				if(user != null && user.isAdmin()){%>
+					<li>
+						<form action="./dispatch" method="get">
+							<input type="hidden" name="res" value="users">
+							<input type="submit" value="Users"/>
+						</form>
+					</li>
+				<%} %>
 				<li class = "rightli">
 					<form action="./dispatch" method="get">
 						<input type="hidden" name="res" value="login">
@@ -64,6 +73,9 @@
 						<% break;
 					case "login":%>
 						<%@ include file="login.jsp" %>
+						<% break;
+					case "users":%>
+						<%@ include file="users.jsp" %>
 						<% break;
 					default:
 				}
