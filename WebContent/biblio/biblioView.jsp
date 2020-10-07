@@ -1,12 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="it.beije.oort.web.biblioteca.dbutils.DatabaseManager" %>
-<%@ page import="it.beije.oort.web.biblioteca.model.*" %><%--
-  Created by IntelliJ IDEA.
-  User: Padawan09
-  Date: 06/10/2020
-  Time: 14:34
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="it.beije.oort.web.biblioteca.model.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -83,8 +77,8 @@
                     <%
                         for (IBibliotecaModel obj : lista){
                             Libro l = (Libro) obj;
-                            Autore a = (Autore) DatabaseManager.select(Autore.class, l.getId_autore());
-                            Editore e = (Editore) DatabaseManager.select(Editore.class, l.getId_editore());
+                            Autore a = l.getAutore();
+                            Editore e = l.getEditore();
                     %>
                     <tr>
                         <td><%= l.getTitolo()%></td>

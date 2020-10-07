@@ -1,5 +1,7 @@
 package it.beije.oort.web.biblioteca.model;
 
+import it.beije.oort.web.biblioteca.dbutils.DatabaseManager;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -25,6 +27,18 @@ public class Libro implements IBibliotecaModel {
 
     @Column
     private Integer id_editore;
+
+    public Autore getAutore(){
+        if (id_autore != null){
+            return (Autore) DatabaseManager.select(Autore.class, id_autore);
+        } else return null;
+    }
+
+    public Editore getEditore(){
+        if (id_editore != null){
+            return (Editore) DatabaseManager.select(Editore.class, id_editore);
+        } else return null;
+    }
 
     public Integer getId() {
         return id;

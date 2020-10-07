@@ -3,7 +3,6 @@ package it.beije.oort.web.biblioteca.controller;
 import it.beije.oort.web.biblioteca.dbutils.DatabaseManager;
 import it.beije.oort.web.biblioteca.model.Utente;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
