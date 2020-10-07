@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home</title>
+<title>Welcome page</title>
 </head>
 <body>
 
-	<% if(session.getAttribute("auth")==null) { %>
+	<% if(session.getAttribute("error")==null) { %>
 	<form action="../../Authentication" method="POST" autocomplete="off">
         <label>Email:</label>
         <input type="email" name="email" required>
@@ -19,23 +19,9 @@
         <br>
         <button type="submit" name="submit">Login</button>
     </form>
-	<% }else if((boolean)session.getAttribute("auth")) { %>
-	<header style="margin-left: 2em;">
-        <div>
-            <h1>Benvenuto <% out.print(session.getAttribute("nome")); %> !</h1>
-            <p>Seleziona l'azione che vuoi compiere tra quelle disponibili</p>
-        </div>
-    </header>
-	<div>
-		<form action="/OortWeb/PathServlet" method="POST" autocomplete="off" style="margin-left: 2em;">
-		    <button type="submit" name="req" value="download"></button>
-		    <button type="submit" name="req" value="form">Form</button>
-		    <button type="submit" name="req" value="select">Select</button>
-		</form>
-    	</div> 
-    	<% } else if (!(boolean)session.getAttribute("auth")) { %>
+	<% } else { %>
     	 <p style="color: red;"><% out.print(session.getAttribute("error")); %></p>
-    	<form action="./Authentication" method="POST" autocomplete="off">
+    	<form action="../../Authentication" method="POST" autocomplete="off">
             <label>Email:</label>
             <input type="email" name="email" required>
             <br>
@@ -44,6 +30,6 @@
             <br>
         <button type="submit" name="submit">Login</button>
         </form>
- 	<% } %>
+ 	<% session.removeAttribute("error"); } %>
 </body>
 </html>

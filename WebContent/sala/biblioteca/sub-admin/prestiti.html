@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+    <title>Admin page</title>
+    <script>
+    function toggle(elem) {
+        var x = document.getElementById(elem);
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
+</head>
+<body>
+    <header style="margin-left: 2em; display: flex;">
+        <div style="width: 70%;"> 
+            <h1>Operazioni su tabella "Prestiti"</h1>
+        <p>Clicca sulla scritta che ti interessa per visualizzare il form corrispondente.</p>
+        </div>
+       <div style="width: 30%;"> 
+            <form action="/OortWeb/Admin" method="GET">
+                <button type="submit" name="req" value="homeadmin">Torna a Admin homepage</button>
+            </form>
+        </div>
+    </header>
+    <div style="margin-left: 2em;">
+        <div>
+            <h3 onclick="toggle('insert')">Inserimento nuovo prestito:</h3>
+            <form id="insert" action="/OortWeb/Prestiti" style="display: none;">
+            	<input type="hidden" name="op" value="insert">
+            	<label>Inserisci l'id dell'utente che sta effettuando il prestito:</label>
+                <input type="number" name="id_utente">
+                <label>Inserisci l'id del libro che si sta prestando:</label>
+                <input type="number" name="id_libro">
+                <label>Inserisci la data di inizio del prestito:</label>
+                <input type="date" name="data_inizio">
+                <label>Inserisci la data di fine del prestito(se terminato):</label>
+                <input type="date" name="data_fine">
+                <label>Inserisci eventuali note:</label>
+                <input type="text" name="note">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div>
+            <h3 onclick="toggle('delete')">Cancellazione prestito:</h3>
+            <form id="delete" action="/OortWeb/Prestiti" style="display: none;">
+            	<input type="hidden" name="op" value="delete">
+            	<label>Inserisci l'id (id_prestito) dell'elemento da cancellare:</label>
+                <input type="number" name="id_prestito" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div>
+            <h3 onclick="toggle('update')">Modifica prestito:</h3>
+            <form id="update" action="/OortWeb/Prestiti" style="display: none;">
+            	<input type="hidden" name="op" value="update">
+            	<label>Inserisci l'id (id_prestito) dell'elemento da modificare</label>
+            	<input type="number" name="id_prestito">
+            	<label>Scegli il campo da modificare:</label>
+            	<input type="text" name="field">
+            	<label>Inserisci il nuovo valore:</label>
+                <input type="text" name="value">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -17,7 +17,7 @@ import it.beije.oort.sala.web.db.JPAToolset;
 /**
  * Servlet implementation class Biblioteca
  */
-@WebServlet("/Authentication")
+@WebServlet
 public class Authentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,7 +31,11 @@ public class Authentication extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-    	response.getWriter().append("TROVATO AUTHENTICATION");
+    	if(request.getParameter("logout")!=null && request.getParameter("logout").equals("true")) {
+    		HttpSession session = request.getSession();
+    		session.invalidate();
+    	}
+    	response.sendRedirect("/OortWeb/sala/biblioteca/index.jsp");
     }
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -44,17 +48,19 @@ public class Authentication extends HttpServlet {
 		Utente u = checkLogin(email, password);
 		if(u!=null) {
 			session.setAttribute("nome", u.getNome());
+			session.setAttribute("admin", u.isAdmin());
+			session.setAttribute("userid", u.getId_utente());
 			session.setAttribute("auth", true);
+			response.sendRedirect("/OortWeb/sala/biblioteca/user.jsp");
 		} else {
 			session.setAttribute("auth", false);
-			session.setAttribute("error", "Email o password errati");
+			session.setAttribute("error", "ERRORE: Email o password errati");
+			response.sendRedirect("/OortWeb/sala/biblioteca/index.jsp");
 		}
-		response.sendRedirect("/OortWeb/sala/biblioteca/index.jsp");
 	}
 
 	private Utente checkLogin(String email, String password) {
 		List<Object> temp = JPAToolset.selectJPA(email, password);
-
 		if(temp.size()==1) {
 			return (Utente)temp.get(0);
 		}

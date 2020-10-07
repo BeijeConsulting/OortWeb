@@ -60,6 +60,15 @@ public class JPAToolset {
 		return temp;
 	}
 	
+	public static List<Object> selectJPA(String table,String field, Integer id) {
+		String jpql = "SELECT c FROM "+table+" AS c WHERE "+field+" = :id";
+		EntityManager entityManager = JPAFactory.createEntityManager();
+		Query query = entityManager.createQuery(jpql).setParameter("id", id);
+		List<Object> temp = query.getResultList();
+		entityManager.close();
+		return temp;
+	}
+	
 	public static void deleteJPA(String table, Integer id) {
 		String jpql = "DELETE FROM "+table+" WHERE id_"+table.toLowerCase()+" = :id";
 		EntityManager entityManager = JPAFactory.createEntityManager();
