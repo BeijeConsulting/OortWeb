@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="it.beije.oort.bm.library.Author" %>
 <%@ page import="it.beije.oort.bm.library.User" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,35 +10,27 @@
 	<title>Insert title here</title>
 </head>
 	<body>
-		<%User u_bscope = (User)session.getAttribute("user"); 
-			if(u_bscope == null){%>
+		<%User u_ascope = (User)session.getAttribute("user"); 
+			if(u_ascope == null){%>
 				Please login first.
 			<%} else { %>
 				<table>
 						<tr>
 							<th>Id</th>
-							<th>Title</th>
-							<th>Author</th>
-							<th>Publisher</th>
-							<th>Year</th>
-							<th>Description</th>
+							<th>Surname</th>
+							<th>Name</th>
+							<th>Date of birth</th>
+							<th>Date of death</th>
+							<th>Biography</th>
 						</tr>
-						<% List<Author> list = session.getAttribute("Authors");
-						for(Author a : list){%>
+						<%for(Author a : (List<Author>)session.getAttribute("data_list")){%>
 							<tr>
-								<td><%= b.getId() %></td>
-								<td><%= b.getTitle() %> </td>
-								<% Author a = new Author();
-								a.setId(b.getAuthor());
-								a = db.searchRecord(Author.class, a).get(0);
-								String author_name = a.getName() + " " + a.getSurname();%>
-								<td><%= author_name %></td>
-								<% Publisher p = new Publisher();
-								p.setId(b.getPublisher());
-								p = db.searchRecord(Publisher.class, p).get(0);%>
-								<td><%= p.getName() %></td>
-								<td><%= b.getYear() %></td>
-								<td><%= b.getDescription() %></td>
+								<td><%= a.getId() %></td>
+								<td><%= a.getSurname() %> </td>
+								<td><%= a.getName() %></td>
+								<td><%= a.getDate_of_birth() %></td>
+								<td><%= a.getDate_of_death() %></td>
+								<td><%= a.getBiography() %></td>
 							</tr>
 						<%} %>
 				</table>

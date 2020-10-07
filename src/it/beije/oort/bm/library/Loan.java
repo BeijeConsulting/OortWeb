@@ -15,10 +15,10 @@ public class Loan implements Comparable<Loan>, Serializable {
 	@Column(name = "id_loan")
 	private int id;
 	@ManyToOne(optional=false)
-	@Column
+	@JoinColumn(name = "user", referencedColumnName = "id_user")
 	private User user;
 	@ManyToOne(optional=false)
-	@Column
+	@JoinColumn(name = "book", referencedColumnName = "id_book")
 	private Book book;
 	@Column
 	private String start_date;

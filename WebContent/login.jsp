@@ -23,13 +23,13 @@
 				<input type="submit" value="Login"/>
 			</form>
 		<%} else { 
-			User u_lscope = (User)session.getAttribute("user");%>
+			User u_login_scope = (User)session.getAttribute("user");%>
 			<p>Autentication successfull!</p><br>
-			First name: <%= u_lscope.getName() %> <br>
-			Last name: <%= u_lscope.getSurname() %> <br>
-			Address: <%= u_lscope.getAddress() %> <br>
-			Phone n°: <%= u_lscope.getPhone() %> <br>
-			E-mail: <%= u_lscope.getEmail() %> <br>
+			First name: <%= u_login_scope.getName() %> <br>
+			Last name: <%= u_login_scope.getSurname() %> <br>
+			Address: <%= u_login_scope.getAddress() %> <br>
+			Phone n°: <%= u_login_scope.getPhone() %> <br>
+			E-mail: <%= u_login_scope.getEmail() %> <br>
 		<%} %>
 	</body>
 </html>

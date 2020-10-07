@@ -18,10 +18,10 @@ public class Book implements Comparable<Book>, Serializable{
 	@Column
 	private String description;
 	@ManyToOne(optional=false)
-	@Column
+	@JoinColumn(name = "author", referencedColumnName = "id_author")
 	private Author author;
 	@ManyToOne(optional=false)
-	@Column
+	@JoinColumn(name = "publisher", referencedColumnName = "id_publisher")
 	private Publisher publisher;
 	@Column
 	private String year;

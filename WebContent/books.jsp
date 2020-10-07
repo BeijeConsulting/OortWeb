@@ -5,7 +5,6 @@
 <%@ page import="it.beije.oort.bm.library.Author" %>
 <%@ page import="it.beije.oort.bm.library.Publisher" %>
 <%@ page import="java.util.List" %>
-<%@ page import="it.beije.oort.bm.library.database.*" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,21 +25,12 @@
 						<th>Year</th>
 						<th>Description</th>
 					</tr>
-					<% List<Book> list = (List<Book>)session.getAttribute("books");
-// 					Transfer this on servlet
-					for(Book b : list){%> 
+					<% for(Book b : (List<Book>)session.getAttribute("data_list")){%> 
 						<tr>
 							<td><%= b.getId() %></td>
 							<td><%= b.getTitle() %> </td>
-							<% Author a = new Author();
-							a.setId(b.getAuthor());
-							a = db.searchRecord(Author.class, a).get(0);
-							String author_name = a.getName() + " " + a.getSurname();%>
-							<td><%= author_name %></td>
-							<% Publisher p = new Publisher();
-							p.setId(b.getPublisher());
-							p = db.searchRecord(Publisher.class, p).get(0);%>
-							<td><%= p.getName() %></td>
+							<td><%= b.getAuthor().getName() + " " + b.getAuthor().getSurname() %></td>
+							<td><%= b.getPublisher().getName() %></td>
 							<td><%= b.getYear() %></td>
 							<td><%= b.getDescription() %></td>
 						</tr>
