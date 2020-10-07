@@ -1,4 +1,4 @@
-package it.beije.oort.kirolosmater.biblioteca;
+package it.beije.oort.kirolosmater.biblioteca.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

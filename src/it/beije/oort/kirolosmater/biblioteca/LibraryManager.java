@@ -11,7 +11,7 @@ import javax.persistence.Persistence;
 
 import org.hibernate.Session;
 
-
+import it.beije.oort.kirolosmater.biblioteca.model.JPAEntityManagerSingleton;
 import it.beije.oort.rubrica.HybSessionFactory;
 
 public class LibraryManager {

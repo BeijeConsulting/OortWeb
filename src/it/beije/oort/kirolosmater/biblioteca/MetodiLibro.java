@@ -10,6 +10,10 @@ import javax.persistence.EntityTransaction;
 
 import org.hibernate.query.Query;
 
+import it.beije.oort.kirolosmater.biblioteca.model.Autore;
+import it.beije.oort.kirolosmater.biblioteca.model.JPAEntityManagerSingleton;
+import it.beije.oort.kirolosmater.biblioteca.model.Libro;
+
 public class MetodiLibro {
 	static EntityManager entityManager = JPAEntityManagerSingleton.getEntityManager(libraryPersistenceUnit);
 	public static void menuLibro () {

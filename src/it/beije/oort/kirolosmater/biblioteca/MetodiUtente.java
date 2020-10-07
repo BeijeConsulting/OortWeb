@@ -9,6 +9,9 @@ import javax.persistence.EntityManager;
 
 import org.hibernate.query.Query;
 
+import it.beije.oort.kirolosmater.biblioteca.model.JPAEntityManagerSingleton;
+import it.beije.oort.kirolosmater.biblioteca.model.Utente;
+
 public class MetodiUtente {
 	
 	static EntityManager entityManager = JPAEntityManagerSingleton.getEntityManager(libraryPersistenceUnit);

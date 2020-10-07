@@ -2,7 +2,7 @@ package it.beije.oort.kirolosmater.rubrica;
 
 import java.io.IOException;
 
-import it.beije.oort.kirolosmater.biblioteca.JPAEntityManagerSingleton;
+import it.beije.oort.kirolosmater.biblioteca.model.JPAEntityManagerSingleton;
 import it.beije.oort.rubrica.*;
 import static it.beije.oort.kirolosmater.rubrica.RubricaJpa.*;
 

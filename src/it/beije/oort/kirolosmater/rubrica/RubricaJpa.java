@@ -7,8 +7,8 @@ import javax.persistence.EntityManager;
 
 import org.hibernate.query.Query;
 
-import it.beije.oort.kirolosmater.biblioteca.Autore;
-import it.beije.oort.kirolosmater.biblioteca.JPAEntityManagerSingleton;
+import it.beije.oort.kirolosmater.biblioteca.model.Autore;
+import it.beije.oort.kirolosmater.biblioteca.model.JPAEntityManagerSingleton;
 import it.beije.oort.rubrica.Contatto;
 
 public class RubricaJpa {
