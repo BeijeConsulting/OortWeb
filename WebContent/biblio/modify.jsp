@@ -116,27 +116,29 @@
                 <%
                         break;
                     case "Autore":
+                        Autore autoreMod = (Autore) obj;
                 %>
                 <div class="single-input">
                     <label for="nomeAutore">Nome: </label>
-                    <input type="text" name="nomeAutore" id="nomeAutore">
+                    <input type="text" name="nomeAutore" id="nomeAutore" placeholder="<%=autoreMod.getNome()%>">
                 </div>
                 <div class="single-input">
                     <label for="cognomeAutore">Descrizione: </label>
-                    <input type="text" name="cognomeAutore" id="cognomeAutore">
+                    <input type="text" name="cognomeAutore" id="cognomeAutore" placeholder="<%=autoreMod.getCognome()%>">
                 </div>
 
                 <div class="single-input">
                     <label for="autDataNasc">Anno di Nascita: </label>
-                    <input type="date" name="autDataNasc" id="autDataNasc">
+                    <input type="date" name="autDataNasc" id="autDataNasc" placeholder="<%=autoreMod.getData_nascita()%>">
                 </div>
                 <div class="single-input">
                     <label for="autDataMorte">Anno di Morte: </label>
-                    <input type="date" name="autDataMorte" id="autDataMorte">
+                    <input type="date" name="autDataMorte" id="autDataMorte" placeholder="<%=autoreMod.getData_morte()%>">
                 </div>
                 <div class="single-input">
                     <label for="bio">Biografia </label>
-                    <input type="text" name="bio" id="bio">
+                    <textarea name="bio" id="bio" placeholder="<%=autoreMod.getBiografia()%>">
+                    </textarea>
                 </div>
                 <%
                         break;

@@ -1,6 +1,7 @@
 package it.beije.oort.web.biblioteca.controller;
 
 import it.beije.oort.web.biblioteca.dbutils.DatabaseManager;
+import it.beije.oort.web.biblioteca.model.Autore;
 import it.beije.oort.web.biblioteca.model.Libro;
 
 import javax.servlet.ServletException;
@@ -26,9 +27,9 @@ public class BiblioUpdaterServlet extends HttpServlet {
 //            case "Editore":
 //                createEditore(request);
 //                break;
-//            case "Autore":
-//                createAutore(request);
-//                break;
+            case "Autore":
+                updateAutore(request);
+                break;
 //            case "Utente":
 //                createUtente(request);
 //                break;
@@ -37,7 +38,36 @@ public class BiblioUpdaterServlet extends HttpServlet {
 //                break;
         }
 //        response.sendRedirect("/OortWeb_war/biblio/biblioAdd.jsp");
-        System.out.print("modificato");
+        response.getWriter().println("modificato!");
+    }
+
+    private void updateAutore(HttpServletRequest request) {
+        Integer id = (Integer) request.getSession().getAttribute("modifyMeID");
+        String nome = request.getParameter("nomeAutore");
+        String cognome = request.getParameter("cognomeAutore");
+        String dataNasc = request.getParameter("autDataNasc");
+        String dataMort = request.getParameter("autDataMorte");
+        String bio = request.getParameter("bio");
+
+        Autore a = (Autore) DatabaseManager.select(Autore.class, id);
+
+        if (nome != null && !nome.equalsIgnoreCase("")){
+            a.setNome(nome);
+        }
+        if (cognome != null && !cognome.equalsIgnoreCase("")){
+            a.setCognome(cognome);
+        }
+        if (dataNasc != null && !dataNasc.equalsIgnoreCase("")){
+            a.setData_nascita(Date.valueOf(dataNasc));
+        }
+        if (dataMort != null && !dataMort.equalsIgnoreCase("")){
+            a.setData_morte(Date.valueOf(dataMort));
+        }
+        if (bio != null && !bio.equalsIgnoreCase("")){
+            a.setBiografia(bio);
+        }
+
+        DatabaseManager.insert(a);
     }
 
     private void updateLibro(HttpServletRequest request) {

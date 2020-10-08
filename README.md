@@ -27,4 +27,4 @@ Login: Admin e Utente. Admin fa tutto, Utente per ora guarda solo i suoi prestit
 Ricerca: Autore, Libro
 Visualizza: Tutto
 Aggiungi: Tutto
-Modifica: Solo libro, funziona al 100% ma ho rotto il css (c'è una matita nella sezione visualizza accanto all'oggetto)
+Modifica: Autore e Libro, funziona al 100% ma ho rotto il css (c'è una matita nella sezione visualizza accanto all'oggetto)
