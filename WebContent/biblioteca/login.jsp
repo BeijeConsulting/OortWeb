@@ -21,7 +21,7 @@ request.getSession().removeAttribute("errore");
 <div class="titolo">Login</div>
 <div class="descrizione">Effettua il login per utilizzare le funzionalità del sito.</div>
 <div class="form">
-	<form action="./LoginBibliotecaServlet" method="POST">
+	<form action="./Login" method="POST">
 		<fieldset>
 			<div class="campi">
 				<label for="emailInput">Email:</label><input id="emailInput" type="email" name="email">
@@ -29,7 +29,7 @@ request.getSession().removeAttribute("errore");
 			</div>
 			<div class="formButtons">
 				<button class="buttonReset" type="reset">Resetta campi</button>
-				<button name="submitContatto" class="buttonSubmit" type="submit">Cerca</button>
+				<button name="submitContatto" class="buttonSubmit" type="submit">Login</button>
 			</div>
 		</fieldset>
 	</form>

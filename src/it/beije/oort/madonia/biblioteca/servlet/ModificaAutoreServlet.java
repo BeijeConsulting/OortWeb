@@ -10,15 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import it.beije.oort.madonia.biblioteca.ebeans.Utente;
 
 /**
- * Servlet implementation class GestioneAutoreServlet
+ * Servlet implementation class ModificaAutoreServlet
  */
-@WebServlet("/biblioteca/InserimentoAutore")
-public class InserimentoAutoreServlet extends HttpServlet {
+@WebServlet("/biblioteca/ModificaAutore")
+public class ModificaAutoreServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InserimentoAutoreServlet() {
+    public ModificaAutoreServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,15 +36,8 @@ public class InserimentoAutoreServlet extends HttpServlet {
     		request.getSession().setAttribute("errore", "Non hai i permessi per visualizzare questi contenuti");
     		response.sendRedirect("./login.jsp");
     	} else {
-    		response.sendRedirect("./InserimentoAutore.jsp");
+    		response.sendRedirect("./ModificaAutore.jsp");
     	}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 	}
 
 }

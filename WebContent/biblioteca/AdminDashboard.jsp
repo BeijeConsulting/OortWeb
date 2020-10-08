@@ -24,7 +24,7 @@ if (utenteAttivo.getId() == 0) {
 	</div>
 	<div class="form">
 		<div class="formButtons">
-			<button class="buttonNavigation" onclick="location.href='./InserimentoAutore.jsp'" type="button">Inserimento Autore</button>
+			<button class="buttonNavigation" onclick="location.href='./InserimentoAutore'" type="button">Inserimento Autore</button>
 		<!-- 	<button class="buttonNavigation" type="button">Modifica e cancellazione contatti</button>
 			<button class="buttonNavigation" onclick="location.href='./InserisciContatto.jsp'" type="button">Inserimento contatti</button>
 			<button class="buttonNavigation" type="button">Export dati</button> -->

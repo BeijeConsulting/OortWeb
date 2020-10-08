@@ -14,7 +14,7 @@ import it.beije.oort.madonia.db.DatabaseManagerRubrica;
 /**
  * Servlet implementation class LoginBibliotecaServlet
  */
-@WebServlet("/biblioteca/LoginBibliotecaServlet")
+@WebServlet("/biblioteca/Login")
 public class LoginBibliotecaServlet extends HttpServlet {
 	
        
@@ -24,7 +24,11 @@ public class LoginBibliotecaServlet extends HttpServlet {
     public LoginBibliotecaServlet() {
         super();
     }
-
+    
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	response.sendRedirect("./login.jsp");
+    }
+    
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -37,7 +41,7 @@ public class LoginBibliotecaServlet extends HttpServlet {
 			if (utente.isAdmin()) {
 				response.sendRedirect("./AdminDashboard.jsp");
 			} else {
-				response.sendRedirect("./Prestiti.jsp");
+				response.sendRedirect("./Prestiti");
 			}
 		} else {
 			request.getSession().setAttribute("errore", "Credenziali errate.");

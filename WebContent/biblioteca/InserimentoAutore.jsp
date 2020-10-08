@@ -13,14 +13,6 @@
 <jsp:useBean id="utenteAttivo" class="it.beije.oort.madonia.biblioteca.ebeans.Utente" scope="session" />
 
 <%
-if (utenteAttivo.getId() == 0) {
-	request.getSession().setAttribute("errore", "Devi effettuare il login prima di accedere ai contenuti");
-	response.sendRedirect("./login.jsp");
-} else if (! utenteAttivo.isAdmin()) {
-	request.getSession().setAttribute("errore", "Non hai i permessi per accedere alla pagina, sei stato reindirizzato su questa pagina.");
-	response.sendRedirect("./Prestiti.jsp");
-}
-
 String erroreMsg = (String) request.getSession().getAttribute("errore");
 String successMsg = (String) request.getSession().getAttribute("success");
 if (erroreMsg != null && erroreMsg.length() > 0) {
@@ -36,12 +28,15 @@ if (successMsg != null && successMsg.length() > 0) {
 <%
 request.getSession().removeAttribute("success");
 }
+
+if (utenteAttivo != null && utenteAttivo.isAdmin()) {
 %>
 
-<div class="titolo">Inserimento autore</div>
-<div class="descrizione">Metti i dati per poter inserire l'autore</div>
+<div class="titolo">Inserimento Autore</div>
+<div class="descrizione">Inserisci un autore</div>
+<div></div>
 <div class="form borderForm">
-	<form action="./InserimentoAutoreServlet" method="POST">
+	<form action="./InserimentoAutoreForm" method="POST">
 		<fieldset>
 			<div class="campi">
 				<label for="nomeInputInserimento">Nome:</label><input id="nomeInputInserimento" type="text" name="nome"><br>
@@ -52,10 +47,13 @@ request.getSession().removeAttribute("success");
 			</div>
 			<div class="formButtons">
 				<button class="buttonReset" type="reset">Resetta campi</button>
-				<button name="submitInserimento" class="buttonSubmit" type="submit">Inserisci</button>
+				<button name="submitInserimento" class="buttonSubmit" type="submit" value="true">Inserisci</button>
 			</div>
 		</fieldset>
 	</form>
 </div>
+<%
+}
+%>
 </body>
 </html>

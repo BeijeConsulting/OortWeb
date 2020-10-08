@@ -8,5 +8,6 @@
 </head>
 <body>
 <a href="./rubrica/MenuPrincipale.jsp">Rubrica</a>
+<a href="./biblioteca/login.jsp">Biblioteca</a>
 </body>
 </html>

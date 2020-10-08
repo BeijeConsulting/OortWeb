@@ -64,6 +64,24 @@ public class DatabaseManagerBiblioteca {
 		}
 	}
 	
+	public static void modifica(Autore autore) {
+		EntityManager eManager = JpaEntityManagerFactory.createEntityManager(persistenceUnitName);
+		try {
+			Autore autoreModifica = eManager.find(Autore.class, autore.getId());
+			autoreModifica.setNome(autore.getNome());
+			autoreModifica.setCognome(autore.getCognome());
+			autoreModifica.setDataNascita(autore.getDataNascita());
+			autoreModifica.setDataMorte(autore.getDataMorte());
+			autoreModifica.setBiografia(autore.getBiografia());
+			
+			eManager.getTransaction().begin();
+			eManager.persist(autoreModifica);
+			eManager.getTransaction().commit();
+		} finally {
+			eManager.close();
+		}
+	}
+	
 	public static Libro trovaLibro(int id) {
 		EntityManager eManager = null;
 		Libro libro = null;
@@ -77,6 +95,21 @@ public class DatabaseManagerBiblioteca {
 		}
 		
 		return libro;
+	}
+	
+	public static Autore trovaAutore(int id) {
+		EntityManager eManager = null;
+		Autore autore = null;
+		try {
+			eManager = JpaEntityManagerFactory.createEntityManager(persistenceUnitName);
+			autore = eManager.find(Autore.class, id);
+		} catch(NoResultException e) {
+			autore = null;
+		} finally {
+			eManager.close();
+		}
+		
+		return autore;
 	}
 	
 	public static List<Prestito> trovaPrestiti(Utente utente) {
