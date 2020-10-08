@@ -4,19 +4,21 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>InsertLibro</title>
+<title>Insert title here</title>
 </head>
 <body background="sfondo.jpg">
-	<h1>Inserire nuovo libro!</h1>
+	<h1>Inserire nuovo utente!</h1>
 	<a href="conferma.jsp"><mark>HOME</mark></a> <a href="contattibiblio.jsp"><mark>CONTATTI</mark></a> <a href="help.jsp"><mark>HELP</mark></a><br><br>
-		<form action="./inslibro" method="post">
+		<form action="./insUtente" method="post">
 	<fieldset>
-			<legend><h3>Dati libro: </h3></legend><br>
-			<p align ="left"><label>Titolo: <input name="titolo" type="text"> 
-			Descrizione: <input name="descrizione" type="text">
-			Autore(Num): <input name="autore" type="text">
-			Editore(Num): <input name="editore" type="text">
-			Anno: <input name="anno" type="text"></label></p>
+			<legend><h3>Dati utente: </h3></legend><br>
+			<label>Nome: <input name="nome" type="text">
+			Cognome: <input name="cognome" type="text">
+			Codice Fiscale : <input name="codice_fiscale" type="text"></label><br><br><br>
+			<label>Indirizzo: <input name="indirizzo" type="text">
+			Telefono: <input name="telefono" type="text"></label><br><br><br>
+			<label>Email: <input name="email" type="text">
+			Password: <input name="password" type="text"></label>
 	</fieldset>
 			<br>
 			<button type ="submit"> Conferma e invia!</button> 
@@ -25,6 +27,5 @@
 		<form action="conferma.jsp">	
 			<button type ="submit"> Annulla e torna al menu'!</button>
 		</form>
-
 </body>
 </html>

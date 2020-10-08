@@ -104,14 +104,14 @@ public class Utenti {
 	}
 
 	public String toString() {
-		StringBuilder builder = new StringBuilder("utente [");
-		builder.append("id: ").append(this.id)
-			.append(" - nome: ").append(this.nome)
-			.append(" - cognome: ").append(this.cognome)
-			.append(" - codice fiscale: ").append(this.codiceFiscale)
-			.append(" - indirizzo: ").append(this.indirizzo)
-			.append(" - email: ").append(this.email)
-			.append(" - telefono: ").append(this.telefono).append("]");
+		StringBuilder builder = new StringBuilder("[");
+		builder.append("ID: ").append(this.id)
+			.append(" - Nome: ").append(this.nome)
+			.append(" - Cognome: ").append(this.cognome)
+			.append(" - Codice Fiscale: ").append(this.codiceFiscale)
+			.append(" - Indirizzo: ").append(this.indirizzo)
+			.append(" - Email: ").append(this.email)
+			.append(" - Telefono: ").append(this.telefono).append("]");
 
 		return builder.toString();
 	}

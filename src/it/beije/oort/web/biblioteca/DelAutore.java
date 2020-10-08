@@ -11,17 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.beije.oort.web.biblioteca.SingletonJPABiblio;
-
-
-@WebServlet("/delLibro")
-public class DelLibro extends HttpServlet {
+@WebServlet("/delAutore")
+public class DelAutore extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
- 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-						
-		StringBuilder builder = new StringBuilder("<h3>Libro cancellato correttamente!</h3> <br>");
+		
+		StringBuilder builder = new StringBuilder("<h3>Autore cancellato correttamente!</h3> <br>");
 		String id_value = request.getParameter("id");
 				
 				
@@ -29,7 +24,7 @@ public class DelLibro extends HttpServlet {
 		EntityManager entityManager = SingletonJPABiblio.openEntity();
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
-		String jpql = ("SELECT l FROM Libri as l WHERE id = " + id_value) ;
+		String jpql = ("SELECT a FROM Autore as a WHERE id = " + id_value) ;
 		Query query = entityManager.createQuery(jpql);
 			entityManager.remove(query.getResultList().get(0));
 		entityManager.getTransaction().commit();
@@ -56,6 +51,5 @@ public class DelLibro extends HttpServlet {
 		response.getWriter().append(b);
 				
 	}
-}
-	
 
+}

@@ -39,8 +39,8 @@ if (userBean == null) {
 %>
 <p align="right"><mark><% out.print(time);%></mark></p>
 <h3><p align="left"> Operazione che puoi effettuare:   <img src="https://www.gifanimate.com/data/media/53/libro-immagine-animata-0050.gif" border="0" alt="libro-immagine-animata-0050" /></h3>
-<h4><p align ="left">1) Visualizzare <a href="./libri">LIBRI</a> - <a href="./autori">AUTORI</a> -  <a href="./editori">EDITORI</a></h4>
-<h4><p align ="left">2) Inserire un nuovo: <a href="./redirectl">LIBRO</a> - <a href="./redirecta">AUTORE</a> - <a href="./redirecte">EDITORE</a></h4>
+<h4><p align ="left">1) Visualizzare <a href="./libri">LIBRI</a> - <a href="./autori">AUTORI</a> -  <a href="./editori">EDITORI</a> - <a href="./prestiti">PRESTITI</a> - <a href="./utenti">UTENTI</a></h4>
+<h4><p align ="left">2) Inserire un nuovo: <a href="./redirectl">LIBRO</a> - <a href="./redirecta">AUTORE</a> - <a href="./redirecte">EDITORE</a> - <a href="./smistaP">PRESTITO</a> - <a href="./smistaU">UTENTE</a></h4>
 <h4><p align ="left">3) Eliminare un: <a href="./nodeL">LIBRO</a> - <a href="./nodeA">AUTORE</a> - <a href="./nodeE">EDITORE</a></h4>
 <p align="right"><img src="http://i.stack.imgur.com/SBv4T.gif" alt="this slowpoke moves"  width=250/>
 

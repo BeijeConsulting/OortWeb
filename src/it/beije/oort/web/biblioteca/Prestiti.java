@@ -81,13 +81,13 @@ public class Prestiti {
 	}
 
 	public String toString() {
-		StringBuilder builder = new StringBuilder("prestito [");
-		builder.append("id: ").append(this.id)
-			.append(" - id_libro: ").append(this.libro)
-			.append(" - id_utente: ").append(this.utente)
-			.append(" - data inizio: ").append(this.dataInizio)
-			.append(" - data fine: ").append(this.dataFine)
-			.append(" - note: ").append(this.note).append("]");
+		StringBuilder builder = new StringBuilder(" [");
+		builder.append("ID: ").append(this.id)
+			.append(" - ID Libro: ").append(this.libro)
+			.append(" - ID Utente: ").append(this.utente)
+			.append(" -Data inizio: ").append(this.dataInizio)
+			.append(" - Data fine: ").append(this.dataFine)
+			.append(" - Note: ").append(this.note).append("]");
 
 		return builder.toString();
 	}

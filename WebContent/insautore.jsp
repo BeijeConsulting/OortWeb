@@ -8,6 +8,7 @@
 </head>
 <body background="sfondo.jpg">
 	<h1>Inserire nuovo autore!</h1>
+	<a href="conferma.jsp"><mark>HOME</mark></a> <a href="contattibiblio.jsp"><mark>CONTATTI</mark></a> <a href="help.jsp"><mark>HELP</mark></a><br><br>
 		<form action="./insautore" method="post">
 	<fieldset>
 			<legend><h3>Dati autore: </h3></legend><br>
