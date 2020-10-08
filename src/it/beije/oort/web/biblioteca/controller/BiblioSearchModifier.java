@@ -16,6 +16,7 @@ public class BiblioSearchModifier  extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.getSession().removeAttribute("results");
         if (request.getParameter("searchType") != null){
             request.getSession().setAttribute("searchType", request.getParameter("searchType"));
 

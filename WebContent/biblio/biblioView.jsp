@@ -99,13 +99,18 @@
                             }
                         %></td>
                         <td><%= l.getDescrizione() != null ? l.getDescrizione() : ""%></td>
-                        <td>
-                            <a id="open-modal-<%= l.getId()%>"
-                               onclick="showSinossi('modal-<%= l.getId()%>', 'open-modal-<%= l.getId()%>', <%= l.getId()%>)">
-                                <i class="far fa-file-alt"></i>
-                            </a>
-                        </td>
-                        <td><a href="../destroy?classe=<%=l.getClass().getSimpleName()%>&id=<%=l.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
+                        <!-- Non funziona al 100% -->
+<%--                        <td>--%>
+<%--                            <a id="open-modal-<%= l.getId()%>"--%>
+<%--                               onclick="showSinossi('modal-<%= l.getId()%>', 'open-modal-<%= l.getId()%>', <%= l.getId()%>)">--%>
+<%--                                <i class="far fa-file-alt"></i>--%>
+<%--                            </a>--%>
+<%--                        </td>--%>
+                        <td><a href="../modify?classe=<%=l.getClass().getSimpleName()%>&id=<%=l.getId()%>">
+                            <i class="fas fa-pen"></i>
+                        </a></td>
+                        <td><a href="../destroy?classe=<%=l.getClass().getSimpleName()%>&id=<%=l.getId()%>">
+                            <i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     <%
                         }
@@ -131,6 +136,9 @@
                         <td><%= a.getData_nascita() != null ? a.getData_nascita() : "" %></td>
                         <td><%= a.getData_morte() != null ? a.getData_morte() : ""%></td>
                         <td><%= a.getBiografia() != null ? a.getBiografia()  : ""%></td>
+                        <td><a href="../modify?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getId()%>">
+                            <i class="fas fa-pen"></i>
+                        </a></td>
                         <td><a href="../destroy?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     <%
@@ -151,6 +159,9 @@
                     <tr>
                         <td><%= e.getNome() != null ? e.getNome() : "" %></td>
                         <td><%= e.getDescrizione() != null ? e.getDescrizione() : "" %></td>
+                        <td><a href="../modify?classe=<%=e.getClass().getSimpleName()%>&id=<%=e.getId()%>">
+                            <i class="fas fa-pen"></i>
+                        </a></td>
                         <td><a href="../destroy?classe=<%=e.getClass().getSimpleName()%>&id=<%=e.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     <%
@@ -179,6 +190,9 @@
                         <td><%= a.getCellulare() != null ? a.getCellulare() : ""%></td>
                         <td><%= a.getIndirizzo() != null ? a.getIndirizzo() : ""%></td>
                         <td><%= a.getCodice_fiscale() != null ? a.getCodice_fiscale()  : ""%></td>
+                        <td><a href="../modify?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getCodice_fiscale()%>">
+                            <i class="fas fa-pen"></i>
+                        </a></td>
                         <td><a href="../destroy?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getCodice_fiscale()%>"><i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     <%
@@ -205,6 +219,9 @@
                         <td><%= a.getDataInizio() != null ? a.getDataInizio() : "" %></td>
                         <td><%= a.getDataFine() != null ? a.getDataFine() : ""%></td>
                         <td><%= a.getNote() != null ? a.getNote()  : ""%></td>
+                        <td><a href="../modify?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getId()%>">
+                            <i class="fas fa-pen"></i>
+                        </a></td>
                         <td><a href="../destroy?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     <%

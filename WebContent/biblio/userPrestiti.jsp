@@ -46,17 +46,15 @@
                 <!-- tabella riempita da Java -->
                 <%
                     List<Prestito> prestiti = DatabaseManager.getPrestitiFromUser(utente.getCodice_fiscale());
-                    System.out.println(prestiti);
                     if (prestiti != null && !prestiti.isEmpty()){
                         for (Prestito p : prestiti){
-                            System.out.println(p);
-                            Libro libro = (Libro)DatabaseManager.select(Libro.class, p.getIdLibro());
-                            Autore autore = (Autore) DatabaseManager.select(Autore.class, libro.getId_autore());
+                            Libro libro = p.getLibro();
+                            Autore autore = libro.getAutore();
                 %>
                 <tr>
                     <td><%= libro.getTitolo() %></td>
-                    <td><%= autore.getNome() + " " + autore.getCognome() %></td>
-                    <td><%= p.getDataInizio() %></td>
+                    <td><%= autore.getNome() != null ? autore.getNome() : "" + " " + autore.getCognome() != null ? autore.getCognome() : "" %></td>
+                    <td><%= p.getDataInizio() == null ? "" : p.getDataInizio()%></td>
                     <td><%= p.getDataFine() == null ? "" : p.getDataFine()%></td>
                     <td><%= p.getNote() == null ? "" : p.getNote() %></td>
                 </tr>

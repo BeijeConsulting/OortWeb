@@ -20,6 +20,7 @@ public class BiblioSearchServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().removeAttribute("results");
         System.out.println("in doget");
         System.out.println((String) request.getSession().getAttribute("searchType")
         + (String) request.getSession().getAttribute("searchField")
@@ -49,7 +50,7 @@ public class BiblioSearchServlet extends HttpServlet {
                 case "l-id":
                     System.out.println(searchQuery + " " + searchField);
                     IBibliotecaModel obj = DatabaseManager.select((Class<? extends IBibliotecaModel>) classe, Integer.parseInt(searchQuery));
-                    results.add(obj);
+                    if (obj != null) results.add(obj);
                     break;
                 default:
                     results = (List<IBibliotecaModel>) DatabaseManager.search(classe, searchField, searchQuery);

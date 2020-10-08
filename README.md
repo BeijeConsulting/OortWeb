@@ -21,3 +21,10 @@ pw: paperino
     insert into editori (nome, descrizione) VALUES
     ('editor', 'editorrrr');
     COMMIT;
+    
+## Finito
+Login: Admin e Utente. Admin fa tutto, Utente per ora guarda solo i suoi prestiti
+Ricerca: Autore, Libro
+Visualizza: Tutto
+Aggiungi: Tutto
+Modifica: Solo libro, funziona al 100% ma ho rotto il css

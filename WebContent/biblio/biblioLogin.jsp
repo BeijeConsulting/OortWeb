@@ -36,7 +36,7 @@
                     if (error.equalsIgnoreCase("user")){
                         out.print("Utente inesistente");
                     } else if (error.equalsIgnoreCase("pass")){
-                        out.print("Password inesistente");
+                        out.print("Password errata");
                     }
                 }
             %>

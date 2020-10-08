@@ -93,7 +93,7 @@
                 <option <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
-                        if (name.equalsIgnoreCase("id-editore")) out.print("selected");
+                        if (name.equalsIgnoreCase("id_editore")) out.print("selected");
                     }
                 %> value="id_editore">ID Editore</option>
                 <%
@@ -105,35 +105,35 @@
                         String name = (String) request.getSession().getAttribute("searchField");
                         if (name.equalsIgnoreCase("a-id")) out.print("selected");
                     }
-                %> value="a-id">ID</option>
+                %> value="id">ID</option>
 
                 <option <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
                         if (name.equalsIgnoreCase("a-nome")) out.print("selected");
                     }
-                %>  value="a-nome">Nome</option>
+                %>  value="nome">Nome</option>
 
                 <option <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
                         if (name.equalsIgnoreCase("a-cognome")) out.print("selected");
                     }
-                %> value="a-cognome">Cognome</option>
+                %> value="cognome">Cognome</option>
 
                 <option <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
                         if (name.equalsIgnoreCase("a-nascita")) out.print("selected");
                     }
-                %> value="a-nascita">Data di Nascita</option>
+                %> value="data_nascita">Data di Nascita</option>
 
                 <option <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
                         if (name.equalsIgnoreCase("a-morte")) out.print("selected");
                     }
-                %> value="a-morte">Data di Morte</option>
+                %> value="data_morte">Data di Morte</option>
                 <%
                     break;
                     } // togliere questa parentesi se uncommento la parte qua sotto
@@ -200,11 +200,13 @@
                 <%
                     for (IBibliotecaModel obj : lista){
                         Libro l = (Libro) obj;
+                        Autore a = null;
+                        Editore e = null;
                         if (l.getId_autore() != null) {
-                            Autore a = l.getAutore();
+                            a = l.getAutore();
                         }
-                        if (l.getId_editore()d() != null){
-                            Editore e = l.getEditore();
+                        if (l.getId_editore() != null){
+                            e = l.getEditore();
                         }
                 %>
                 <tr>
@@ -229,12 +231,13 @@
                         }
                     %></td>
                     <td><%= l.getDescrizione() != null ? l.getDescrizione() : ""%></td>
-                    <td>
-                        <a id="open-modal-<%= l.getId()%>"
-                           onclick="showSinossi('modal-<%= l.getId()%>', 'open-modal-<%= l.getId()%>', <%= l.getId()%>)">
-                            <i class="far fa-file-alt"></i>
-                        </a>
-                    </td>
+                    <!-- Non funziona al 100% -->
+                    <%--                    <td>--%>
+<%--                        <a id="open-modal-<%= l.getId()%>"--%>
+<%--                           onclick="showSinossi('modal-<%= l.getId()%>', 'open-modal-<%= l.getId()%>', <%= l.getId()%>)">--%>
+<%--                            <i class="far fa-file-alt"></i>--%>
+<%--                        </a>--%>
+<%--                    </td>--%>
                     <td><a href="../destroy?classe=<%=l.getClass().getSimpleName()%>&id=<%=l.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
                 </tr>
                 <%
@@ -353,6 +356,7 @@
             %>
 
 
+</div>
 </div>
 </div>
 </body>
