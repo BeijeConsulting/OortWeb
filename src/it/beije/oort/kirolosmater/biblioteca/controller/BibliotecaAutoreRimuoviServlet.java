@@ -1,6 +1,5 @@
 package it.beije.oort.kirolosmater.biblioteca.controller;
 import static it.beije.oort.kirolosmater.biblioteca.MetodiAutore.*;
-import it.beije.oort.kirolosmater.biblioteca.model.*;
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -11,17 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import it.beije.oort.kirolosmater.biblioteca.model.Autore;
+
 /**
- * Servlet implementation class BibliotecaAutoreVisualizzaIdServlet
+ * Servlet implementation class BibliotecaAutoreRimuoviServlet
  */
-@WebServlet("/biblioteca/view/BibliotecaAutoreVisualizzaIdServlet")
-public class BibliotecaAutoreVisualizzaIdServlet extends HttpServlet {
+@WebServlet("/biblioteca/view/BibliotecaAutoreRimuoviServlet")
+public class BibliotecaAutoreRimuoviServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BibliotecaAutoreVisualizzaIdServlet() {
+    public BibliotecaAutoreRimuoviServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,7 +35,7 @@ public class BibliotecaAutoreVisualizzaIdServlet extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession();
 		int id = Integer.parseInt(request.getParameter("id"));
-		Autore autore = readRecordFromDb(id);
+		Autore autore = rimuoviAutore(id);
 		String nome = autore.getNome();
 		String cognome = autore.getCognome();
 		LocalDate data_nascita = autore.getData_nascita();
@@ -45,7 +46,7 @@ public class BibliotecaAutoreVisualizzaIdServlet extends HttpServlet {
 		session.setAttribute("data_nascita", data_nascita);
 		session.setAttribute("data_morte", data_morte);
 		session.setAttribute("biografia", biografia);
-		response.sendRedirect("visualizzaAutoreId.jsp");
+		response.sendRedirect("rimozioneAutore.jsp");
 	}
 
 	/**

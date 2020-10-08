@@ -107,7 +107,7 @@ public class MetodiAutore {
 		return autori;
 	}
 	
-	public static void inserimentoAutore () {
+	public static Autore inserimentoAutore () {
 		//SCANNER
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Inserisci nome");
@@ -131,6 +131,7 @@ public class MetodiAutore {
 		entityManager.persist(autore);
 		entityManager.getTransaction().commit();
 		entityManager.close();
+		return autore;
 	}
 	
 	public static Autore inserimentoAutore (String nome, String cognome, String data_nascita, String data_morte, String biografia) {
@@ -167,6 +168,18 @@ public class MetodiAutore {
 		}
 		entityManager.getTransaction().begin();
 		entityManager.persist(autore);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+		return autore;
+	}
+	
+	public static Autore rimuoviAutore (int id) {
+		Autore autore = readRecordFromDb(id);
+		String jpql = "DELETE FROM Autore WHERE id = '" + id + "'";
+		
+		entityManager.getTransaction().begin();
+		Query query = (Query) entityManager.createQuery(jpql);
+		query.executeUpdate();
 		entityManager.getTransaction().commit();
 		entityManager.close();
 		return autore;
