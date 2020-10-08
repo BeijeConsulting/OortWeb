@@ -22,6 +22,7 @@
 				<label for="password">Insert password:</label><input type="password" name="password" value=""/><br>
 				<input type="submit" value="Login"/>
 			</form>
+			<p>You don't have an account yet? <a href="./dispatch?res=register">Register!</a></p>
 		<%} else { 
 			User u_login_scope = (User)session.getAttribute("user");%>
 			<p>Autentication successfull!</p><br>

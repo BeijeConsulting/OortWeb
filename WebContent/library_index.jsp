@@ -8,7 +8,6 @@
 		<link rel = "stylesheet" type = "text/css" href = "library_style.css">
 	</head>
 	<body>
-		<% %>
 		<div id = "head">
 			<h1>Welcome to Brando's Magical Library</h1>
 		</div>
@@ -76,6 +75,9 @@
 						<% break;
 					case "users":%>
 						<%@ include file="users.jsp" %>
+						<% break;
+					case "register":%>
+						<%@ include file="register.jsp" %>
 						<% break;
 					default:
 				}

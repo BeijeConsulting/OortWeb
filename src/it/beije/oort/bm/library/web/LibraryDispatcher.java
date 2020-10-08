@@ -21,9 +21,15 @@ public class LibraryDispatcher extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String param = req.getParameter("res");
 		List list = null;
+		List selector1 = null;
+		List selector2 = null;
 		switch(param) {
 			case "books":
 				list = db.getAll(Book.class);
+				selector1 = db.getAll(Author.class);
+				selector2 = db.getAll(Publisher.class);
+				req.getSession().setAttribute("authors", selector1);
+				req.getSession().setAttribute("publishers", selector2);
 				break;
 			case "authors":
 				list = db.getAll(Author.class);

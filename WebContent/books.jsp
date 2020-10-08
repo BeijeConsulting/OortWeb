@@ -34,9 +34,38 @@
 							<td><%= b.getYear() %></td>
 							<td><%= b.getDescription() %></td>
 						</tr>
-					<%} 
-					session.removeAttribute("data_list");%>
+					<%}%>
 			</table>
-		<%} %>
+		<%} 
+		if(u_bscope.isAdmin()){%>
+			<form action="./insertService" method="post">
+				<label for="ins_title">Title: </label><input type="text" name="ins_title"><br>
+				<label for="ins_author">Author: </label><select name="ins_author">
+					<%for(Author a : (List<Author>)session.getAttribute("authors")){%>
+						<option value="<%=a.getId()%>"><%=a.getName() + " " + a.getSurname()%></option>
+					<%} %>
+				</select><br>
+				<label for="ins_publisher">Publisher: </label><select name="ins_publisher">
+					<%for(Publisher p : (List<Publisher>)session.getAttribute("publishers")){%>
+							<option value="<%=p.getId()%>"><%=p.getName()%></option>
+					<%} %>
+				</select><br>
+				<label for="ins_year">Year: </label><input type="text" name="ins_year"><br>
+				<label for="ins_descr">Description: </label><input type="text" name="ins_descr"><br>
+				<input type="submit" value="Add Book">
+			</form>
+			<form action="./deleteService" method="post">
+				<label for="del_id">Id: </label><select name="del_id">
+					<%for(Book b_id : (List<Book>)session.getAttribute("data_list")){%>
+							<option value="<%=b_id.getId()%>"><%=b_id.getId() + " " + b_id.getTitle()%></option>
+					<%} %>
+				</select><br>
+				<input type="submit" value="Remove Book">
+			</form>
+		<%} 
+		session.removeAttribute("authors");
+		session.removeAttribute("publishers");
+		session.removeAttribute("data_list");
+		%>
 	</body>
 </html>
