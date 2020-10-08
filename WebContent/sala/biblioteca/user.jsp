@@ -39,7 +39,7 @@
             	</form>
             </div>
 	    </header>
-	    <p>......Altre cose da Admin che verranno aggiunte poi......</p>
+	    <p>......vai alla pagina <a href="/OortWeb/Admin?req=homeadmin">pagina admin</a>......</p>
 	<% } %>
 		 
 	<%  if(session.getAttribute("prestiti")==null) {%>

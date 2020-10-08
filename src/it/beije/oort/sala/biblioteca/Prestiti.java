@@ -2,6 +2,7 @@ package it.beije.oort.sala.biblioteca;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,11 +52,15 @@ public class Prestiti extends HttpServlet {
 		// TODO Auto-generated method stub
 		if(request.getParameter("op")!=null) {
 			if(request.getParameter("op").equals("insert")) {
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MM-yyyy");
+				LocalDate fine = null;
+				if(!request.getParameter("data_fine").equals(""))
+					fine = LocalDate.parse(request.getParameter("data_fine"), formatter);
 				JPAToolset.insertJPA(new Prestito(null, 
 						new Integer(request.getParameter("id_utente")),
 						new Integer(request.getParameter("id_libro")),
-						LocalDate.parse(request.getParameter("data_inizio")),
-						LocalDate.parse(request.getParameter("data_fine")),
+						LocalDate.parse(request.getParameter("data_inizio"), formatter),
+						fine,
 						request.getParameter("note")));
 			} else if(request.getParameter("op").equals("delete")) {
 				JPAToolset.deleteJPA("Prestito", new Integer(request.getParameter("id_prestito")));

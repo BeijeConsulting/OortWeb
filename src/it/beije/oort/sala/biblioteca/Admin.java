@@ -25,12 +25,14 @@ public class Admin extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		if(request.getAttribute("req")!=null) {
-			switch((String)request.getAttribute("req")) {
-			case "admin":
-				response.sendRedirect("/OortWeb/sala/biblioteca/admin.jsp");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String req = request.getParameter("req");
+		System.out.println(req);
+		if(req!=null) {
+			switch(req) {
+			case "homeadmin":
+				response.sendRedirect("/OortWeb/sala/biblioteca/admin.html");
 				break;
 			case "prestiti":
 				response.sendRedirect("/OortWeb/sala/biblioteca/sub-admin/prestiti.html");
@@ -46,7 +48,7 @@ public class Admin extends HttpServlet {
 				break;
 			case "utenti":
 				response.sendRedirect("/OortWeb/sala/biblioteca/sub-admin/utenti.html");
-				break;
+				break;		
 			}
 		}
 	}
