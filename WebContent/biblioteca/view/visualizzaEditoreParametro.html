@@ -7,9 +7,12 @@
 </head>
 <body>
     <p>Per visualizzare una lista di editori in base alla stringa iniziale</p>
-    <p>inserisci il parametro da controllare e la stringa</p>
+    <p>seleziona il parametro da controllare e inserisci la stringa</p>
     <form action="./BibliotecaEditoreVisualizzaParametroServlet" method="POST" target="_blank">
-        PARAMETRO&nbsp;<input type="text" name="parametro" value="" placeholder="parametro"/><br/>
+        <input type="radio" id="denominazione" name="parametro" value="denominazione">
+        <label for="denominazione">denominazione</label><br>
+        <input type="radio" id="descrizione" name="parametro" value="descrizione">
+        <label for="descrizione">descrizione</label><br>
         STRINGA&nbsp;<input type="text" name="stringa" value="" placeholder="stringa iniziale"/><br>
         <input type="submit" value="INVIO"/>
     </form>

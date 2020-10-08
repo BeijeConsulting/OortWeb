@@ -9,7 +9,16 @@
     <p>Per visualizzare una lista di prestiti in base alla stringa iniziale</p>
     <p>inserisci il parametro da controllare e la stringa</p>
     <form action="./BibliotecaPrestitoVisualizzaParametroServlet" method="POST" target="_blank">
-        PARAMETRO&nbsp;<input type="text" name="parametro" value="" placeholder="parametro"/><br/>
+        <input type="radio" id="libro" name="parametro" value="libro">
+        <label for="libro">libro</label><br>
+        <input type="radio" id="utente" name="parametro" value="utente">
+        <label for="utente">utente</label><br>
+        <input type="radio" id="data_inizio" name="parametro" value="data_inizio">
+        <label for="data_inizio">data_inizio</label><br>
+        <input type="radio" id="data_fine" name="parametro" value="data_fine">
+        <label for="data_fine">data_fine</label><br>
+        <input type="radio" id="note" name="parametro" value="note">
+        <label for="note">note</label><br>
         STRINGA&nbsp;<input type="text" name="stringa" value="" placeholder="stringa iniziale"/><br>
         <input type="submit" value="INVIO"/>
     </form>

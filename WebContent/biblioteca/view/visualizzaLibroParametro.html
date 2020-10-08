@@ -9,7 +9,14 @@
     <p>Per visualizzare una lista di libri in base alla stringa iniziale</p>
     <p>inserisci il parametro da controllare e la stringa</p>
     <form action="./BibliotecaLibroVisualizzaParametroServlet" method="POST" target="_blank">
-        PARAMETRO&nbsp;<input type="text" name="parametro" value="" placeholder="parametro"/><br/>
+        <input type="radio" id="titolo" name="parametro" value="titolo">
+        <label for="titolo">titolo</label><br>
+        <input type="radio" id="descrizione" name="parametro" value="descrizione">
+        <label for="descrizione">descrizione</label><br>
+        <input type="radio" id="autore" name="parametro" value="autore">
+        <label for="autore">autore</label><br>
+        <input type="radio" id="editore" name="parametro" value="editore">
+        <label for="editore">editore</label><br>
         STRINGA&nbsp;<input type="text" name="stringa" value="" placeholder="stringa iniziale"/><br>
         <input type="submit" value="INVIO"/>
     </form>
