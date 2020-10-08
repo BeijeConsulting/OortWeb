@@ -53,7 +53,7 @@
             <th>Descrizione</th>
             <th>Anno</th>
           </tr>
-          <% Libro book = (Libro)session.getAttribute("libro"); %>
+          <% Libro book = (Libro)session.getAttribute("libro");%>
           		<tr> <td><a href = "./InsertLoanServlet?title=<%= book.getTitolo() %>"><% out.print(book.getTitolo()); %></a></td> 
           			<td><% out.print(book.getDescrizione()); %></td>
           			<td><% out.print(book.getAnno()); %></td>

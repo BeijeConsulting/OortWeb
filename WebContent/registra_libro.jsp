@@ -33,11 +33,11 @@
           </tr>
           <tr>
             <td>Id Autore <input type = "text" name = "id_autore" value = ""/>
-            Se l'autore non è presente nella lista <a href = "">clicca qui</a></td>
+            Se l'autore non è presente nella lista <a href = "./InsertAuthorServlet">clicca qui</a></td>
           </tr>
           <tr>
             <td>Id Editore<input type = "text" name = "id_editore" value = ""/>
-            Se l'editore non è presente nella lista <a href = "">clicca qui</a></td>
+            Se l'editore non è presente nella lista <a href = "./InsertPublisherServlet">clicca qui</a></td>
           </tr>
           <tr>
             <td>Descrizione <input type = "text" name = "descrizione" value = "" placeholder = "facoltativo"/></td>

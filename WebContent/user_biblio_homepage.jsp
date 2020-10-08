@@ -46,7 +46,7 @@ if ( user.getId() == 0 ) {
       <td><a href = "./insertLoan" >Prendi in prestito un nuovo libro</a></td>
     </tr>
      <tr>
-      <td><a href = "./authservlet?logout=1">Esci</a></td>
+      <td><a href = "./authservlet">Esci</a></td>
     </tr>
   </table>
 <% } %>

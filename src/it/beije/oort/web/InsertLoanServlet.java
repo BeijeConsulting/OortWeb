@@ -21,6 +21,7 @@ import it.beije.oort.web.db.User;
 @WebServlet("/insertLoan")
 public class InsertLoanServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	boolean admin;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -36,24 +37,34 @@ public class InsertLoanServlet extends HttpServlet {
 	 */
     //quando chiamo una servlet tramite link sto facendo una doGet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		User utente = (User) request.getSession().getAttribute("loggedUser");
+		System.out.println(request.getParameter("admin"));
 		try {
 			Libro book = JPDBUtilities.exportBook(request.getParameter("title"));
 			User user = (User)request.getSession().getAttribute("loggedUser");
 			String message = JPDBUtilities.insertLoan(book.getId(), user.getId(), LocalDate.now(), LocalDate.now().plusMonths(1), "");
 			request.getSession().setAttribute("statoPrestito", message);
-			response.sendRedirect("user_biblio_homepage.jsp");
+			if (utente.isAdmin()) {
+				response.sendRedirect("admin_biblio_homepage.jsp");
+			} else {
+				response.sendRedirect("user_biblio_homepage.jsp");
+			}
 		} catch (javax.persistence.NoResultException e) {
 			List<Libro> books = JPDBUtilities.exportBooks();
 			request.getSession().setAttribute("libri", books);
+			request.getSession().setAttribute("admin", admin);
 			response.sendRedirect("nuovoPrestito.jsp");
 		}
-		
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Libro book = JPDBUtilities.exportBook(request.getParameter("libro"));
-		HttpSession session = request.getSession();
-		session.setAttribute("libro", book);
+		try {
+			Libro book = JPDBUtilities.exportBook(request.getParameter("libro"));
+			HttpSession session = request.getSession();
+			session.setAttribute("libro", book);
+			response.sendRedirect("nuovoPrestito.jsp");
+		} catch (javax.persistence.NoResultException e) {
+			response.sendRedirect("nuovoPrestito.jsp");
+		}
 	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="it.beije.oort.web.db.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +26,15 @@
 </head>
 <body>
 <jsp:useBean id="loggedUser" class="it.beije.oort.web.db.User" scope="session"/>
+<% String statoPrestito = (String)session.getAttribute("statoPrestito");
+	if (statoPrestito != null && statoPrestito.length() > 0) {
+	out.print("<b>"+statoPrestito+"</b><br/>");
+	session.removeAttribute("statoPrestito");
+}	
+User user = (User)session.getAttribute("loggedUser");
+if ( user.getId() == 0 ) {
+	%> DEVI ESSERE AUTENTICATO PER POTER ACCEDERE A QUESTA PAGINA <%
+} else { %>
  <table>
           <tr>
             <th>BENVENUTO <jsp:getProperty property="nome" name="loggedUser"/> </th>
@@ -35,9 +45,16 @@
           <tr>
             <td><a href = "./InsertBook">Inserisci nuovo libro</a></td>
           </tr>
-           <tr>
-            <td><a href = "">Esci</a></td>
-          </tr>
-        </table>
+            <tr>
+      		<td><a href = "./viewLoan">Visualizza i tuoi prestiti</a></td>
+    		</tr>
+   			 <tr>
+     		 <td><a href = "./insertLoan" >Prendi in prestito un nuovo libro</a></td>
+   			 </tr>
+    		 <tr>
+      		<td><a href = "./authservlet">Esci</a></td>
+    		</tr>
+</table>
+<% } %>
 </body>
 </html>

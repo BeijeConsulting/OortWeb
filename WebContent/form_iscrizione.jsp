@@ -7,17 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% String errore = (String)session.getAttribute("errore");
-	if (errore != null && errore.length() > 0) {
-	out.print("<b>"+errore+"</b><br/>");
-	session.removeAttribute("errore");
-}%>
-	<h3>INSERISCI LE TUE CREDENZIALI</h3>
-	<form action="./authservlet" method="post">
+	<form action="./IscrizioneServlet" method="post">
+			COGNOME&nbsp;<input type="text" name="cognome" value=""/><br>
+ 			NOME&nbsp;<input type="text" name="nome" value=""/><br>
 			EMAIL&nbsp;<input type="email" name="email" value="" placeholder="utente@dominio"/><br/>
  			PASSWORD&nbsp;<input type="password" name="password" value=""/><br>
 			<input type="submit" value="INVIO"/>
 		</form><br/>
-	Se non sei ancora registrato, <a href = "./IscrizioneServlet">iscriviti</a>.
 </body>
 </html>

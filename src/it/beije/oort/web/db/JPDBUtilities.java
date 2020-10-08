@@ -223,7 +223,7 @@ public class JPDBUtilities {
 		entityManager.close();
 	}
 	
-	public static void insertUser(String nome, String cognome, String telefono, String email, String codice_fiscale, String indirizzo) {
+	public static void insertUser(String nome, String cognome, String telefono, String email, String codice_fiscale, String indirizzo, String password) {
 		EntityManager entityManager = JPDBEntityManagerFactory.createEntityManager();
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
@@ -234,6 +234,7 @@ public class JPDBUtilities {
 		user.setEmail(email);
 		user.setCodice_fiscale(codice_fiscale);
 		user.setIndirizzo(indirizzo);
+		user.setPassword(password);
 		entityManager.persist(user);
 		transaction.commit();
 		entityManager.close();

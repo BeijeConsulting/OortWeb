@@ -50,7 +50,12 @@ public class InsertBookServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+		String titolo = (String) request.getParameter("titolo");
+		int id_autore = Integer.parseInt((String) request.getParameter("id_autore"));
+		int id_editore = Integer.parseInt((String) request.getParameter("id_editore"));
+		String descrizione = (String) request.getParameter("descrizione");
+		int anno = Integer.parseInt((String) request.getParameter("anno"));
+		JPDBUtilities.insertBook(titolo, descrizione, id_autore, id_editore, anno);
+		response.sendRedirect("admin_biblio_homepage.jsp");
+	} 
 }
