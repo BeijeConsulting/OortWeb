@@ -133,7 +133,7 @@ public class MetodiAutore {
 		entityManager.close();
 	}
 	
-	public static void inserimentoAutore (String nome, String cognome, String data_nascita, String data_morte, String biografia) {
+	public static Autore inserimentoAutore (String nome, String cognome, String data_nascita, String data_morte, String biografia) {
 		//INSERT
 		Autore autore = new Autore();
 		autore.setNome(nome);
@@ -145,6 +145,31 @@ public class MetodiAutore {
 		entityManager.persist(autore);
 		entityManager.getTransaction().commit();
 		entityManager.close();
+		return autore;
+	}
+	
+	public static Autore modificaAutore (int id, String parametro, String valore) {
+		Autore autore = readRecordFromDb(id);
+		switch (parametro.toLowerCase()) {
+		case "nome": autore.setNome(valore);			
+			break;
+		case "cognome": autore.setCognome(valore);	
+			break;	
+		case "data_nascita": autore.setData_nascita(dateFromString(valore));			
+			break;
+		case "data_morte": autore.setData_morte(dateFromString(valore));		
+			break;
+		case "biografia": autore.setBiografia(valore);		
+			break;
+		default:
+			System.out.println("Hai inserito un parametro non presente");
+			break;
+		}
+		entityManager.getTransaction().begin();
+		entityManager.persist(autore);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+		return autore;
 	}
 	
 	public static LocalDate dateFromString (String str) {
