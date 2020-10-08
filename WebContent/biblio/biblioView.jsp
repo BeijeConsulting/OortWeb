@@ -53,6 +53,7 @@
         <%
             if (request.getSession().getAttribute("list") != null){
                 List<? extends IBibliotecaModel> lista = (List<? extends IBibliotecaModel>)request.getSession().getAttribute("list");
+                if (!lista.isEmpty()){
         %>
             <!-- qui stampo le liste -->
             <div class="contatti-list">
@@ -236,6 +237,7 @@
                 %>
         <%
             // chiude if
+            }
             }
         %>
         </div>

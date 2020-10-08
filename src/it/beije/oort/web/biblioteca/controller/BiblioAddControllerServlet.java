@@ -48,6 +48,9 @@ public class BiblioAddControllerServlet extends HttpServlet {
         String email = request.getParameter("email");
         String cell = request.getParameter("cell");
         String indirizzo = request.getParameter("indirizzo");
+        String isAdmin = request.getParameter("isAdmin");
+
+        u.setAdmin(isAdmin != null && !isAdmin.equalsIgnoreCase(""));
 
         if (nome != null && !nome.equalsIgnoreCase("")){
             u.setNome(nome);

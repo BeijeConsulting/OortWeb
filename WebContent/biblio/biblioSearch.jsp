@@ -1,7 +1,9 @@
+<%@ page import="it.beije.oort.web.biblioteca.model.*" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Visualizza</title>
+    <title>Ricerca</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style/main.css" rel="stylesheet">
     <link href="../style/biblioView.css" rel="stylesheet">
@@ -56,37 +58,44 @@
                 <option <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
-                        if (name.equalsIgnoreCase("l-id")) out.print("selected");
+                        if (name.equalsIgnoreCase("")) out.print("selected");
                     }
-                %> value="l-id">ID</option>
+                    if (request.getSession().getAttribute("searchField") == null) out.print("selected");
+                %> disabled>Seleziona</option>
+                <option <%
+                    if (request.getSession().getAttribute("searchField") != null) {
+                        String name = (String) request.getSession().getAttribute("searchField");
+                        if (name.equalsIgnoreCase("id")) out.print("selected");
+                    }
+                %> value="id">ID</option>
 
                 <option  <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
-                        if (name.equalsIgnoreCase("l-titolo")) out.print("selected");
+                        if (name.equalsIgnoreCase("titolo")) out.print("selected");
                     }
-                %> value="l-titolo">Titolo</option>
+                %> value="titolo">Titolo</option>
 
                 <option <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
-                        if (name.equalsIgnoreCase("l-anno")) out.print("selected");
+                        if (name.equalsIgnoreCase("anno_pubblicazione")) out.print("selected");
                     }
-                %> value="l-anno">Anno di Pubblicazione</option>
+                %> value="anno_pubblicazione">Anno di Pubblicazione</option>
 
                 <option <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
-                        if (name.equalsIgnoreCase("l-autore")) out.print("selected");
+                        if (name.equalsIgnoreCase("id_autore")) out.print("selected");
                     }
-                %> value="l-autore">Autore</option>
+                %> value="id_autore">ID Autore</option>
 
                 <option <%
                     if (request.getSession().getAttribute("searchField") != null) {
                         String name = (String) request.getSession().getAttribute("searchField");
-                        if (name.equalsIgnoreCase("l-editore")) out.print("selected");
+                        if (name.equalsIgnoreCase("id-editore")) out.print("selected");
                     }
-                %> value="l-editore">Editore</option>
+                %> value="id_editore">ID Editore</option>
                 <%
                         break;
                         case "Autore":
@@ -152,19 +161,197 @@
                 case ("a-morte"):
                 case ("l-anno"):
     %>
-        <input type="date" id="searchQuery">
+        <input type="date" id="searchQuery" name="searchQuery">
     <%
         break;
         default:
     %>
-        <input type="text" placeholder="Cosa vuoi cercare?" id="searchQuery">
+        <input type="text" placeholder="Cosa vuoi cercare?" id="searchQuery" name="searchQuery">
     <%
         } // fine switch
     %>
+        <input type="submit" value="Cerca">
     </form>
     <%
         } // fine if
     %>
+
+        <!-- test lista risultati -->
+        <%
+            if (request.getSession().getAttribute("results") != null){
+                List<IBibliotecaModel> lista = (List<IBibliotecaModel>)request.getSession().getAttribute("results");
+        %>
+        <!-- qui stampo le liste -->
+        <div class="contatti-list">
+            <table>
+                <%
+                    // Inizia lo switch per stampare la lista corretta
+                    switch ((String)request.getSession().getAttribute("searchType")){
+                        // LIBRO
+                        case "Libro":
+                %>
+                <tr>
+                    <th>Titolo</th>
+                    <th>Autore</th>
+                    <th>Anno di Pubblicazione</th>
+                    <th>Editore</th>
+                    <th>Sinossi</th>
+                </tr>
+                <%
+                    for (IBibliotecaModel obj : lista){
+                        Libro l = (Libro) obj;
+                        if (l.getId_autore() != null) {
+                            Autore a = l.getAutore();
+                        }
+                        if (l.getId_editore()d() != null){
+                            Editore e = l.getEditore();
+                        }
+                %>
+                <tr>
+                    <td><%= l.getTitolo()%></td>
+                    <td><%
+                        if (a != null){
+                            out.print(
+                                    (a.getNome() != null ? a.getNome() : "") + " " +
+                                            (a.getCognome() != null ?  a.getCognome() : ""));
+                        }
+                    %></td>
+                    <td><%
+                        out.print(
+                                l.getAnno_pubblicazione() != null ? l.getAnno_pubblicazione() : ""
+                        );
+                    %></td>
+                    <td><%
+                        if (e != null){
+                            out.print(
+                                    e.getNome()
+                            );
+                        }
+                    %></td>
+                    <td><%= l.getDescrizione() != null ? l.getDescrizione() : ""%></td>
+                    <td>
+                        <a id="open-modal-<%= l.getId()%>"
+                           onclick="showSinossi('modal-<%= l.getId()%>', 'open-modal-<%= l.getId()%>', <%= l.getId()%>)">
+                            <i class="far fa-file-alt"></i>
+                        </a>
+                    </td>
+                    <td><a href="../destroy?classe=<%=l.getClass().getSimpleName()%>&id=<%=l.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
+                </tr>
+                <%
+                    }
+                %>
+                <%
+                        break;
+                    case "Autore":
+                %>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Data di Nascita</th>
+                    <th>Data di Morte</th>
+                    <th>Biografia</th>
+                </tr>
+                <%
+                    for (IBibliotecaModel obj : lista){
+                        Autore a = (Autore) obj;
+                %>
+                <tr>
+                    <td><%= a.getNome() != null ? a.getNome() : "" %></td>
+                    <td><%= a.getCognome() != null ? a.getCognome() : "" %></td>
+                    <td><%= a.getData_nascita() != null ? a.getData_nascita() : "" %></td>
+                    <td><%= a.getData_morte() != null ? a.getData_morte() : ""%></td>
+                    <td><%= a.getBiografia() != null ? a.getBiografia()  : ""%></td>
+                    <td><a href="../destroy?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
+                </tr>
+                <%
+                    }
+                %>
+                <%
+                        break;
+                    case "Editore":
+                %>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrizione</th>
+                </tr>
+                <%
+                    for (IBibliotecaModel obj : lista){
+                        Editore e = (Editore) obj;
+                %>
+                <tr>
+                    <td><%= e.getNome() != null ? e.getNome() : "" %></td>
+                    <td><%= e.getDescrizione() != null ? e.getDescrizione() : "" %></td>
+                    <td><a href="../destroy?classe=<%=e.getClass().getSimpleName()%>&id=<%=e.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
+                </tr>
+                <%
+                    }
+                %>
+                <%
+                        break;
+                    case "Utente":
+                %>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Email</th>
+                    <th>Cellulare</th>
+                    <th>Indirizzo</th>
+                    <th>Codice Fiscale</th>
+                </tr>
+                <%
+                    for (IBibliotecaModel obj : lista){
+                        Utente a = (Utente) obj;
+                %>
+                <tr>
+                    <td><%= a.getNome() != null ? a.getNome() : "" %></td>
+                    <td><%= a.getCognome() != null ? a.getCognome() : "" %></td>
+                    <td><%= a.getEmail() != null ? a.getEmail() : "" %></td>
+                    <td><%= a.getCellulare() != null ? a.getCellulare() : ""%></td>
+                    <td><%= a.getIndirizzo() != null ? a.getIndirizzo() : ""%></td>
+                    <td><%= a.getCodice_fiscale() != null ? a.getCodice_fiscale()  : ""%></td>
+                    <td><a href="../destroy?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getCodice_fiscale()%>"><i class="fas fa-minus-circle"></i></a></td>
+                </tr>
+                <%
+                    }
+                %>
+                <%
+                        break;
+                    case "Prestito":
+                %>
+                <tr>
+                    <th>Libro</th>
+                    <th>Utente</th>
+                    <th>Data Inizio Prestito</th>
+                    <th>Data Fine Prestito</th>
+                    <th>Note</th>
+                </tr>
+                <%
+                    for (IBibliotecaModel obj : lista){
+                        Prestito a = (Prestito) obj;
+                %>
+                <tr>
+                    <td><%= a.getLibro().getTitolo() != null ? a.getLibro().getTitolo()  : "" %></td>
+                    <td><%= a.getUtente().getCodice_fiscale() != null ? a.getUtente().getCodice_fiscale()  : "" %></td>
+                    <td><%= a.getDataInizio() != null ? a.getDataInizio() : "" %></td>
+                    <td><%= a.getDataFine() != null ? a.getDataFine() : ""%></td>
+                    <td><%= a.getNote() != null ? a.getNote()  : ""%></td>
+                    <td><a href="../destroy?classe=<%=a.getClass().getSimpleName()%>&id=<%=a.getId()%>"><i class="fas fa-minus-circle"></i></a></td>
+                </tr>
+                <%
+                    }
+                %>
+                <%
+                            // chiude switch
+                    }
+                %>
+
+            </table>
+
+            <%
+                    // chiude if
+                }
+            %>
+
 
 </div>
 </div>

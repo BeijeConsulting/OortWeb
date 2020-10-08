@@ -219,6 +219,10 @@
                     <label for="indirizzo">Indirizzo: </label>
                     <input type="text" name="indirizzo" id="indirizzo">
                 </div>
+                <div class="single-input">
+                    <label for="isAdmin">Admin? </label>
+                    <input type="checkbox" name="isAdmin" id="isAdmin">
+                </div>
                 <%
                         break;
                     }

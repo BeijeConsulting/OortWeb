@@ -52,8 +52,6 @@ public class DatabaseManager {
             String jpql = "SELECT p FROM Prestito as p WHERE p.cfUtente = " +
                     "'" + userCF + "'";
             TypedQuery<Prestito> query = em.createQuery(jpql, Prestito.class);
-//                    .setParameter("cf", userCF);
-            System.out.println(query.toString());
             return query.getResultList();
         } catch (NoResultException e){
             e.printStackTrace();
@@ -66,6 +64,7 @@ public class DatabaseManager {
         try{
             deleteMe = select(classe, id);
         } catch (Exception e){
+            e.printStackTrace();
         }
         em.getTransaction().begin();
         em.remove(deleteMe);
@@ -77,5 +76,12 @@ public class DatabaseManager {
         em.getTransaction().begin();
         em.remove(deleteMe);
         em.getTransaction().commit();
+    }
+
+    public static List<? extends IBibliotecaModel> search(Class<?> classe, String column, String query){
+        String jpql = "SELECT o FROM " + classe.getSimpleName() + " as o WHERE " + column + " LIKE " +
+                "'%" + query + "%'";
+        Query q = em.createQuery(jpql);
+        return q.getResultList();
     }
 }
