@@ -20,6 +20,30 @@ if (userBean == null) {
 	<a href="./LoginBiblio">- Login</a>
 <%
 } else {
+	String erroreDataInizio = (String)session.getAttribute("erroreDataInizio");
+	if (erroreDataInizio != null && erroreDataInizio.length() > 0) {
+		out.print("<b>"+erroreDataInizio+"</b><br/>");
+		session.removeAttribute("erroreDataInizio");
+	}
+	
+	String erroreDataFine = (String)session.getAttribute("erroreDataFine");
+	if (erroreDataFine != null && erroreDataFine.length() > 0) {
+		out.print("<b>"+erroreDataFine+"</b><br/>");
+		session.removeAttribute("erroreDataFine");
+	}
+	String erroreIdLibro = (String)session.getAttribute("erroreIdLibro");
+	if (erroreIdLibro != null && erroreIdLibro.length() > 0) {
+		out.print("<b>"+erroreIdLibro+"</b><br/>");
+		session.removeAttribute("erroreIdLibro");
+	}
+	
+	String erroreIdUtente = (String)session.getAttribute("erroreIdUtente");
+	if (erroreIdUtente != null && erroreIdUtente.length() > 0) {
+		out.print("<b>"+erroreIdUtente+"</b><br/>");
+		session.removeAttribute("erroreIdUtente");
+	}
+
+
 %>
 	<h1><em>Registrazione prestito</em></h1>
 	

@@ -3,6 +3,8 @@ package it.beije.oort.lauria.biblioteca.jsp;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.beije.oort.lauria.biblioteca.Autore;
 import it.beije.oort.lauria.biblioteca.BiblioClient;
+import it.beije.oort.lauria.biblioteca.Editore;
 import it.beije.oort.lauria.biblioteca.JPADBtools;
+import it.beije.oort.lauria.biblioteca.Libro;
+import it.beije.oort.lauria.biblioteca.Utente;
 
 /**
  * Servlet implementation class Registrazione
@@ -51,6 +57,18 @@ public class Registrazione extends HttpServlet {
 				String id_editore = request.getParameter("id_editore");
 				String anno = request.getParameter("anno");
 				
+				if(JPADBtools.entityManager.find(Autore.class, Integer.parseInt(id_autore)) == null) {
+					request.getSession().setAttribute("erroreIdAutore","Non esiste un autore associato all'identificativo numerico digitato.");
+					response.sendRedirect("registraLibro.jsp");
+					break;
+				}
+				
+				if(JPADBtools.entityManager.find(Editore.class, Integer.parseInt(id_editore)) == null) {
+					request.getSession().setAttribute("erroreIdEditore","Non esiste un editore associato all'identificativo numerico digitato.");
+					response.sendRedirect("registraLibro.jsp");
+					break;
+				}
+				
 				JPADBtools.insertLibro(titolo, descrizione, Integer.parseInt(id_autore), Integer.parseInt(id_editore), anno);
 
 				request.getSession().setAttribute("nuovoLibro", "TRUE");	
@@ -66,9 +84,24 @@ public class Registrazione extends HttpServlet {
 				String data_morte = request.getParameter("data_morte");
 				String biografia = request.getParameter("biografia");
 				
-				DateTimeFormatter f = DateTimeFormatter.ofPattern("dd MM yyyy");
-				LocalDate data_n = LocalDate.parse(data_nascita, f);
-				LocalDate data_m = LocalDate.parse(data_morte, f);
+				DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+				LocalDate data_n = null, data_m = null;
+				try {
+					data_n = LocalDate.parse(data_nascita, f);
+				}catch(DateTimeParseException e) {
+					data_n = null;
+					request.getSession().setAttribute("erroreDataNascita","Data di nascita non valida");
+					response.sendRedirect("registraAutore.jsp");
+					break;
+				}
+				try {
+					data_m = LocalDate.parse(data_morte, f);
+				}catch(DateTimeParseException e) {
+					data_m = null;
+					request.getSession().setAttribute("erroreDataMorte","Data di morte non valida");
+					response.sendRedirect("registraAutore.jsp");
+					break;
+				}
 				
 				JPADBtools.insertAutore(nome, cognome, data_n, data_m, biografia);
 
@@ -117,10 +150,36 @@ public class Registrazione extends HttpServlet {
 				String data_f = request.getParameter("data_fine");
 				String note = request.getParameter("note");
 				
-				DateTimeFormatter f = DateTimeFormatter.ofPattern("dd MM yyyy");
-				LocalDate data_inizio = LocalDate.parse(data_i, f);
-				LocalDate data_fine = LocalDate.parse(data_f, f);
+				if(JPADBtools.entityManager.find(Libro.class, Integer.parseInt(id_libro)) == null) {
+					request.getSession().setAttribute("erroreIdLibro","Non esiste un libro associato all'identificativo numerico digitato.");
+					response.sendRedirect("registraPrestito.jsp");
+					break;
+				}
+				if(JPADBtools.entityManager.find(Utente.class, Integer.parseInt(id_utente)) == null) {
+					request.getSession().setAttribute("erroreIdUtente","Non esiste un utente associato all'identificativo numerico digitato.");
+					response.sendRedirect("registraPrestito.jsp");
+					break;
+				}
+				DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+				LocalDate data_inizio = null, data_fine = null;
+				try {
+					data_inizio = LocalDate.parse(data_i, f);
+				}catch(DateTimeParseException e) {
+					data_inizio = null;
+					request.getSession().setAttribute("erroreDataInizio","Data di inizio prestito non valida");
+					response.sendRedirect("registraPrestito.jsp");
+					break;
+				}
 				
+				try {
+					data_fine = LocalDate.parse(data_f, f);
+				}catch(DateTimeParseException e) {
+					data_fine = null;
+					request.getSession().setAttribute("erroreDataFine","Data di fine prestito non valida");
+					response.sendRedirect("registraPrestito.jsp");
+					break;
+				}
+							
 				JPADBtools.insertPrestito(Integer.parseInt(id_libro), Integer.parseInt(id_utente), data_inizio, data_fine, note);
 
 				request.getSession().setAttribute("nuovoPrestito", "TRUE");	

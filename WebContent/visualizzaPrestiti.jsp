@@ -1,6 +1,7 @@
 <%@page import="it.beije.oort.lauria.biblioteca.JPADBtools"%>
 <%@page import="it.beije.oort.lauria.biblioteca.Prestito"%>
 <%@page import="it.beije.oort.lauria.biblioteca.Utente"%>
+<%@page import="it.beije.oort.lauria.biblioteca.Libro"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -46,13 +47,15 @@ if (userBean == null) {
 	<a href="./GestioneLink">HOME</a><br>
 	<%
 	List<Prestito> prestiti = (List<Prestito>)session.getAttribute("catalogoPrestiti");
+	List<Libro> libri = (List<Libro>)session.getAttribute("catalogoLibri");
+	List<Utente> utenti = (List<Utente>)session.getAttribute("catalogoUtenti");
 	%>
 	<h2>Sono stati registrati <%=prestiti.size() %> prestiti.</h2>
 	<tr>
 		<th>Id</th>
 		<th>Id_libro</th>
 		<th>Id_utente</th>		
-		<th>Data_inizio()</th>
+		<th>Data_inizio</th>
 		<th>Data_fine</th>
 		<th>Note</th>
 	</tr>
@@ -62,11 +65,11 @@ if (userBean == null) {
 		%>
 		<tr>
 			<td><%=prestito.getId()%></td>
-			<td><%=prestito.getId_libro()%></td>
-			<td><%=prestito.getId_utente()%></td>
+			<td><%=prestito.getId_libro()%> (<%=libri.get(prestito.getId_libro()-1).getTitolo()%>)</td>
+			<td><%=prestito.getId_utente()%> (<%=utenti.get(prestito.getId_utente()-1).getNome()%> <%=utenti.get(prestito.getId_utente()-1).getCognome()%>)</td>
 			<td><%=prestito.getData_inizio().toString()%></td>
 			<td><%=prestito.getData_fine().toString()%></td>
-			<td><%=prestito.getNote() != null ? prestito.getNote() : ""%></td>
+			<td><%=prestito.getNote() != null ? prestito.getNote() : ""%></td> 
 		</tr>
 		<%
 		}

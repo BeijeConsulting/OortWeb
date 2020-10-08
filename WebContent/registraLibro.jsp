@@ -20,6 +20,18 @@ if (userBean == null) {
 	<a href="./LoginBiblio">- Login</a>
 <%
 } else {
+	String erroreIdAutore = (String)session.getAttribute("erroreIdAutore");
+	if (erroreIdAutore != null && erroreIdAutore.length() > 0) {
+		out.print("<b>"+erroreIdAutore+"</b><br/>");
+		session.removeAttribute("erroreIdAutore");
+	}
+	
+	String erroreIdEditore = (String)session.getAttribute("erroreIdEditore");
+	if (erroreIdEditore != null && erroreIdEditore.length() > 0) {
+		out.print("<b>"+erroreIdEditore+"</b><br/>");
+		session.removeAttribute("erroreIdEditore");
+	}
+
 %>
 	<h1><em>Registrazione libro</em></h1>
 	

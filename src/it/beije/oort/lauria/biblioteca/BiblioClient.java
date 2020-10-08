@@ -533,7 +533,7 @@ public class BiblioClient {
 		}while(id_libro.equals(""));
 		
 		if(JPADBtools.entityManager.find(Libro.class, Integer.parseInt(id_libro)) == null) {
-			System.out.println("Non esiste un editore associato all'identificativo numerico digitato.");
+			System.out.println("Non esiste un libro associato all'identificativo numerico digitato.");
 			return false;
 		}
 		System.out.print("id_utente : ");

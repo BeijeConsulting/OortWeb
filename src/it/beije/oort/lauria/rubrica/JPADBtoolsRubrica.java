@@ -47,18 +47,6 @@ public class JPADBtoolsRubrica {
 		JPADBtoolsRubrica.entityManager.getTransaction().commit();
 		
 	}
-	public static void searchContact(int id){
-		
-		Contatto contatto = entityManager.find(Contatto.class, id);		
-		
-		// apro la transaction
-		JPADBtoolsRubrica.entityManager.getTransaction().begin();
-		// salvo il libro
-		JPADBtoolsRubrica.entityManager.remove(contatto);
-		// chiudo la transaction
-		JPADBtoolsRubrica.entityManager.getTransaction().commit();
-		
-	}
 
 	public static List<Contatto> selectContacts(String nome, String cognome, String telefono, String email) {
 

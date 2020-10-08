@@ -1,6 +1,7 @@
 <%@page import="it.beije.oort.lauria.biblioteca.JPADBtools"%>
 <%@page import="it.beije.oort.lauria.biblioteca.Prestito"%>
 <%@page import="it.beije.oort.lauria.biblioteca.Utente"%>
+<%@page import="it.beije.oort.lauria.biblioteca.Libro"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -46,6 +47,7 @@ if (userBean == null) {
 	<a href="./GestioneLink">HOME</a><br>
 	<%
 	List<Prestito> prestiti = (List<Prestito>)session.getAttribute("catalogoPrestitiUtente");
+	List<Libro> libri = (List<Libro>)session.getAttribute("catalogoLibri");
 	%>
 	<h2>Sono stati registrati <%=prestiti.size() %> prestiti a suo nome.</h2>
 	<tr>
@@ -61,7 +63,7 @@ if (userBean == null) {
 		%>
 		<tr>
 			<td><%=prestito.getId_utente()%></td>
-			<td><%=prestito.getId_libro()%></td>
+			<td><%=prestito.getId_libro()%> (<%=libri.get(prestito.getId_libro()-1).getTitolo()%>)</td>
 			<td><%=prestito.getData_inizio().toString()%></td>
 			<td><%=prestito.getData_fine().toString()%></td>
 			<td><%=prestito.getNote() != null ? prestito.getNote() : ""%></td>

@@ -23,11 +23,20 @@ if (userBean == null) {
 %>
 <%-- UTENTE: <jsp:getProperty property="nome" name="userBean"/> <jsp:getProperty property="cognome" name="userBean"/> --%>
 	<h1>Benvenuto <%= (userBean.getNome() != null) ? userBean.getNome() : "" %> <%= (userBean.getCognome() != null) ? userBean.getCognome() : "" %></h1>
+		
+		<h2>Visualizzazione</h2>
+		
 		<ul>
 			<a href="./VisualizzaLibri" ><li>Libri in biblioteca</li></a>
 			<a href="./VisualizzaAutori" ><li>Catalogo autori</li></a>
 			<a href="./VisualizzaEditori" ><li>Catalogo editori</li></a>
 			<a href="./VisualizzaPrestitiUtente" ><li>I tuoi prestiti</li></a>
+		</ul>
+		
+		<h2>Ricerca per id</h2>
+		
+		<ul>
+			<a href="./Ricerca?page=libro" ><li>Ricerca libro per id</li></a>
 		</ul>
 		
 		<!-- RICERCA -->
@@ -36,12 +45,18 @@ if (userBean == null) {
 }else {
 %>
 		<h1>Benvenuto <%= (userBean.getNome() != null) ? userBean.getNome() : "" %> <%= (userBean.getCognome() != null) ? userBean.getCognome() : "" %></h1>
+		
+		<h2>Visualizzazione</h2>
+		
 		<ul>
 			<a href="./VisualizzaLibri" ><li>Libri in biblioteca</li></a>
 			<a href="./VisualizzaAutori" ><li>Catalogo autori</li></a>
 			<a href="./VisualizzaEditori" ><li>Catalogo editori</li></a>
+			<a href="./VisualizzaUtenti" ><li>Elenco utenti registrati</li></a>
 			<a href="./VisualizzaPrestiti" ><li>Elenco prestiti</li></a>
 		</ul>
+		
+		<h2>Inserimento</h2>
 		
 		<ul>
 			<a href="./Inserimento?page=libro" ><li>Registra libro</li></a>
@@ -51,8 +66,13 @@ if (userBean == null) {
 			<a href="./Inserimento?page=prestito" ><li>Registra prestito</li></a>
 		</ul>
 		
-		<!-- INSERIMENTO/ELIMINAZIONE E RICERCA -->
-	
+		<h2>Ricerca per id</h2>
+		
+		<ul>
+			<a href="./Ricerca?page=libro" ><li>Ricerca libro per id</li></a>
+		</ul>
+		<!-- ELIMINAZIONE E RICERCA -->
+		
 <%		
 }
 %>

@@ -20,6 +20,23 @@ if (userBean == null) {
 	<a href="./LoginBiblio">- Login</a>
 <%
 } else {
+
+	//String test = request.getParameter("test");
+	//System.out.print(test);
+	
+	String erroreDataNascita = (String)session.getAttribute("erroreDataNascita");
+	if (erroreDataNascita != null && erroreDataNascita.length() > 0) {
+		out.print("<b>"+erroreDataNascita+"</b><br/>");
+		session.removeAttribute("erroreDataNascita");
+	}
+	
+	String erroreDataMorte = (String)session.getAttribute("erroreDataMorte");
+	if (erroreDataMorte != null && erroreDataMorte.length() > 0) {
+		out.print("<b>"+erroreDataMorte+"</b><br/>");
+		session.removeAttribute("erroreDataMorte");
+	}
+
+	
 %>
 	<h1><em>Registrazione autore</em></h1>
 	
@@ -29,9 +46,9 @@ if (userBean == null) {
 	  <label for="cognome">Cognome:</label>
 	  <input type="text" name="cognome" value=""><br>
 	  <label for="data_nascita">Data di nascita:</label>
-	  <input type="text" name="data_nascita" placeholder="dd MM yyyy" value=""><br>
+	  <input type="text" name="data_nascita" placeholder="gg/mm/aaaa" value=""><br>
 	  <label for="data_morte">Data di morte:</label>
-	  <input type="text" name="data_morte" placeholder="dd MM yyyy" value=""><br>
+	  <input type="text" name="data_morte" placeholder="gg/mm/aaaa" value=""><br>
 	  <label for="biografia">Biografia:</label>
 	  <input type="text" name="biografia" value=""><br>
 	  <input name="insert" type="submit" value="INVIO"/>

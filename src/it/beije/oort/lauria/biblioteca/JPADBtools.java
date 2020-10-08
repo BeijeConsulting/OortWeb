@@ -446,6 +446,21 @@ public class JPADBtools {
 					
 		//entityManager.close();
 	}
+
+	public static void deleteLibro(int id) {
+		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
+		Libro libro = entityManager.find(Libro.class, id);
+		
+		// apro la transaction
+		entityManager.getTransaction().begin();
+		// salvo il libro
+		entityManager.remove(libro);
+		// chiudo la transaction
+		entityManager.getTransaction().commit();
+					
+		//entityManager.close();
+	}
+
 	
 	public static Utente verifyUtenti(String email, String password) {
 		//EntityManager entityManager = JEntityManagerFactory.openEntityManager("OortBiblioteca");
