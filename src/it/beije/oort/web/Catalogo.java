@@ -43,13 +43,13 @@ public class Catalogo extends HttpServlet {
 		String autore = request.getParameter("Autore");
 		String editore = request.getParameter("Editore");
 		List<Libri> catalogo;
-		//se viene chiamato per il catalogo
+		//controllo se è la prima chiamata o ha già i valori autore ed editore
 		if (autore!=null && editore!=null || ((String)session.getAttribute("richiestaCatalogo")).equals("on")) {
 			if(autore==null && editore==null) {
 				response.sendRedirect("catalogo.jsp");
 			}
 			else {
-				if(autore.equals(editore) && autore.equals(0)){ 			
+				if(autore.equals(editore) && autore.equals("0")){ 			
 				catalogo = JPDBtools.catalogoLibri();
 				} else { 
 				catalogo = JPDBtools.catalogoLibriPersonalizzato(Integer.parseInt(autore), Integer.parseInt(editore));

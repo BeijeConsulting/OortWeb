@@ -9,14 +9,15 @@
 </head>
 <body background="sfondo2.jpg">
 
-
+<%-- stringa con cui mostro messaggi di errore o di conferma --%>
 <% 	String errore = (String)session.getAttribute("errore");
 	if(errore!=null) { %>
 	<h3><%=errore %></h3>
 	<% session.removeAttribute("errore"); 
-	}
+	} 
 	String login = (String)session.getAttribute("login");
 	if(login!=null&&!login.equals("false")){ %>
+	<%-- controllo se ha fatto il login o meno  --%>
 		<h3>Benvenuto <%=((Utenti)session.getAttribute("utente")).getNome() %> <%=((Utenti)session.getAttribute("utente")).getCognome() %></h3>
 		<form action="./Smistatore" method="get">
 		<input type="submit" value="PRESTITI" name="Prestiti"/>

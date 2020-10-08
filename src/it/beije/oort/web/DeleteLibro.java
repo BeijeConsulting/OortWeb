@@ -41,7 +41,7 @@ public class DeleteLibro extends HttpServlet {
 				JPDBtools.delete("Libri", indice, "OortBiblioteca");
 				request.getSession().setAttribute("errore", "Libro Cancellato Correttamente");
 				response.sendRedirect("menubiblioteca.jsp");
-			} catch(Exception e) {
+			} catch(Exception e) { //Cosi prendo sia eccezioni di numberformat che eventualmente della jpa
 				request.getSession().setAttribute("errore", "Id Libro Errato");
 				response.sendRedirect("menubiblioteca.jsp");
 			}

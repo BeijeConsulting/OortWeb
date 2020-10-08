@@ -14,7 +14,7 @@
 <title>Catalogo Biblioteca Oort</title>
 </head>
 <body background ="libro.jpg">
-		
+		<%--controlla se la richiesta è stata fatta dalla servlet Smistatore o dalla servlet Catalogo --%>
 		<% 	if(session.getAttribute("richiestaCatalogo").equals("off")){
 			List<Libri> catalogo = (List<Libri>)session.getAttribute("catalogo");		
 			%>
@@ -32,6 +32,7 @@
 				else disponibilita = "Non disponibile"; }%> 
 				<b>Disponibilità</b> <%=disponibilita %></p>			
 			<%} } %>
+			<%-- se la richiesta è stata fatta dal menu, sulla pagina si vede solo quello che segue --%>
 			<h3>Inserisci gli id per i quali vuoi cercare i libri</h3>
 			<h4>Inserisci 0 per omettere il campo corrispondente nella ricerca</h4>	
 			<a href="autori.jsp">Autori</a>

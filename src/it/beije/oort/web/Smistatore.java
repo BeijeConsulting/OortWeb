@@ -22,9 +22,7 @@ public class Smistatore extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	//metodo che mi smista tutte le varie richieste ma non elabora nulla, se non al massimo un attribute
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getParameter("Catalogo")!=null) {
 			request.getSession().setAttribute("richiestaCatalogo", "on");

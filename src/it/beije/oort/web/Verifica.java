@@ -38,9 +38,7 @@ public class Verifica extends HttpServlet {
 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String email = request.getParameter("email");
@@ -49,8 +47,10 @@ public class Verifica extends HttpServlet {
 		//nel caso venga chiamato per il login	
 		if(email!=null && password !=null) {
 		Utenti utente = JPDBtools.ricercaUtente(email, password);
-		if(utente==null) {session.setAttribute("errore", "Credenziali Errate");
-		response.sendRedirect("login.jsp"); }
+		if(utente==null) {
+			session.setAttribute("errore", "Credenziali Errate");
+			response.sendRedirect("login.jsp"); 
+		}
 		else { 
 			session.setAttribute("utente", utente);
 			session.setAttribute("login", "true");
