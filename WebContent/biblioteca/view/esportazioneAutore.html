@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esportazione</title>
+</head>
+<body>
+    <p>Per esportare una lista di autori inserisci</p>
+    <p>la path del download, id iniziale e id finale da escludere</p>
+    <form action="./BibliotecaAutoreEsportaServlet" method="POST" target="_blank">
+        PATH&nbsp;<input type="text" name="path" value="" placeholder="path"/><br/>
+        ID_INIZIALE&nbsp;<input type="text" name="id_iniziale" value="" placeholder="id_iniziale"/><br/>
+        ID_FINALE&nbsp;<input type="text" name="id_finale" value="" placeholder="id_finale"/><br/>
+        <input type="submit" value="INVIO"/>
+    </form>
+</body>
+</html>

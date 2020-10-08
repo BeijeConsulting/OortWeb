@@ -1,7 +1,12 @@
 package it.beije.oort.kirolosmater.biblioteca;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import static it.beije.oort.kirolosmater.biblioteca.LibraryManager.libraryPersistenceUnit;
@@ -183,6 +188,44 @@ public class MetodiAutore {
 		entityManager.getTransaction().commit();
 		entityManager.close();
 		return autore;
+	}
+	
+	public static List<Autore> readRecords (int first, int last) {
+		List<Autore> autori = new ArrayList<Autore>();
+		for(int i = first; i < last; i++) {
+			autori.add(readRecordFromDb(i));
+		}
+		return autori;
+	}
+	
+	public static void exportListToCsv (List<Autore> list, String path) {
+		File fileCsv = new File(path);
+		try {
+			FileWriter writer = new FileWriter(fileCsv);
+			writer.write("NOME;COGNOME;DATA_NASCITA;DATA_MORTE;BIOGRAFIA\n");
+			for (Autore autore : list ) {
+				writer.write(autoreToCsv(autore));
+			}
+			System.out.println("Done records: " + LocalTime.now());
+			writer.flush();
+			writer.close();
+			System.out.println("Done file: " + LocalTime.now());
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static String autoreToCsv (Autore autore) {
+		StringBuilder builder = new StringBuilder();
+		builder.append(autore.getNome()).append(";")
+			.append(autore.getCognome()).append(";")
+			.append(autore.getData_nascita()).append(";")
+			.append(autore.getData_morte()).append(";")
+			.append(autore.getBiografia()).append("\n");
+		
+		return builder.toString();
 	}
 	
 	public static LocalDate dateFromString (String str) {
