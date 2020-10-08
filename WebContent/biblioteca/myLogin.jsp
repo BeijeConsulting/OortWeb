@@ -24,17 +24,21 @@
 		}
 		*/
 		%>
-
+		
 		<h3><em>"Una biblioteca è un luogo dove si impara ciò che gli insegnanti hanno 
-		paura di insegnare." <br> Alan M. Dershowitz</em></h3><br>
+		paura di insegnare." <br> Alan M. Dershowitz</em></h3>
 		<br>
-		<%		
+		
+		<%	//ERROR	
 		String errore = (String)session.getAttribute("errore");
 		if (errore != null && errore.length() > 0) {
-			out.print("<b>"+errore+"</b><br/>");
+		%>
+		<h4 style="color:rgb(255, 0, 0);>;"><% out.print("<b>"+errore+"</b><br/>");%></h4>
+		<%	
 			session.removeAttribute("errore");
 		}
 		%>
+		
 		<h4>Prego effetuare il login:</h4>
 		<form action="../autenticazione" method="post">
 			EMAIL&nbsp;<input type="email" name="email" value="" placeholder="g@d.it"/><br/>

@@ -8,16 +8,16 @@ import javax.persistence.Query;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.beije.oort.web.girardi.jpa.JPAfactory;
+import it.beije.oort.web.girardi.jpa.JPAfactoryBiblio;
 
 public class BiblioTools {
 	//apre EntityManagerFactory
-	private static final EntityManager entityManager = JPAfactory.openEntityFactory();
+	private static final EntityManager entityManager = JPAfactoryBiblio.openEntityFactory();
 	
 	
 	public static Utente getUtente (String email, String password) throws IOException {		
 		//query JPQL
-		String jpql = "SELECT a FROM Autore as a WHERE email = '" + email + "' and "
+		String jpql = "SELECT a FROM Utente as a WHERE email = '" + email + "' and "
 						+ "password = '" + password + "'";
 		Query query = entityManager.createQuery(jpql);
 		List<Utente> listUtente = query.getResultList();
@@ -25,7 +25,7 @@ public class BiblioTools {
 		if (listUtente.size() == 0) {
 			System.out.println("Nessun utente corrisponde ai dati inseriti");
 			return null;
-		}else if (listUtente.size() > 1) 
+		} else if (listUtente.size() > 1) 
 			System.out.println("ALERT: Più di un utente corrisponde ai dati inseriti");
 		
 		Utente utente = listUtente.get(0);

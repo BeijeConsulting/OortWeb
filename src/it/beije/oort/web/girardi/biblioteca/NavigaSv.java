@@ -22,10 +22,13 @@ public class NavigaSv extends HttpServlet {
 		String richiesta = request.getParameter("naviga");
 		switch (richiesta) { 
 		case "catalogo":
-			response.sendRedirect("biblioteca/catalogo.jsp");
+//			response.sendRedirect("biblioteca/catalogo.jsp");
+			response.sendRedirect("biblioteca/workInProgress.jsp");
 			break;
 		case "campi": 
-			response.sendRedirect("biblioteca/campi.jsp");
+//			response.sendRedirect("biblioteca/campi.jsp");
+			response.sendRedirect("biblioteca/workInProgress.jsp");
+
 			break;
 		case "id": 
 			response.sendRedirect("biblioteca/id.jsp");

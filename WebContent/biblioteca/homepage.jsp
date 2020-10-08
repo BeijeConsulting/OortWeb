@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@page import="java.time.LocalDateTime"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="it.beije.oort.web.girardi.biblioteca.Utente"%>
 
 <!DOCTYPE html>
@@ -34,12 +35,13 @@ if (userBean.getAdmin()){
 %>
 
 		<h2>Ciao <%= (userBean.getNome() != null) ? userBean.getNome() : "" %> 
-		<%= (userBean.getCognome() != null) ? userBean.getCognome() : "" %>!</h2><br>
+		<%= (userBean.getCognome() != null) ? userBean.getCognome() : "" %>!</h2>
 		<br>
 		<h2><em>Benvenuto nel menu Biblioteca!</em></h2><br>
 		<%
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd - MMMM - yyyy, hh:mm");
 		LocalDateTime now = LocalDateTime.now();
-		out.println("Oggi a Greenwich: " + now);
+		out.println("Oggi: " + now.format(f));
 		%>
 		<br>
 		<h4>Selezionare l'operazione che si vuole eseguire:</h4>

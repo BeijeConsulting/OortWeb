@@ -22,7 +22,8 @@ public class HomepageSv extends HttpServlet {
 		String richiesta = request.getParameter("homepage");
 		switch (richiesta) { 
 		case "operazioni":
-			response.sendRedirect("biblioteca/operazioni.jsp");
+//			response.sendRedirect("biblioteca/operazioni.jsp");
+			response.sendRedirect("biblioteca/workInProgress.jsp");
 			break;
 		case "naviga": 
 			response.sendRedirect("biblioteca/naviga.jsp");
