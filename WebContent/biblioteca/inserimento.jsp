@@ -36,6 +36,7 @@
 					<li><a href="../GestioneLink?page=rimozione">Rimozione</a></li>
 					<li><a href="../GestioneLink?page=ricerca">Ricerca</a></li>
 					<li><a href="../GestioneLink?page=esportazione">Esportazione</a></li>
+					<li><a href="../Logout">Log out</a></li>
 				</ul>
 			</nav>
 

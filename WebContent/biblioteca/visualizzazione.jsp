@@ -41,6 +41,7 @@
 				<li><a href="rimozione.html">Rimozione</a></li>
 				<li><a href="ricerca.html">Ricerca</a></li>
 				<li><a href="esportazione.html">Esportazione</a></li>
+				<li><a href="../Logout">Log out</a></li>
 			</ul>
 		</nav>
 

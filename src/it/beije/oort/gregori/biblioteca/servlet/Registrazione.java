@@ -1,13 +1,22 @@
 package it.beije.oort.gregori.biblioteca.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.swing.text.Utilities;
 
+import it.beije.oort.gregori.biblioteca.jpa.JPAEntityManager;
 import it.beije.oort.gregori.biblioteca.jpa.Utente;
+import it.beije.oort.gregori.biblioteca.jpa.UtenteUtility;
 
 /**
  * Servlet implementation class Registrazione
@@ -42,9 +51,9 @@ public class Registrazione extends HttpServlet {
 		String cognome = request.getParameter("cognome");
 		String codiceFiscale = request.getParameter("codice-fiscale");
 		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+		String password = request.getParameter("pass");
 		String indirizzo = request.getParameter("indirizzo");
-		String telefono = request.getParameter("telefono");		
+		String telefono = request.getParameter("telefono");	
 		
 		Utente utente = new Utente();
 		utente.setNome(nome);
@@ -55,7 +64,26 @@ public class Registrazione extends HttpServlet {
 		utente.setTelefono(telefono);
 		utente.setPassword(password);
 		
-		List<Utente> utenti;		
+		EntityManager entityManager = JPAEntityManager.createEntityManager();
+		
+		String query = "SELECT u FROM Utente as u WHERE email = '" + email + "'";
+		List<Utente> utenti = entityManager.createQuery(query).getResultList();
+		
+		if(utenti.size() == 0) {
+			EntityTransaction entityTransaction = entityManager.getTransaction();
+			entityTransaction.begin();
+			
+			entityManager.persist(utente);
+			entityManager.getTransaction().commit();
+			
+			entityManager.close();			
+		}
+		else {
+			HttpSession session = request.getSession();
+			session.setAttribute("errore-registrazione", "errore-registrazione");	
+		}
+		
+		response.sendRedirect("./biblioteca/login/confermaRegistrazione.jsp");		
 	}
 
 }

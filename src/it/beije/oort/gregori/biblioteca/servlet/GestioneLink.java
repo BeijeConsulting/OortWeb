@@ -54,6 +54,9 @@ public class GestioneLink extends HttpServlet {
 			else if(page.equals("registrazione")) {
 				response.sendRedirect("./biblioteca/login/registrazione.jsp");
 			}		
+			else if(page.equals("login")) {
+				response.sendRedirect("./biblioteca/login/login.jsp");
+			}		
 		}
 	}
 
