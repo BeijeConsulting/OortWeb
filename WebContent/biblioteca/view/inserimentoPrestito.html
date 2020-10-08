@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserimento</title>
+</head>
+<body>
+    <p>Per inserire un prestito compila i campi</p>
+    <form action="./BibliotecaPrestitoInserimentoServlet" method="POST" target="_blank">
+        LIBRO&nbsp;<input type="text" name="libro" value="" placeholder="libro"/><br/>
+        UTENTE&nbsp;<input type="text" name="utente" value="" placeholder="utente"/><br/>
+        DATA_INIZIO&nbsp;<input type="text" name="data_inizio" value="" placeholder="data_inizio"/><br/>
+        DATA_FINE&nbsp;<input type="text" name="data_fine" value="" placeholder="data_fine"/><br/>
+        NOTE&nbsp;<input type="text" name="note" value="" placeholder="note"/><br/>
+        <input type="submit" value="INVIO"/>
+    </form>
+</body>
+</html>

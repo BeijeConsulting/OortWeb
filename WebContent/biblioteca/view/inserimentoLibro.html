@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserimento</title>
+</head>
+<body>
+    <p>Per inserire un libro compila i campi</p>
+    <form action="./BibliotecaLibroInserimentoServlet" method="POST" target="_blank">
+        TITOLO&nbsp;<input type="text" name="titolo" value="" placeholder="titolo"/><br/>
+        DESCRIZIONE&nbsp;<input type="text" name="descrizione" value="" placeholder="descrizione"/><br/>
+        AUTORE&nbsp;<input type="text" name="autore" value="" placeholder="autore"/><br/>
+        EDITORE&nbsp;<input type="text" name="editore" value="" placeholder="editore"/><br/>
+        ANNO&nbsp;<input type="text" name="anno" value="" placeholder="anno"/><br/>
+        <input type="submit" value="INVIO"/>
+    </form>
+</body>
+</html>

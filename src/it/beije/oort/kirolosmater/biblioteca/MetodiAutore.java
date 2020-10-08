@@ -133,6 +133,20 @@ public class MetodiAutore {
 		entityManager.close();
 	}
 	
+	public static void inserimentoAutore (String nome, String cognome, String data_nascita, String data_morte, String biografia) {
+		//INSERT
+		Autore autore = new Autore();
+		autore.setNome(nome);
+		autore.setCognome(cognome);
+		autore.setData_nascita(dateFromString(data_nascita));
+		autore.setData_morte(dateFromString(data_morte));
+		autore.setBiografia(biografia);
+		entityManager.getTransaction().begin();
+		entityManager.persist(autore);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+	}
+	
 	public static LocalDate dateFromString (String str) {
 		DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDate date = LocalDate.parse(str, f);
