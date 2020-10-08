@@ -24,14 +24,17 @@
 		<form action="./Smistatore" method="get">
 		<input type="submit" value="CATALOGO" name ="Catalogo">
 		</form>
-		<%--if(session.getAttribute("admin").equals("on")) { --%>
+		<form action="./Smistatore" method="get">
+		<input type="submit" value="LOGOUT" name ="Logout">
+		</form>
+		<%if(((String)session.getAttribute("admin")).equals("on")) { %>
 		<h3>Menu Admin</h3>
-			<form action="./Smistatore" method="get">
-			<input type="submit" value="NewPrestito" name="NewPrestito"/>
-			</form>	
 			<form action="./Smistatore" method="get">
 			<input type="submit" value="ListaUtenti" name ="CatalogoUtenti">
 			</form>
+			<form action="./Smistatore" method="get">
+			<input type="submit" value="NewPrestito" name="NewPrestito"/>
+			</form>	
 			<form action="./Smistatore" method="get">
 			<input type="submit" value="NewAutore" name ="NewAutore">
 			</form>
@@ -41,7 +44,13 @@
 			<form action="./Smistatore" method="get">
 			<input type="submit" value="NewEditore" name ="NewEditore">
 			</form>
-		<%--} --%>
+			<form action="./Smistatore" method="get">
+			<input type="submit" value="NewLibro" name="NewLibro"/>
+			</form>	
+			<form action="./Smistatore" method="get">
+			<input type="submit" value="DeleteLibro" name ="DeleteLibro">
+			</form>
+		<%} %>
 	<%} else {%>
 	<h3>Devi fare il login</h3>
 	<form action= "./Smistatore" method="get">

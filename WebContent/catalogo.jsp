@@ -18,7 +18,7 @@
 		<% 	if(session.getAttribute("richiestaCatalogo").equals("off")){
 			List<Libri> catalogo = (List<Libri>)session.getAttribute("catalogo");		
 			%>
-			<h2>Questi sono  i libri presenti in catalogo con quelle caratteristiche</h2>			
+			<h2>Questi sono  i libri presenti in catalogo</h2>			
 		<%	 for(Libri l : catalogo){ 
 			Autori autore = JPDBtools.ricercaAutore(l.getAutore());
 			Editori editore = JPDBtools.ricercaEditore(l.getEditore());
@@ -45,10 +45,13 @@
 			<form action="./Smistatore" method="get">
 			<input type="submit" value="HOME" name="Menu">
 			</form>
-			<%--if(session.getAttribute("admin").equals("on")){ --%>
+			<% if(session.getAttribute("admin").equals("on")){ %>
 			<form action="./Smistatore" method="get">
 			<input type="submit" value="NewPrestito" name="NewPrestito">
 			</form>
-			<%--=} --%>
+			<form action="./Smistatore" method="get">
+			<input type="submit" value="DeleteLibro" name="DeleteLibro">
+			</form>
+			<% } %>
 </body>
 </html>

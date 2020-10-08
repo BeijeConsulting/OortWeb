@@ -54,8 +54,9 @@ public class Verifica extends HttpServlet {
 		else { 
 			session.setAttribute("utente", utente);
 			session.setAttribute("login", "true");
+			if(utente.isAdmin()) session.setAttribute("admin", "on");
+			else session.setAttribute("admin", "off");
 			response.sendRedirect("menubiblioteca.jsp");
-			//session.setAttribute("admin", on/off);
 				
 				}
 			}

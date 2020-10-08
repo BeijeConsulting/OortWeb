@@ -60,6 +60,16 @@ public class Smistatore extends HttpServlet {
 		if(request.getParameter("NewUtente")!=null) {
 			response.sendRedirect("newutente.jsp");
 		}
+		if(request.getParameter("NewLibro")!=null) {
+			response.sendRedirect("newlibro.jsp");
+		}
+		if(request.getParameter("Logout")!=null) {
+			request.getSession().removeAttribute("login");
+			response.sendRedirect("menubiblioteca.jsp");
+		}
+		if(request.getParameter("DeleteLibro")!=null) {
+			response.sendRedirect("deletelibro.jsp");
+		}
 	}
 
 

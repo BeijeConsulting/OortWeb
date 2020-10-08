@@ -34,7 +34,31 @@ public class Utenti {
 	
 	@Column
 	private String telefono;
+	
+	@Column
+	private boolean admin;
+	
+	@Column
+	private String password;
+	
+	public boolean isAdmin() {
+		return admin;
+	}
 
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+	
 	public int getId() {
 		return id;
 	}
