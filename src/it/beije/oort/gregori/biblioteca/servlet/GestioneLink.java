@@ -43,7 +43,7 @@ public class GestioneLink extends HttpServlet {
 				response.sendRedirect("./biblioteca/modifica.html");
 			}
 			else if(page.equals("rimozione")) {
-				response.sendRedirect("./biblioteca/rimozione.html");
+				response.sendRedirect("./biblioteca/eliminazione.jsp");
 			}		
 			else if(page.equals("ricerca")) {
 				response.sendRedirect("./biblioteca/ricerca.html");

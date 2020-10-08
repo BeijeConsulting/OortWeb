@@ -3,6 +3,8 @@ package it.beije.oort.gregori.biblioteca.servlet;
 import java.io.IOException;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,7 @@ import it.beije.oort.gregori.biblioteca.jpa.Autore;
 import it.beije.oort.gregori.biblioteca.jpa.AutoreUtility;
 import it.beije.oort.gregori.biblioteca.jpa.Editore;
 import it.beije.oort.gregori.biblioteca.jpa.EditoreUtility;
+import it.beije.oort.gregori.biblioteca.jpa.JPAEntityManager;
 import it.beije.oort.gregori.biblioteca.jpa.Libro;
 import it.beije.oort.gregori.biblioteca.jpa.LibroUtility;
 import it.beije.oort.gregori.biblioteca.jpa.Prestito;
@@ -22,16 +25,16 @@ import it.beije.oort.gregori.biblioteca.jpa.Utente;
 import it.beije.oort.gregori.biblioteca.jpa.UtenteUtility;
 
 /**
- * Servlet implementation class Visualizzazione
+ * Servlet implementation class Rimozione
  */
-@WebServlet("/Visualizzazione")
-public class Visualizzazione extends HttpServlet {
+@WebServlet("/Rimozione")
+public class Rimozione extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Visualizzazione() {
+    public Rimozione() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -76,7 +79,7 @@ public class Visualizzazione extends HttpServlet {
 				break;
 		
 		}
-		response.sendRedirect("./biblioteca/visualizzazione.jsp");
+		response.sendRedirect("./biblioteca/eliminazione.jsp");
 	}
 
 	/**
@@ -84,7 +87,24 @@ public class Visualizzazione extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		// doGet(request, response);
+		
+		String checkbox = request.getParameter("checkbox");
+		
+		String jpaql = "SELECT id FROM Utente";
+		
+		EntityManager entityManager =  JPAEntityManager.createEntityManager();
+		List<Integer> ids = entityManager.createQuery(jpaql).getResultList();
+		
+		if(ids.contains(Integer.parseInt(checkbox))) {
+			EntityTransaction entityTransaction = entityManager.getTransaction();
+			entityTransaction.begin();
+			entityManager.remove(entityManager.find(Utente.class, Integer.parseInt(checkbox)));
+			entityManager.getTransaction().commit();
+			entityManager.close();		
+		}
+		
+		response.sendRedirect("./biblioteca/eliminazione.jsp");
 	}
 
 }
