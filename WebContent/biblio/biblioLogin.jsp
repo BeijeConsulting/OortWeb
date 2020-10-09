@@ -33,7 +33,7 @@
             <%
                 String error = request.getParameter("error");
                 if (error != null){
-                    if (error.equalsIgnoreCase("user")){
+                    if (error.equalsIgnoreCase("utente")){
                         out.print("Utente inesistente");
                     } else if (error.equalsIgnoreCase("pass")){
                         out.print("Password errata");

@@ -15,15 +15,15 @@
 <%--<%--%>
 <%--/*--%>
 <%--jsp:useBean scope="page"--%>
-<%--Utente user = new Utente();--%>
+<%--Utente utente = new Utente();--%>
 <%--*/--%>
 
 <%--/*--%>
 <%--jsp:useBean scope="session"--%>
-<%--Utente user = session.getAttribute("userBean");--%>
-<%--if (user == null) {--%>
-<%--	user = new Utente();--%>
-<%--	user.setAttribute("userBean", user);--%>
+<%--Utente utente = session.getAttribute("userBean");--%>
+<%--if (utente == null) {--%>
+<%--	utente = new Utente();--%>
+<%--	utente.setAttribute("userBean", utente);--%>
 <%--}--%>
 <%--*/--%>
 
@@ -31,8 +31,8 @@
 <%--setProperty property="nome" name="contatto"--%>
 <%--setProperty property="cognome" name="contatto--%>
 
-<%--user.setNome = request.getParameter("param_nome");--%>
-<%--user.setCognome = request.getParameter("param_cognome");--%>
+<%--utente.setNome = request.getParameter("param_nome");--%>
+<%--utente.setCognome = request.getParameter("param_cognome");--%>
 <%--*/--%>
 <%--%>--%>
 

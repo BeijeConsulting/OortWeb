@@ -11,7 +11,7 @@
     <title>Login</title>
 </head>
 <body>
-<jsp:useBean id="user" class="it.beije.oort.web.model.User" scope="application"/>
+<jsp:useBean id="utente" class="it.beije.oort.web.model.User" scope="application"/>
 
 
     <div class="home">
@@ -24,7 +24,7 @@
             </div>
             <%
                 String login = request.getParameter("login");
-                if (user.getEmail() == null){
+                if (utente.getEmail() == null){
             %>
 
             <div class = "rubrica-form">
@@ -49,12 +49,12 @@
             %>
             <p>Login fallito.</p>
             <%
-            } else if (user.getEmail() != null){
+            } else if (utente.getEmail() != null){
             %>
             <p>Loggato con successo.</p>
 
-            Email: <jsp:getProperty name="user" property="email"/>
-            ID: <jsp:getProperty name="user" property="id"/>
+            Email: <jsp:getProperty name="utente" property="email"/>
+            ID: <jsp:getProperty name="utente" property="id"/>
             <%
             }
             %>
