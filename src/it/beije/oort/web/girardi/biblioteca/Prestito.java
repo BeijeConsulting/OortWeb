@@ -21,8 +21,8 @@ public class Prestito {
 	@Column(name = "libro")
 	private String libro;
 	
-	@Column(name = "utente")
-	private String utente;
+	@Column(name = "id_utente")
+	private Integer id_utente;
 	
 	@Column(name = "data_inizio")
 	private LocalDate data_inizio;
@@ -35,9 +35,9 @@ public class Prestito {
 
 	public Prestito() {}
 
-	public Prestito(String libro, String utente, LocalDate data_inizio, LocalDate data_fine, String note) {
+	public Prestito(String libro, Integer id_utente, LocalDate data_inizio, LocalDate data_fine, String note) {
 		this.libro = libro;
-		this.utente = utente;
+		this.id_utente = id_utente;
 		this.data_inizio = data_inizio;
 		this.data_fine = data_fine;
 		this.note = note;
@@ -59,12 +59,12 @@ public class Prestito {
 		this.libro = libro;
 	}
 
-	public String getUtente() {
-		return utente;
+	public Integer getIdUtente() {
+		return id_utente;
 	}
 
-	public void setUtente(String utente) {
-		this.utente = utente;
+	public void setUtente(Integer utente) {
+		this.id_utente = id_utente;
 	}
 
 	public LocalDate getData_inizio() {
@@ -95,7 +95,7 @@ public class Prestito {
 		StringBuilder builder = new StringBuilder("prestito [");
 		builder.append("id : ").append(this.id)	
 			.append(" - libro : ").append(this.libro)	
-			.append(" - utente : ").append(this.utente)
+			.append(" - id_utente : ").append(this.id_utente)
 			.append(" - data_inizio : ").append(this.data_inizio)
 			.append(" - data_fine : ").append(this.data_fine)
 			.append(" - note : ").append(this.note).append("]");

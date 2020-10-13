@@ -24,11 +24,11 @@ public class Libro {
 	@Column(name = "descrizione")
 	private String descrizione;
 	
-	@Column(name = "autore")
-	private String autore;
+	@Column(name = "id_autore")
+	private Integer id_autore;
 	
-	@Column(name = "editore")
-	private String editore;
+	@Column(name = "id_editore")
+	private Integer id_editore;
 	
 	@Column(name = "anno")
 	private LocalDate anno;
@@ -36,12 +36,12 @@ public class Libro {
 	
 	public Libro() {}
 	
-	public Libro(String titolo, String descrizione, String autore, 
-								String editore, LocalDate anno) {
+	public Libro(String titolo, String descrizione, Integer id_autore, 
+					Integer id_editore, LocalDate anno) {
 		this.titolo = titolo;
 		this.descrizione = descrizione;
-		this.autore = autore;
-		this.editore = editore;
+		this.id_autore = id_autore;
+		this.id_editore = id_editore;
 		this.anno = anno;
 	}
 
@@ -70,19 +70,19 @@ public class Libro {
 	}
 	
 	
-	public String getAutore() {
-		return autore;
+	public Integer getIdAutore() {
+		return id_autore;
 	}
-	public void setAutore(String autore) {
-		this.autore = autore;
+	public void setIdAutore(Integer id_autore) {
+		this.id_autore = id_autore;
 	}
 	
 	
-	public String getEditore() {
-		return editore;
+	public Integer getIdEditore() {
+		return id_editore;
 	}
-	public void setId_editore(String editore) {
-		this.editore = editore;
+	public void setIdEditore(Integer id_editore) {
+		this.id_editore = id_editore;
 	}
 	
 	
@@ -98,8 +98,8 @@ public class Libro {
 		builder.append("id : ").append(this.id)	
 			.append(" - titolo : ").append(this.titolo)	
 			.append(" - descrizione : ").append(this.descrizione)
-			.append(" - autore : ").append(this.autore)
-			.append(" - editore : ").append(this.editore)
+			.append(" - id_autore : ").append(this.id_autore)
+			.append(" - id_editore : ").append(this.id_editore)
 			.append(" - anno : ").append(this.anno).append("]");
 		return builder.toString();
 	}
