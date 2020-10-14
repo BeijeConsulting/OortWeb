@@ -1,64 +1,50 @@
 <!DOCTYPE html>
 <html>
 <body>
-<style>
-.calculator {
-  text-align: center;
-}
-
-table {
-  margin: auto;
-}
-
-td {
-  border-style: solid;
-  border-size: 1px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-}
-</style>
+<link rel="stylesheet" href="calcolatrice.css">
 <div class="calculator">
 <h2>CALCULATOR</h2>
 
 <!-- display... -->
+<form action="">
+  <input id="display" type="text" value="" placeholder="">
+</form>
 
 <table>
   <tr>
-    <td id="t1" onclick="vedi(1)">1</td>
-    <td id="t2" onclick="vedi(2)">2</td>
-    <td id="t3" onclick="vedi(3)">3</td>
-  </tr>
-  <tr>
-    <td id="t4" onclick="vedi(4)">4</td>
-    <td id="t5" onclick="vedi(5)">5</td>
-    <td id="t6" onclick="vedi(6)">6</td>
+    <td id="tAC" onclick="vedi('AC')">AC</td>
+    <td id="tDEL" onclick="vedi('DEL')">DEL</td>
+    <td id="t%" onclick="vedi('%')">%</td>
+    <td id="t/" onclick="vedi('/')" class="operator">÷</td>
   </tr>
   <tr>
     <td id="t7" onclick="vedi(7)">7</td>
     <td id="t8" onclick="vedi(8)">8</td>
     <td id="t9" onclick="vedi(9)">9</td>
+    <td id="t*" onclick="vedi('*')" class="operator">x</td>
   </tr>
   <tr>
-    <td id="tAC" onclick="vedi('AC')">AC</td>
+    <td id="t4" onclick="vedi(4)">4</td>
+    <td id="t5" onclick="vedi(5)">5</td>
+    <td id="t6" onclick="vedi(6)">6</td>
+    <td id="t-" onclick="vedi('-')" class="operator">-</td>
+  </tr> 
+  <tr>
+    <td id="t1" onclick="vedi(1)">1</td>
+    <td id="t2" onclick="vedi(2)">2</td>
+    <td id="t3" onclick="vedi(3)">3</td>
+    <td id="t+" onclick="vedi('+')" class="operator">+</td>
+  </tr>
+  <tr>
     <td id="t0" onclick="vedi(0)">0</td>
     <td id="tComma" onclick="vedi(',')">,</td>
+    <td></td>
+    <td id="t=" onclick="vedi('=')" class="operator">=</td>
   </tr>
 </table>
 </div>
 
-<script>
-var somma = 0;
-
-function vedi(valore) {
-/*  if (valore != 'AC')
-    somma = somma + valore;
-  else
-    somma = 0;
-  alert(somma);*/
-  console.log(valore);
-}
-</script>
+<script src="calcolatrice.js"></script>
 
 </body>
 </html>
