@@ -13,6 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/authentication")
 public class Authentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.sendRedirect("login.jsp");
+	}
        
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
