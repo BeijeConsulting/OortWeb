@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="main.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="calculator">
+    <h2>CALCULATOR</h2>
+    <table>
+      <tr>
+        <td id="memory" colspan="4"></td>
+      </tr>
+      <tr>
+        <td id="display" colspan="3"></td>
+        <td id="operation"></td>
+      </tr>
+      <tr>
+        <td id="tPerc" onclick="show('%')">%</td>
+        <td id="tCE" onclick="show('CE')">CE</td>
+        <td id="tC" onclick="show('C')">C</td>
+        <td id="tDivide" onclick="show('/')">/</td>
+        <td id="tRightParenthesis" onclick="show(')')">)</td>
+      </tr>
+      <tr>
+        <td id="t7" onclick="show(7)">7</td>
+        <td id="t8" onclick="show(8)">8</td>
+        <td id="t9" onclick="show(9)">9</td>
+        <td id="tStar" onclick="show('*')">*</td>
+        <td id="tRightParenthesis" onclick="show('(')">(</td>
+      </tr>
+      <tr>
+        <td id="t4" onclick="show(4)">4</td>
+        <td id="t5" onclick="show(5)">5</td>
+        <td id="t6" onclick="show(6)">6</td>
+        <td id="tMinus" onclick="show('-')">-</td>
+      </tr>
+      <tr>
+        <td id="t1" onclick="show(1)">1</td>
+        <td id="t2" onclick="show(2)">2</td>
+        <td id="t3" onclick="show(3)">3</td>
+        <td id="tPlus" onclick="show('+')">+</td>
+      </tr>
+      <tr>
+        <td id="tNull"></td>
+        <td id="t0" onclick="show(0)">0</td>
+        <td id="tComma" onclick="show('.')">.</td>
+        <td id="tEquals" onclick="show('=')">=</td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="calcolatrice-scientific.js"></script>
+  <script src="lexer.js"></script>
+  <script src="parser.js"></script>
+
+</body>
+
+</html>
