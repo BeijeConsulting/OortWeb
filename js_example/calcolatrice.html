@@ -1,64 +1,148 @@
 <!DOCTYPE html>
 <html>
-<body>
-<style>
-.calculator {
-  text-align: center;
-}
-
-table {
-  margin: auto;
-}
-
-td {
-  border-style: solid;
-  border-size: 1px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-}
-</style>
-<div class="calculator">
-<h2>CALCULATOR</h2>
-
-<!-- display... -->
-
-<table>
-  <tr>
-    <td id="t1" onclick="vedi(1)">1</td>
-    <td id="t2" onclick="vedi(2)">2</td>
-    <td id="t3" onclick="vedi(3)">3</td>
-  </tr>
-  <tr>
-    <td id="t4" onclick="vedi(4)">4</td>
-    <td id="t5" onclick="vedi(5)">5</td>
-    <td id="t6" onclick="vedi(6)">6</td>
-  </tr>
-  <tr>
-    <td id="t7" onclick="vedi(7)">7</td>
-    <td id="t8" onclick="vedi(8)">8</td>
-    <td id="t9" onclick="vedi(9)">9</td>
-  </tr>
-  <tr>
-    <td id="tAC" onclick="vedi('AC')">AC</td>
-    <td id="t0" onclick="vedi(0)">0</td>
-    <td id="tComma" onclick="vedi(',')">,</td>
-  </tr>
-</table>
-</div>
-
-<script>
-var somma = 0;
-
-function vedi(valore) {
-/*  if (valore != 'AC')
-    somma = somma + valore;
-  else
-    somma = 0;
-  alert(somma);*/
-  console.log(valore);
-}
-</script>
-
-</body>
+	<head>
+		<style>
+			.calculator {
+			  text-align: center;
+			  width: min-content;
+			  margin: auto;
+			}
+			
+			table {
+			  margin: auto;
+			}
+			
+			td {
+			  border-style: solid;
+			  border-size: 1px;
+			  width: 30px;
+			  height: 30px;
+			  text-align: center;
+			}
+			.display {
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+			.display p {
+				text-align: right;
+			}
+			#last_result {
+				font-size: 80%;
+			}
+			#display {
+				font-size: 120%;
+			}
+		</style>
+		<script>
+			class Display {
+				constructor(){
+					this.screen_last = document.getElementById("last_result");
+					this.screen_current = document.getElementById("display");
+					this.last_val = "";
+					this.current_val = "";
+					this.op = "";
+				}
+				
+				show() {
+					this.screen_last.innerHTML = this.last_val + " " + this.op;
+					this.screen_current.innerHTML = this.current_val;
+				}
+				
+				insert(x){
+					switch(x){
+						case "+":
+						case "-":
+						case "*":
+						case "/":
+							if(this.current_val) {
+								this.last_val = this.current_val;
+								this.op = x;
+								this.current_val = "";
+							} else {
+								if(this.last_val) {
+									this.op = x;
+								}
+							}
+							break;
+						case "=":
+							this.execute();
+							break;
+						case "AC":
+							this.last_val = "";
+							this.op = "";
+							this.current_val = "";
+							break;
+						default:
+							if(!this.op){
+								this.last_val = "";
+							}
+							this.current_val += x;
+					}
+					this.show();
+				}
+				
+				execute() {
+					let v1 = parseInt(this.last_val, 10);
+					let v2 = parseInt(this.current_val, 10);
+					switch(this.op) {
+						case "+":
+							this.last_val = v1 + v2;
+							break;
+						case "-":
+							this.last_val = v1 - v2;
+							break;
+						case "*":
+							this.last_val = v1 * v2;
+							break;
+						case "/":
+							this.last_val = v1 / v2;
+					}
+					this.current_val = "";
+					this.op = "";
+				}
+			}
+			
+			let display;
+			function init() { display = new Display();}
+			
+		</script>
+	</head>
+	<body onload = "init()">
+	
+		<div class="calculator">
+			<h2>CALCULATOR</h2>
+			
+			<div class="display">
+				<p id = "last_result"></p>
+				<p id = "display"></p>
+			</div>
+			
+			<table>
+				<tr>
+					<td id="t1" onclick="display.insert(1)">1</td>
+					<td id="t2" onclick="display.insert(2)">2</td>
+					<td id="t3" onclick="display.insert(3)">3</td>
+					<td id="tMult" onclick="display.insert('*')">*</td>
+				</tr>
+				<tr>
+					<td id="t4" onclick="display.insert(4)">4</td>
+					<td id="t5" onclick="display.insert(5)">5</td>
+					<td id="t6" onclick="display.insert(6)">6</td>
+					<td id="tDiv" onclick="display.insert('/')">/</td>
+				</tr>
+				<tr>
+					<td id="t7" onclick="display.insert(7)">7</td>
+					<td id="t8" onclick="display.insert(8)">8</td>
+					<td id="t9" onclick="display.insert(9)">9</td>
+					<td id="tPlus" onclick="display.insert('+')">+</td>
+				</tr>
+				<tr>
+			   		<td id="tEq" onclick="display.insert('=')">=</td>
+			    	<td id="t0" onclick="display.insert(0)">0</td>
+			    	<td id="tAC" onclick="display.insert('AC')">AC</td>
+			    	<td id="tMinus" onclick="display.insert('-')">-</td>
+			  	</tr>
+			</table>
+		</div>
+	</body>
 </html>
