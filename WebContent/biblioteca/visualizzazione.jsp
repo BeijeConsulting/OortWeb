@@ -1,8 +1,8 @@
-<%@ page import="it.beije.oort.gregori.biblioteca.jpa.Utente" %>
-<%@ page import="it.beije.oort.gregori.biblioteca.jpa.Libro" %>
-<%@ page import="it.beije.oort.gregori.biblioteca.jpa.Prestito" %>
-<%@ page import="it.beije.oort.gregori.biblioteca.jpa.Autore" %>
-<%@ page import="it.beije.oort.gregori.biblioteca.jpa.Editore" %>
+<%@ page import="it.beije.oort.gregori.biblioteca.Utente" %>
+<%@ page import="it.beije.oort.gregori.biblioteca.Libro" %>
+<%@ page import="it.beije.oort.gregori.biblioteca.Prestito" %>
+<%@ page import="it.beije.oort.gregori.biblioteca.Autore" %>
+<%@ page import="it.beije.oort.gregori.biblioteca.Editore" %>
 <%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>

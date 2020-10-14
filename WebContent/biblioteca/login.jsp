@@ -17,7 +17,7 @@
 	</head>
 	<body class="is-preload">
 	
-		<jsp:useBean id="utente" class="it.beije.oort.gregori.biblioteca.jpa.Utente" scope="session"/>
+		<jsp:useBean id="utente" class="it.beije.oort.gregori.biblioteca.Utente" scope="session"/>
 		<jsp:setProperty property="email" name="utente" param="username"/>
 		<jsp:setProperty property="password" name="utente" param="pass"/>
 

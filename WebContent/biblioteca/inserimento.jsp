@@ -1,4 +1,4 @@
-<%@ page import="it.beije.oort.gregori.biblioteca.jpa.Utente" %>
+<%@ page import="it.beije.oort.gregori.biblioteca.Utente" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE HTML>
