@@ -21,13 +21,13 @@ import javax.servlet.http.HttpSession;
 public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-//    /**
-//     * @see HttpServlet#HttpServlet()
-//     */
-//    public TestServlet() {
-//        super();
-//        // TODO Auto-generated constructor stub
-//    }
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public TestServlet() {
+        super();
+        System.out.println("TestServlet creata");
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
