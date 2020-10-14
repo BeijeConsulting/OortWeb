@@ -10,12 +10,29 @@ table {
   margin: auto;
 }
 
+th {
+  border-style: solid;
+  border-size: 1px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 15pt;
+  color: green
+}
+
 td {
   border-style: solid;
   border-size: 1px;
   width: 30px;
   height: 30px;
   text-align: center;
+  font-size: 15pt;
+}
+
+.display {
+  text-align: center;
+  color: blue;
+  font-size: 20pt;
 }
 </style>
 <div class="calculator">
@@ -25,38 +42,104 @@ td {
 
 <table>
   <tr>
-    <td id="t1" onclick="vedi(1)">1</td>
-    <td id="t2" onclick="vedi(2)">2</td>
-    <td id="t3" onclick="vedi(3)">3</td>
+    <div id="display" class="display"> Hello!</div>
   </tr>
   <tr>
-    <td id="t4" onclick="vedi(4)">4</td>
-    <td id="t5" onclick="vedi(5)">5</td>
-    <td id="t6" onclick="vedi(6)">6</td>
+    <td id="t1" onclick="inserimento(1)">1</td>
+    <td id="t2" onclick="inserimento(2)">2</td>
+    <td id="t3" onclick="inserimento(3)">3</td>
+	<th id="tpiu" onclick="vedi('+')">+</th>
+	<th id="tmeno" onclick="vedi('-')">-</th>
   </tr>
   <tr>
-    <td id="t7" onclick="vedi(7)">7</td>
-    <td id="t8" onclick="vedi(8)">8</td>
-    <td id="t9" onclick="vedi(9)">9</td>
+    <td id="t4" onclick="inserimento(4)">4</td>
+    <td id="t5" onclick="inserimento(5)">5</td>
+    <td id="t6" onclick="inserimento(6)">6</td>
+	<th id="tper" onclick="vedi('*')">*</th>
+	<th id="tdiviso" onclick="vedi('/')">/</th>
   </tr>
   <tr>
-    <td id="tAC" onclick="vedi('AC')">AC</td>
-    <td id="t0" onclick="vedi(0)">0</td>
-    <td id="tComma" onclick="vedi(',')">,</td>
+    <td id="t7" onclick="inserimento(7)">7</td>
+    <td id="t8" onclick="inserimento(8)">8</td>
+    <td id="t9" onclick="inserimento(9)">9</td>
+	<th id="tvirgola" onclick="vedi('.')">.</th>
+  </tr>
+  <tr>
+    <th id="tAC" onclick="vedi('AC')">AC</th>
+    <td id="t0" onclick="inserimento(0)">0</td>
+	<th id="tuguale" onclick="vedi('uguale')">=</th>
+	
   </tr>
 </table>
 </div>
 
 <script>
 var somma = 0;
+var result = 0;
+var num = 0;
+var s = "";
+var display = "";
+var virgola = 0;
+var decimal = 0.0;
 
 function vedi(valore) {
-/*  if (valore != 'AC')
-    somma = somma + valore;
-  else
-    somma = 0;
-  alert(somma);*/
-  console.log(valore);
+	switch (valore) {
+	case 'AC':
+		num = 0;
+		display = "";
+		somma = 0;
+		result = 0;
+		document.getElementById('display').innerHTML=result;
+		break;
+		
+	case '.':
+		num = String(num);
+		virgola = num.includes(".");
+		if (virgola != true) {
+		virgola = true;
+		num = num + '.';
+		document.getElementById('display').innerHTML=num;
+		}
+		break;
+	
+	case '-':
+	case '+':
+	case '*':
+	case '/':
+		somma = num;
+		s = valore;
+		display = num + s ;
+		num = 0;
+		document.getElementById('display').innerHTML=display;
+		break;
+		
+	case 'uguale':
+		switch (s) {
+		case '-':
+			result = somma - num;
+			break;
+		case '+':
+			result = somma + num;
+			break;
+		case '*':
+			result = somma * num;
+			break;
+		case '/':
+			result = somma / num;
+			break;
+		}
+		num = result;
+		document.getElementById('display').innerHTML=result;
+		break;
+	}
+}
+
+function inserimento(valore) {
+  if (num!=0)
+	num = String(num);
+  num = num + valore;
+  document.getElementById('display').innerHTML=num;
+  num = Number(num);
 }
 </script>
 
