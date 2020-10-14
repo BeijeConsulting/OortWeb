@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<link href="prova.css" rel="stylesheet"/>
+		<script src="prova.js"></script>
 	</head>
 	<body>
 		<div class="calculator">
@@ -36,40 +37,33 @@
 			</table>
 			<div id="submit" onclick="parse()"> = </div>
 		</div>
-
-		<script>
-		var o="";
-		function reset() {
-			document.getElementById("display").innerHTML = "";
-			o="";
-		}
-		function num(valore) {
-			o+=valore;
-			document.getElementById("display").innerHTML = o;
-		}
-		function operation(op, o, o1) {
-			//console.log('Entro in operation. operaione(op)=', op, ' Operando 1:', parseInt(o1), ' Operando 2:', o);
-			if(op=="+") return parseFloat(o1)+parseFloat(o);
-			if(op=="-") return parseFloat(o1)-parseFloat(o);
-			if(op=="*") return parseFloat(o1)*parseFloat(o);
-			if(op=="/") return parseFloat(o1)/parseFloat(o);
-		}
-		function parse() {
-			//console.log('Entro in parse(). var o = ', o)
-			let o1="";
-			for (let index = 0; index < o.length; index++) {
-				//console.log('Entro nel for. Index = ', index ,"ChatAt(index): ", o.charAt(index));
-				if (o.charAt(index)==="+" || o.charAt(index)==="-" || o.charAt(index)==="*" || o.charAt(index)==="/") {
-						let op = o.charAt(index);
-						document.getElementById("display").innerHTML = operation(op, o.substr(index+1), o1);
-						break;
-					}
-					else {
-						o1 += o.charAt(index)
-					}
-			}
-			o="";
-		}
-	</script>
+		<!-- FINE CALCOLATRICE TABLE // INIZIO CALCOLATRICE DIV -->
+		<div id="tabella">
+			<div id="riga1" class="riga">
+				<div id="cella1" class="cella" onclick="num('1')">1</div>
+				<div id="cella2" class="cella" onclick="num('2')">2</div>
+				<div id="cella3" class="cella" onclick="num('3')">3</div>
+				<div id="cella4" class="cella" onclick="num('+')">+</div>
+			</div>
+			<div id="riga2" class="riga">
+				<div id="cella5" class="cella" onclick="num('4')">4</div>
+				<div id="cella6" class="cella" onclick="num('5')">5</div>
+				<div id="cella7" class="cella" onclick="num('6')">6</div>
+				<div id="cella8" class="cella" onclick="num('-')">-</div>
+			</div>
+			<div id="riga3" class="riga">
+				<div id="cella9" class="cella" onclick="num('7')">7</div>
+				<div id="cella10" class="cella" onclick="num('8')">8</div>
+				<div id="cella11" class="cella" onclick="num('9')">9</div>
+				<div id="cella12" class="cella" onclick="num('*')">*</div>
+			</div>
+			<div id="riga4" class="riga">
+				<div id="cella13" class="cella" onclick="reset()">C</div>
+				<div id="cella14" class="cella" onclick="num('0')">0</div>
+				<div id="cella15" class="cella" onclick="num('.')">,</div>
+				<div id="cella16" class="cella" onclick="num('/')">/</div>
+			</div>
+			<div id="riga5" class="riga" onclick="parse()">=</div>
+		</div>
 	</body>
 </html>

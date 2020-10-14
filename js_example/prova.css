@@ -1,3 +1,41 @@
+/*css pre seconda calcolatrice (quella con i div) */
+#riga5 {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	height: 30px;
+	width: 132px;
+	margin: auto;
+	align-items: center;
+	  justify-content: center;
+}
+
+#riga4 {
+	margin-bottom: 1px;
+}
+
+#tabella {
+	width: max-content;
+	margin: auto;
+}
+
+.riga {
+	
+	display: flex;
+}
+
+.cella {
+	text-align: center;
+	padding-top: 6px;
+	height: 24px;
+	width: 30px;
+	margin: 1px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+
+/*css per prima calcolatrice (quella con la table) */
 #submit {
 	border-style: solid;
 	border-width: 1px;
@@ -6,6 +44,9 @@
 	height: 30px;
 	margin:auto;
 	text-align: center;
+	display: flex;
+	align-items: center;
+  	justify-content: center;
 }
 
 #display {
@@ -20,6 +61,7 @@
 
 .calculator {
 text-align: center;
+margin-bottom: 2em;
 }
 
 table {
@@ -34,6 +76,7 @@ height: 30px;
 text-align: center;
 }
 
+/*css per prova.html*/
 h2 {
 	color: blue;
 }
