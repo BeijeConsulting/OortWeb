@@ -1,0 +1,39 @@
+.calculator {
+    text-align: center;
+}
+
+input{
+    text-align: right;
+    font-size: 25px;
+}
+
+table {
+    margin: 10px auto auto;
+}
+
+td {
+    border-style: solid;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+td:active{
+    background-color: darkgrey;
+}
+
+td:hover{
+    cursor: pointer;
+}
+
+#error{
+    color: red;
+    font-style: italic;
+}
+
+.hidden{
+    border: none;
+}
+.hidden:hover{
+    cursor: default;
+}
