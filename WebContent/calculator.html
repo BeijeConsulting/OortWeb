@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+	<title>Oort Calculator</title>
+<style>
+.myDiv {
+  border-style: ridge;
+  background-color: lightblue;    
+  text-align: center;
+  margin: auto;
+}
+.display {
+	border-style: ridge;
+	width: auto;
+  	height: 30px;
+  	text-align: center;
+	
+}
+/* p.ridge {border-style: ridge;} */
+
+</style>
+</head>
+<body>
+
+<h1>Oort Calculator</h1>
+
+<div class="myDiv">
+	 <input type="text" id="disp" name="disp">	
+  <div id="display" class="display" ></div>
+  <input type="submit" id="7" value="7" onclick="vedi(this.id)">
+  <input type="submit" id="8" value="8" onclick="vedi(this.id)">
+  <input type="submit" id="9" value="9" onclick="vedi(this.id)">
+  <input type="submit" id="*" value="*" onclick="vedi(this.value)"><br>
+  
+  <input type="submit" value="4" onclick="vedi(this.value)">
+  <input type="submit" value="5" onclick="vedi(this.value)">
+  <input type="submit" value="6" onclick="vedi(this.value)">
+  <input type="submit" value="/" onclick="vedi(this.value)"><br>
+  
+  <input type="submit" value="1" onclick="vedi(this.value)">
+  <input type="submit" value="2" onclick="vedi(this.value)">
+  <input type="submit" value="3" onclick="vedi(this.value)">
+  <input type="submit" id="+" value="+" onclick="vedi(this.id)"><br>
+  
+  <input type="submit" value="," onclick="vedi(this.value)">
+  <input type="submit" value="0" onclick="vedi(this.value)">
+  <input type="submit" value="=" onclick="op()">
+  <input type="submit" value="-" onclick="vedi(this.value)"><br>
+	
+</div>
+<p id="demo"></p>
+<script>
+
+function vedi(valore) {  
+  document.getElementById('disp').value+=valore;
+  console.log(document.getElementById('disp').value);
+  
+/*   document.getElementById('display').value+=valore; 
+  console.log(document.getElementById('display').value);*/
+	
+  document.getElementById('display').innerHTML+=valore;
+}
+
+function op(){
+
+ document.getElementById('disp').value=eval(document.getElementById('disp').value);
+ document.getElementById('display').innerHTML = document.getElementById('disp').value;
+ 
+ //document.getElementById('display').value=eval(document.getElementById('display').value);
+}
+
+</script>
+
+</body>
+</html>

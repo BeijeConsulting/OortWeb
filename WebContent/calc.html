@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+	<title>Oort Calculator</title>
+<style>
+.myDiv {
+  border-style: ridge;
+  background-color: lightblue;    
+  text-align: center;
+  margin: auto;
+}
+.display {
+	border-style: ridge;
+	width: auto;
+  	height: 30px;
+  	text-align: center;
+	
+}
+/* p.ridge {border-style: ridge;} */
+
+</style>
+</head>
+<body>
+
+<h1>Oort Calculator</h1>
+
+<div class="myDiv">
+<form action="./calc.html" onsubmit="return myFunction()"> 
+	<input type="text" id="result" size="20">
+	
+	 <input type="text" id="disp" name="disp" >	
+  <div id="display" class="display" ></div>
+  <input type="button" id="num" value="7" onclick="vedi(this.value)" > 
+  <input type="button" id="8" value="8" onclick="vedi(this.id)">
+  <input type="button" id="9" value="9" onclick="vedi(this.id)">
+  <input type="button" id="opt" value="*" onclick="vedi(this.value)"><br>
+  
+  <input type="submit" value="4" onclick="vedi(this.value)">
+  <input type="submit" value="5" onclick="vedi(this.value)">
+  <input type="submit" value="6" onclick="vedi(this.value)">
+  <input type="submit" value="/" onclick="vedi(this.value)"><br>
+  
+  <input type="submit" value="1" onclick="vedi(this.value)">
+  <input type="submit" value="2" onclick="vedi(this.value)">
+  <input type="submit" value="3" onclick="vedi(this.value)">
+  <input type="submit" value="+" onclick="vedi(this.id)"><br>
+  
+  <input type="submit" value="," onclick="vedi(this.value)">
+  <input type="submit" value="0" onclick="vedi(this.value)">
+  <input type="submit" id="opt" value="=">
+  <input type="submit" value="-" onclick="vedi(this.value)"><br>
+
+</form>
+</div>
+
+<script>
+var res = 0;
+function vedi(valore) {  
+	res = document.getElementById('display').text + valore;
+	console.log("result: ",res);
+  document.getElementById('disp').value+=valore;
+  console.log(document.getElementById('disp').value);
+	
+  document.getElementById('display').innerHTML+=valore;
+}
+
+function op(){
+	console.log("result: ",res.text);
+ document.getElementById('disp').value=eval(document.getElementById('disp').value);
+ document.getElementById('display').innerHTML = document.getElementById('disp').value;
+}
+
+function myFunction(){
+	  var n = document.getElementById("num").value;
+	  var opt = document.getElementById("opt").value;
+	  var txt = document.getElementById("result").value;
+	  txt = txt + option;
+	  document.getElementById("result").value = txt;
+}
+</script>
+
+</body>
+</html>
