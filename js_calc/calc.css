@@ -7,25 +7,6 @@ input{
     font-size: 25px;
 }
 
-table {
-    margin: 10px auto auto;
-}
-
-td {
-    border-style: solid;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-}
-
-td:active{
-    background-color: darkgrey;
-}
-
-td:hover{
-    cursor: pointer;
-}
-
 #error{
     color: red;
     font-style: italic;
@@ -36,4 +17,72 @@ td:hover{
 }
 .hidden:hover{
     cursor: default;
+}
+
+.container{
+    text-align: center;
+}
+
+.flex{
+    background-color: #008CBA;
+    width: 230px;
+    padding: 0;
+    margin: auto;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row;
+    justify-content: space-around;
+
+    line-height: 50px;
+}
+
+.calcButton{
+    background-color: white;
+    margin: 5px;
+    font-size: 1.5em;
+    text-align: center;
+    flex: 1;
+    height:auto;
+
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.calcButton:before {
+    content:'';
+    float:left;
+    padding-top:100%;
+}
+
+.calcButton:active{
+    background-color: darkgrey;
+}
+
+/*noinspection ALL*/
+.calcScreen{
+    background-color: #f1f1f1;
+    margin: 5px;
+    font-size: 15px;
+    width: inherit;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+    flex-basis: inherit;
+    line-height: 30px;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+input{
+    width: inherit;
+    height: 35px;
 }

@@ -8,42 +8,45 @@
 <div class="calculator">
 <h2>CALCULATOR</h2>
 
-<!-- display... -->
-  <input type="text" value="" id="screen" disabled/>
+<!-- Redesign -->
+<div class="container">
   <p id="error"></p>
-
-<table>
-  <tr>
-    <td class = "hidden"></td>
-    <td class = "hidden"></td>
-    <td class = "hidden"></td>
-    <td id="tDiv" onclick="calcolatrice('/')">/</td>
-  </tr>
-  <tr>
-    <td id="t1" onclick="calcolatrice(1)">1</td>
-    <td id="t2" onclick="calcolatrice(2)">2</td>
-    <td id="t3" onclick="calcolatrice(3)">3</td>
-    <td id="tMult" onclick="calcolatrice('*')">*</td>
-  </tr>
-  <tr>
-    <td id="t4" onclick="calcolatrice(4)">4</td>
-    <td id="t5" onclick="calcolatrice(5)">5</td>
-    <td id="t6" onclick="calcolatrice(6)">6</td>
-    <td id="tMinus" onclick="calcolatrice('-')">-</td>
-  </tr>
-  <tr>
-    <td id="t7" onclick="calcolatrice(7)">7</td>
-    <td id="t8" onclick="calcolatrice(8)">8</td>
-    <td id="t9" onclick="calcolatrice(9)">9</td>
-    <td id="tplus" onclick="calcolatrice('+')">+</td>
-  </tr>
-  <tr>
-    <td id="tAC" onclick="calcolatrice('AC')">AC</td>
-    <td id="t0" onclick="calcolatrice(0)">0</td>
-    <td id="tComma" onclick="calcolatrice('.')">.</td>
-    <td id="eq" onclick="calcolatrice('eq')">=</td>
-  </tr>
-</table>
+  <div class="flex">
+    <div class = "calcScreen">
+      <input type="text" value="" id="screen" disabled/>
+    </div>
+  </div>
+  <div class="flex">
+    <div class = "calcButton" onclick="calcolatrice('\u221A')">&radic;</div>
+    <div class = "calcButton" onclick="calcolatrice('del')">&#8592;</div>
+    <div class = "calcButton" onclick="calcolatrice('^')">^</div>
+    <div class = "calcButton" onclick="calcolatrice('/')">/</div>
+  </div>
+  <div class="flex">
+    <div class = "calcButton" onclick="calcolatrice(7)">7</div>
+    <div class = "calcButton" onclick="calcolatrice(8)">8</div>
+    <div class = "calcButton" onclick="calcolatrice(9)">9</div>
+    <div class = "calcButton" onclick="calcolatrice('*')">*</div>
+  </div>
+  <div class="flex">
+    <div class = "calcButton" onclick="calcolatrice(4)">4</div>
+    <div class = "calcButton" onclick="calcolatrice(5)">5</div>
+    <div class = "calcButton" onclick="calcolatrice(6)">6</div>
+    <div class = "calcButton" onclick="calcolatrice('-')">-</div>
+  </div>
+  <div class="flex">
+    <div class = "calcButton" onclick="calcolatrice(1)">1</div>
+    <div class = "calcButton" onclick="calcolatrice(2)">2</div>
+    <div class = "calcButton" onclick="calcolatrice(3)">3</div>
+    <div class = "calcButton" onclick="calcolatrice('+')">+</div>
+  </div>
+  <div class="flex">
+    <div class = "calcButton" onclick="calcolatrice('AC')">AC</div>
+    <div class = "calcButton" onclick="calcolatrice(0)">0</div>
+    <div class = "calcButton" onclick="calcolatrice('.')">.</div>
+    <div class = "calcButton" onclick="calcolatrice('eq')">=</div>
+  </div>
 </div>
+
 </body>
 </html>
