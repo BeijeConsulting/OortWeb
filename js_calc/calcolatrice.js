@@ -1,5 +1,7 @@
+// booleano per permettere una singola operazione alla volta
 let operatorSelected = false;
 
+// entry point
 function calcolatrice(valore) {
     document.getElementById("error").innerHTML = null;
 
