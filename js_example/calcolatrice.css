@@ -1,0 +1,16 @@
+.calculator {
+		margin: auto;
+  text-align: center;
+    border: 5px ridge black;
+    width: 200px;
+    height: 300px;
+
+}
+.display{
+	margin: auto;
+  text-align: center;
+  border:1px solid black;
+  width: 155px;
+  height: 30px;
+  line-height: 30px;
+}

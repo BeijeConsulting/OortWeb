@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
+		<link href="calcolatrice.css" rel="stylesheet"/>
+		<script src="calcolatrice.js"></script>
+</head>
 <body>
 <style>
-.calculator {
-  text-align: center;
-}
+
+
 
 table {
   margin: auto;
@@ -20,45 +23,42 @@ td {
 </style>
 <div class="calculator">
 <h2>CALCULATOR</h2>
+<div id="display" class="display">0</div>
 
-<!-- display... -->
+
 
 <table>
   <tr>
-    <td id="t1" onclick="vedi(1)">1</td>
-    <td id="t2" onclick="vedi(2)">2</td>
-    <td id="t3" onclick="vedi(3)">3</td>
+    <td id="t1" onclick="insert('1')">1</td>
+    <td id="t2" onclick="insert('2')">2</td>
+    <td id="t3" onclick="insert('3')">3</td>
+    <td id="tPiu" onclick="operazione('+')">+</td>
   </tr>
   <tr>
-    <td id="t4" onclick="vedi(4)">4</td>
-    <td id="t5" onclick="vedi(5)">5</td>
-    <td id="t6" onclick="vedi(6)">6</td>
+    <td id="t4" onclick="insert('4')">4</td>
+    <td id="t5" onclick="insert('5')">5</td>
+    <td id="t6" onclick="insert('6')">6</td>
+    <td id="tMeno" onclick="operazione('-')">-</td>
+ 
   </tr>
   <tr>
-    <td id="t7" onclick="vedi(7)">7</td>
-    <td id="t8" onclick="vedi(8)">8</td>
-    <td id="t9" onclick="vedi(9)">9</td>
+    <td id="t7" onclick="insert('7')">7</td>
+    <td id="t8" onclick="insert('8')">8</td>
+    <td id="t9" onclick="insert('9')">9</td>
+    <td id="tPer" onclick="operazione('*')">*</td>
+
   </tr>
   <tr>
-    <td id="tAC" onclick="vedi('AC')">AC</td>
-    <td id="t0" onclick="vedi(0)">0</td>
-    <td id="tComma" onclick="vedi(',')">,</td>
+    <td id="tAC" onclick="operazione('AC')">AC</td>
+    <td id="t0" onclick="insert('0')">0</td>
+    <td id="tComma" onclick="insert('.')">,</td>
+    <td id="tFratto" onclick="operazione('/')">/</td>
+  </tr>
+  <tr>
+  	<td id="tUguale" onclick="operazione('=')" colspan=4>=</td>
   </tr>
 </table>
 </div>
-
-<script>
-var somma = 0;
-
-function vedi(valore) {
-/*  if (valore != 'AC')
-    somma = somma + valore;
-  else
-    somma = 0;
-  alert(somma);*/
-  console.log(valore);
-}
-</script>
 
 </body>
 </html>
