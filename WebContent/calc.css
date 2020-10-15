@@ -1,0 +1,13 @@
+.myDiv {
+  border-style: ridge;
+  background-color: lightblue;    
+  text-align: center;
+  margin: auto;
+}
+.display {
+	border-style: ridge;
+	width: auto;
+  	height: 30px;
+  	text-align: center;
+	
+}
