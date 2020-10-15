@@ -30,7 +30,11 @@ function vedi(valore) {
             stringaValore = stringaDisplay;
             break;
         case "+": 
-            memory += parseFloat(stringaValore);
+            if(lastOperator == "-") {
+                memory -= parseFloat(stringaValore);
+            } else {
+                memory += parseFloat(stringaValore);
+            }               
             stringaDisplay = stringaDisplay + " + "  ;
             lastOperator = "+";
             break;
@@ -38,7 +42,13 @@ function vedi(valore) {
             if(memory == 0) {
                 memory = parseFloat(stringaValore);
             } else {
-                memory -= parseFloat(stringaValore);
+                if(lastOperator == "+") {
+                    memory += parseFloat(stringaValore);
+                }
+                else{
+                    memory -= parseFloat(stringaValore);
+                }
+                
             }
             
             stringaDisplay = stringaDisplay + " - "  ;
@@ -54,7 +64,7 @@ function vedi(valore) {
             break;
         case "/": 
             memory = parseFloat(stringaValore);
-            stringaDisplay = "";
+            stringaDisplay = stringaDisplay + " ÷ "  ;
             lastOperator = "/";
             break;
         case "=":
