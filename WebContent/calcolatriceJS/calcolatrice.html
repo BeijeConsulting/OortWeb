@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Calcolatrice in Javascript</title>
+        <script src="./calcolatrice.js" type="application/Javascript"></script>
+        <link rel="stylesheet" href="./calcolatrice.css"/>
+    </head>
+    <body>
+        <div class="calculator">
+            <form name="row">
+                <div class="head-calculator">
+                    <div id="expressionDisplay" class="expression-display"></div>
+                    <div id="resultDisplay" class="result-display">0</div>
+                </div>
+                <div class="row">
+                    <input type="button" name="btn1" value="1" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btn2" value="2" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btn3" value="3" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btnDiv" value="/" onClick="clickCalc(this.value)"/>
+                </div>
+                <div class="row">
+                    <input type="button" name="btn4" value="4" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btn5" value="5" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btn6" value="6" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btnMul" value="X" onClick="clickCalc(this.value)"/>
+                </div>
+                <div class="row">
+                    <input type="button" name="btn7" value="7" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btn8" value="8" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btn9" value="9" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btnSub" value="-" onClick="clickCalc(this.value)"/>
+                </div>
+                <div class="row">
+                    <input type="button" name="btnAC" value="AC" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btn0" value="0" onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btnComma" value="," onClick="clickCalc(this.value)"/>
+                    <input type="button" name="btnAdd" value="+" onClick="clickCalc(this.value)"/>
+                </div>
+                <div class="row">
+                    <input type="button" name="btnEq" value="=" onClick="clickCalc(this.value)"/>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

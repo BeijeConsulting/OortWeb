@@ -1,0 +1,73 @@
+body {
+    background: #dddddd;
+}
+
+.calculator {
+    width: 400px;
+    background: #0d0c46;
+    box-shadow: 0 15px 50px 0 rgba(0,0,0,0.4), 0 15px 20px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.expression-display {
+    height: 20px;
+    width: 332px;
+    margin: auto;
+    position: relative;
+    font-size: 9pt;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    background: #fafafa;
+}
+
+.result-display {
+    height: 50px;
+    width: 332px;
+    margin: auto;
+    position: relative;
+    font-size: 20pt;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+    background: #fafafa;
+}
+
+.row {
+    width: 340px;
+    margin: auto;
+    position: relative;
+}
+
+input[type='button'] {
+    float: left;
+    font-size: 24px;
+    line-height: 70px;
+    width: 80px;
+    height: 70px;
+    margin: 2;
+    border: none;
+    color: #fafafa;
+    cursor: pointer;
+    outline: none;
+    background: #2d2d2d;
+}
+
+input[type='button']:hover {
+    background: #161616;
+}
+
+input[type='button'][value='='] {
+    background: #ec2629;
+    color: #ffffff;
+    width: 332px;
+}
+
+input[type='button'][value='=']:hover {
+    background: #7c1416;
+}
