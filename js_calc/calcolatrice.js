@@ -10,8 +10,6 @@ function calcolatrice(valore) {
     // Devo cancellare tutto o l'ultimo char? Se sì, inutile proseguire, fai return.
     if (tryCleanOrDelete(valore)) return;
 
-    //todo radice non funzionante perché non riesce a fare il controllo
-
     // Se hai già fatto un'operazione, fai l'operazione effettiva (come la calc di Windows)
     if (operatorSelected &&
         (valore === '+' || valore === '-' || valore === '*' || valore === '/'
@@ -65,7 +63,7 @@ function calc(valueOnScreen){
         return getNumber(nums[0]) + getNumber(nums[1]);
     } else if (value.indexOf("^") !== -1){ // pow
         let nums = value.split("^");
-        let result = pow(getNumber(nums[0]), getNumber(nums[1]));
+        let result = Math.pow(getNumber(nums[0]), getNumber(nums[1]));
         console.log(result);
         return result;
     } else if (value.indexOf('\u221A') !== -1){ //sqrt
@@ -104,15 +102,11 @@ function getNumber(numberInString){
 
 function radix(n1, n2){
     if (n2 === 0){
-        console.log("Zero non è un inpur valido.");
+        console.log("Zero non è un input valido.");
         document.getElementById("error").innerHTML = "Zero non è un inpur valido.";
         return "";
     }
     return Math.pow(n1, 1/n2);
-}
-
-function pow(n1, n2){
-    return Math.pow(n1, n2);
 }
 
 function tryCleanOrDelete(valore){
