@@ -2,17 +2,13 @@ let risultato = 0;
 let stringaDisplay = "";
 let stringaValore = "";
 let memory = 0;
-let memory2 = 0;
+let memories = [];
 let lastOperator = "";
 function vedi(valore) {
-/*  if (valore != 'AC')
-    somma = somma + valore;
-  else
-    somma = 0;
-  alert(somma);*/
     console.log("input : " + valore);
     if (lastOperator == "=") {
         memory = 0;
+        memories = [];
         risultato = "";
         lastOperator = "";
         stringaDisplay = "";
@@ -22,7 +18,6 @@ function vedi(valore) {
             stringaDisplay = "";
             stringaValore = "";
             memory = 0;
-            memory2 = 0;
             risultato = 0;
             lastOperator = "";
             break;
@@ -34,9 +29,9 @@ function vedi(valore) {
         case "+": 
             switch (lastOperator) {
                 case "-": memory -= parseFloat(stringaValore); 
-                break;
+                    break;
                 case "*": memory *= parseFloat(stringaValore);
-                break;
+                    break;
                 default: memory += parseFloat(stringaValore);
             }             
             stringaDisplay = stringaDisplay + " + "  ;
@@ -46,18 +41,14 @@ function vedi(valore) {
             if(memory == 0) {
                 memory = parseFloat(stringaValore);
             } else {
-                if(lastOperator == "+") {
-                    memory += parseFloat(stringaValore);
+                switch (lastOperator) {
+                    case "+": memory += parseFloat(stringaValore); 
+                        break;
+                    case "*": memory *= parseFloat(stringaValore);
+                        break;
+                    default: memory -= parseFloat(stringaValore);
                 }
-                else{
-                    memory -= parseFloat(stringaValore);
-                }
-                if(lastOperator == "*") {
-                    memory *= parseFloat(stringaValore);
-                }
-                else{
-                    memory -= parseFloat(stringaValore);
-                }
+                
             }
             
             stringaDisplay = stringaDisplay + " - "  ;
@@ -66,17 +57,27 @@ function vedi(valore) {
         case "*":
             if (memory == 0) {
                 memory = 1;
+            }           
+            switch (lastOperator) {
+                case "+": memory += parseFloat(stringaValore); 
+                    break;
+                case "-": memory -= parseFloat(stringaValore);
+                    break;
+                default: memory *= parseFloat(stringaValore);
             }
-            // if(lastOperator == "+") {
-            //     memory2 = memory;
-            //     memory = 0;
-            // }            
-            memory *= parseFloat(stringaValore);
             stringaDisplay = stringaDisplay + " x "  ;
             lastOperator = "*";
             break;
         case "/": 
-            memory = parseFloat(stringaValore);
+            switch (lastOperator) {
+                case "+": memory += parseFloat(stringaValore); 
+                    break;
+                case "-": memory -= parseFloat(stringaValore);
+                    break;
+                case "*": memory *= parseFloat(stringaValore);
+                    break;
+                default: memory = parseFloat(stringaValore);
+            }
             stringaDisplay = stringaDisplay + " ÷ "  ;
             lastOperator = "/";
             break;
@@ -101,7 +102,6 @@ function vedi(valore) {
                 default:
                     lastOperator = "=";
                     memory = 0;
-                    memory2 = 0;
                     risultato = "";
                     stringaDisplay = "";
             }
