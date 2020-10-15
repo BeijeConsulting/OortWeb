@@ -27,15 +27,21 @@ function vedi(valore) {
         case "DEL" :
             let sliced = stringaDisplay.slice(0, stringaDisplay.length - 1);
             stringaDisplay = sliced;
+            stringaValore = stringaDisplay;
             break;
         case "+": 
             memory += parseFloat(stringaValore);
-            stringaDisplay = stringaValore + " + "  ;
+            stringaDisplay = stringaDisplay + " + "  ;
             lastOperator = "+";
             break;
         case "-": 
-            memory -= Math.abs(parseFloat(stringaValore));
-            stringaDisplay = stringaDisplay + stringaValore + " - "  ;
+            if(memory == 0) {
+                memory = parseFloat(stringaValore);
+            } else {
+                memory -= parseFloat(stringaValore);
+            }
+            
+            stringaDisplay = stringaDisplay + " - "  ;
             lastOperator = "-";
             break;
         case "*":
@@ -43,7 +49,7 @@ function vedi(valore) {
                 memory = 1;
             }            
             memory *= parseFloat(stringaValore);
-            stringaDisplay = stringaDisplay + stringaValore + " x "  ;
+            stringaDisplay = stringaDisplay + " x "  ;
             lastOperator = "*";
             break;
         case "/": 
@@ -54,27 +60,38 @@ function vedi(valore) {
         case "=":
             switch (lastOperator) {
                 case "+":
-                    risultato = memory + parseFloat(stringaDisplay);
+                    risultato = memory + parseFloat(stringaValore);
                     lastOperator = "=";
                     break;
                 case "-":
-                    risultato = memory - parseFloat(stringaDisplay);
+                    risultato = memory - parseFloat(stringaValore);
                     lastOperator = "=";
                     break;
                 case "*":
-                    risultato = memory * parseFloat(stringaDisplay);
+                    risultato = memory * parseFloat(stringaValore);
                     lastOperator = "=";
                     break;
                 case "/":
-                    risultato = memory / parseFloat(stringaDisplay);
+                    risultato = memory / parseFloat(stringaValore);
                     lastOperator = "=";
                     break;
+                default:
+                    lastOperator = "=";
+                    memory = 0;
+                    risultato = "";
+                    stringaDisplay = "";
             }
             stringaDisplay = "" + risultato;
             memory = 0;
             break;
         default:
-            stringaValore += valore; 
+            if(stringaDisplay.charAt(stringaDisplay.length-1) == " ")
+            {
+                stringaValore = "";                
+            }
+                
+            stringaValore += valore;
+             
             if (lastOperator == "") {
                 stringaDisplay = stringaValore;
             } else {
