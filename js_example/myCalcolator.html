@@ -27,6 +27,7 @@ td {
   height: 30px;
   text-align: center;
   font-size: 15pt;
+  background-color: lightblue;
 }
 
 .display {
@@ -34,40 +35,51 @@ td {
   color: blue;
   font-size: 20pt;
 }
+
+#ugua {
+  background-color: orange;
+}
+
+#op {
+  background-color: lightgray;
+}
+
+
 </style>
 <div class="calculator">
-<h2>CALCULATOR</h2>
+<h2>BEST CALCULATOR</h2>
 
 <!-- display... -->
 
 <table>
   <tr>
-    <div id="display" class="display"> Hello!</div>
+    <div id="memory" class="display"> Hello!</div>
+    <div id="display" class="display"> - </div>
   </tr>
   <tr>
     <td id="t1" onclick="inserimento(1)">1</td>
     <td id="t2" onclick="inserimento(2)">2</td>
     <td id="t3" onclick="inserimento(3)">3</td>
-	<th id="tpiu" onclick="vedi('+')">+</th>
-	<th id="tmeno" onclick="vedi('-')">-</th>
+	<th id="op" onclick="vedi('+')">+</th>
+	<th id="op" onclick="vedi('-')">-</th>
   </tr>
   <tr>
     <td id="t4" onclick="inserimento(4)">4</td>
     <td id="t5" onclick="inserimento(5)">5</td>
     <td id="t6" onclick="inserimento(6)">6</td>
-	<th id="tper" onclick="vedi('*')">*</th>
-	<th id="tdiviso" onclick="vedi('/')">/</th>
+	<th id="op" onclick="vedi('*')">*</th>
+	<th id="op" onclick="vedi('/')">/</th>
   </tr>
   <tr>
     <td id="t7" onclick="inserimento(7)">7</td>
     <td id="t8" onclick="inserimento(8)">8</td>
     <td id="t9" onclick="inserimento(9)">9</td>
-	<th id="tvirgola" onclick="vedi('.')">.</th>
+	<th id="op" onclick="vedi('.')">.</th>
   </tr>
   <tr>
-    <th id="tAC" onclick="vedi('AC')">AC</th>
+    <th id="op" onclick="vedi('AC')">AC</th>
     <td id="t0" onclick="inserimento(0)">0</td>
-	<th id="tuguale" onclick="vedi('uguale')">=</th>
+	<th id="ugua" onclick="vedi('uguale')">=</th>
 	
   </tr>
 </table>
@@ -79,26 +91,35 @@ var result = 0;
 var num = 0;
 var s = "";
 var display = "";
+var memory = "";
 var virgola = 0;
+checkEqual = false;
 var decimal = 0.0;
 
 function vedi(valore) {
 	switch (valore) {
 	case 'AC':
+		checkEqual = false;
 		num = 0;
 		display = "";
 		somma = 0;
 		result = 0;
+		memory = "";
 		document.getElementById('display').innerHTML=result;
+		document.getElementById('memory').innerHTML="Hello!";
 		break;
 		
 	case '.':
+		checkEqual = false;
 		num = String(num);
 		virgola = num.includes(".");
 		if (virgola != true) {
 		virgola = true;
 		num = num + '.';
-		document.getElementById('display').innerHTML=num;
+		memory = memory + '.';
+		//document.getElementById('display').innerHTML=num;
+		document.getElementById('memory').innerHTML=memory;
+
 		}
 		break;
 	
@@ -110,35 +131,50 @@ function vedi(valore) {
 		s = valore;
 		display = num + s ;
 		num = 0;
-		document.getElementById('display').innerHTML=display;
+		memory = display;
+		//document.getElementById('display').innerHTML=display;
+		document.getElementById('memory').innerHTML=memory;
+
 		break;
 		
 	case 'uguale':
-		switch (s) {
-		case '-':
-			result = somma - num;
-			break;
-		case '+':
-			result = somma + num;
-			break;
-		case '*':
-			result = somma * num;
-			break;
-		case '/':
-			result = somma / num;
-			break;
+		if (checkEqual)
+			vedi("AC");
+		else {
+			switch (s) {
+			case '-':
+				result = somma - num;
+				break;
+			case '+':
+				result = somma + num;
+				break;
+			case '*':
+				result = somma * num;
+				break;
+			case '/':
+				result = somma / num;
+				break;
+			}
+			num = result;
+			document.getElementById('display').innerHTML=result;
+			memory = memory + "=";
+			checkEqual = true;
+			document.getElementById('memory').innerHTML=memory;
+			memory = String(result);
 		}
-		num = result;
-		document.getElementById('display').innerHTML=result;
-		break;
 	}
 }
 
 function inserimento(valore) {
+  checkEqual = false;
   if (num!=0)
 	num = String(num);
+	
   num = num + valore;
-  document.getElementById('display').innerHTML=num;
+  memory = memory + valore;
+  //document.getElementById('display').innerHTML=num;
+  document.getElementById('memory').innerHTML=memory;
+
   num = Number(num);
 }
 </script>
