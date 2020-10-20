@@ -22,7 +22,7 @@ public class BiblioSearchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getSession().removeAttribute("results");
         System.out.println("in doget");
-        System.out.println((String) request.getSession().getAttribute("searchType")
+        System.out.println(request.getSession().getAttribute("searchType")
         + (String) request.getSession().getAttribute("searchField")
         + request.getParameter("searchQuery"));
 
